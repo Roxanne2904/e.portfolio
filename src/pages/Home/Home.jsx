@@ -3,8 +3,8 @@ import logo from "../../assets/my_logo_namesoff.png";
 //*Components
 import Button from "../../components/Button/Button";
 import Logo from "../../components/Logo/Logo";
-//*Font-Awesome
-import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+// //*Font-Awesome
+// import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 
 //*Styled
 import {
@@ -25,27 +25,35 @@ export default function Home() {
       <header></header>
       <main>
         <StyledMainContainer>
-          <div style={{ display: "flex", position: "relative" }}>
-            <StyledLogosContainer>
-              <Logo logo={faDoorOpen} />
-            </StyledLogosContainer>
-            <StyledContainer>
+          <StyledContainer>
+            <div
+              style={{
+                position: "relative",
+                textAlign: "center",
+                width: "25%",
+              }}
+            >
+              <StyledLogosContainer>
+                <Logo logo={"github"} />
+                <Logo logo={"linkedin"} />
+                <Logo logo={"instagram"} />
+              </StyledLogosContainer>
               <StyledImg src={logo} alt="logo" className="logo" />
+            </div>
 
-              <StyledMainTitle>
-                <StyledStrongString>V</StyledStrongString>iette{" "}
-                <StyledStrongString>R</StyledStrongString>oxanne
-              </StyledMainTitle>
+            <StyledMainTitle>
+              <StyledStrongString>V</StyledStrongString>iette{" "}
+              <StyledStrongString>R</StyledStrongString>oxanne
+            </StyledMainTitle>
 
-              <StyledAboutContainer>
-                <StyledSecondaryTitle>
-                  Développeuse d'application
-                  <StyledSubtitle>JavaScript React</StyledSubtitle>
-                </StyledSecondaryTitle>
-                <Button title={"Bienvenue... "} titleSecondary={"...Entrer"} />
-              </StyledAboutContainer>
-            </StyledContainer>
-          </div>
+            <StyledAboutContainer>
+              <StyledSecondaryTitle>
+                Développeuse d'application
+                <StyledSubtitle>JavaScript React</StyledSubtitle>
+              </StyledSecondaryTitle>
+              <Button title={"Bienvenue... "} titleSecondary={"...Entrer"} />
+            </StyledAboutContainer>
+          </StyledContainer>
         </StyledMainContainer>
       </main>
     </div>

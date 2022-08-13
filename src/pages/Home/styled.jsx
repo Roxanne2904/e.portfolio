@@ -10,12 +10,16 @@ import {
 } from "../../utils/GlobalStyled";
 
 export const StyledLogosContainer = styled.div`
+  display: flex;
+  flex-direction: column;
+  height: 43%;
+  justify-content: space-between;
   position: absolute;
-  right: 62%;
+  top: 1%;
 `;
 
 export const StyledImg = styled.img`
-  width: 25%;
+  width: 100%;
 `;
 export const StyledMainTitle = styled.h1`
   font-size: ${fontSize.main};
