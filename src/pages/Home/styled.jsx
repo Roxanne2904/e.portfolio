@@ -1,4 +1,5 @@
 import styled from "styled-components";
+
 import {
   colors,
   display,
@@ -8,13 +9,23 @@ import {
   beforeLineAnimation,
 } from "../../utils/GlobalStyled";
 
+export const StyledLogosContainer = styled.div`
+  position: absolute;
+  right: 62%;
+`;
+
 export const StyledImg = styled.img`
   width: 25%;
 `;
 export const StyledMainTitle = styled.h1`
   font-size: ${fontSize.main};
+  width: 24%;
+  text-align: end;
   position: relative;
-  left: 3%;
+  bottom: 70px;
+  background: ${colors.secondaryLessO};
+  box-shadow: 20px -10px 1em ${colors.secondaryDarker};
+  padding: 0 1% 0 0;
 `;
 export const StyledSecondaryTitle = styled.h2`
   position:relative;
@@ -48,8 +59,11 @@ export const StyledSecondaryTitle = styled.h2`
   }
 `;
 
-export const StyledStrongString = styled.strong`
+export const StyledStrongString = styled.span`
   color: ${colors.primary};
+  font-family: auto;
+  font-size: 4rem;
+  font-weight: normal;
 `;
 
 export const StyledMainContainer = styled.div`
@@ -62,9 +76,18 @@ export const StyledMainContainer = styled.div`
 `;
 export const StyledContainer = styled.div`
   width: 95%;
+  position: relative;
   display: ${display.flex};
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 `;
 export const StyledSubtitle = styled.span`
   display: ${display.block};
   font-size: 1.2rem;
+`;
+export const StyledAboutContainer = styled.div`
+  width: 25%;
+  position: relative;
+  bottom: 70px;
 `;
