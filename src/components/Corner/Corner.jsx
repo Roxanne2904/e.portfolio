@@ -12,8 +12,8 @@ export default function Corner() {
       viewBox="0 0 56.69 56.69"
       xmlSpace="preserve"
       fill="url(#SVGID_1_)"
-      width="90"
-      height="90"
+      width="4%"
+      height="4%"
     >
       <g>
         <linearGradient
@@ -58,7 +58,7 @@ export default function Corner() {
         </linearGradient>
       </g>
       <polygon
-        class="st0"
+        className="st0"
         points="56.69,0 12.12,0 0,0 0,12.12 0,56.69 12.12,56.69 12.12,12.12 56.69,12.12 "
       />
     </svg>

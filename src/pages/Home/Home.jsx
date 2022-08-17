@@ -22,7 +22,6 @@ import {
 export default function Home() {
   return (
     <div>
-      <header></header>
       <main>
         <StyledMainContainer>
           <StyledContainer>
@@ -34,17 +33,38 @@ export default function Home() {
               }}
             >
               <StyledLogosContainer>
-                <Logo logo={"github"} />
-                <Logo logo={"linkedin"} />
-                <Logo logo={"instagram"} />
+                <Logo
+                  name={"github"}
+                  url={"https://github.com/Roxanne2904/"}
+                  width="85%"
+                  height="100%"
+                  margin={"15% 15% 0 0"}
+                  bool={false}
+                />
+                <Logo
+                  name={"linkedin"}
+                  url={"https://www.linkedin.com/in/roxanne-viette-15a365203/"}
+                  width="85%"
+                  height="100%"
+                  margin={"15% 15% 0 0"}
+                  bool={false}
+                />
+                <Logo
+                  name={"instagram"}
+                  url={"https://www.instagram.com/roxannevietteillustratrice/"}
+                  width="85%"
+                  height="100%"
+                  margin={"15% 15% 0 0"}
+                  bool={false}
+                />
               </StyledLogosContainer>
               <StyledImg src={logo} alt="logo" className="logo" />
-            </div>
 
-            <StyledMainTitle>
-              <StyledStrongString>V</StyledStrongString>iette{" "}
-              <StyledStrongString>R</StyledStrongString>oxanne
-            </StyledMainTitle>
+              <StyledMainTitle>
+                <StyledStrongString>V</StyledStrongString>iette{" "}
+                <StyledStrongString>R</StyledStrongString>oxanne
+              </StyledMainTitle>
+            </div>
 
             <StyledAboutContainer>
               <StyledSecondaryTitle>

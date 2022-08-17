@@ -2,10 +2,16 @@ import { keyframes } from "styled-components";
 
 export const colors = {
   primary: "#4ac0bf",
+  primaryLessO: "#4ac0bf10",
   secondary: "#032628",
   secondaryLessO: "#03262899",
   secondaryDarker: "#021d1e",
+  secondaryDarkerLessO: "#021d1e99",
+  tertiary: "#005959",
+
+  purple: "#6229C9",
   white: "#FFFFFF",
+  dark: "#011616",
 };
 
 export const display = {
@@ -18,6 +24,9 @@ export const flexDirection = {
 
 export const fontSize = {
   main: "2.5rem",
+  mainLessB: "1.5rem",
+  mainBigger: "4rem",
+  secondary: "0.85rem",
 };
 
 export const afterLineAnimation = keyframes`
@@ -33,11 +42,11 @@ export const buttonAnimation = keyframes`
 50% {width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
 70% {width:20%;font-size:0rem;border-radius:50%;}
 80% {width:20%;border-radius:inherit;background:${colors.primary};}
-100%{transform: translateY(0%)}
-
-
-
-
+100%{transform: translateY(0%);}
+`;
+export const pointerEventsAnimation = keyframes`
+0%{pointer-events: none;}
+100%{pointer-events: inherit;}
 `;
 
 // 0% {transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}

@@ -12,10 +12,9 @@ import {
 export const StyledLogosContainer = styled.div`
   display: flex;
   flex-direction: column;
-  height: 43%;
+  width: 15%;
   justify-content: space-between;
   position: absolute;
-  top: 1%;
 `;
 
 export const StyledImg = styled.img`
@@ -23,13 +22,13 @@ export const StyledImg = styled.img`
 `;
 export const StyledMainTitle = styled.h1`
   font-size: ${fontSize.main};
-  width: 24%;
   text-align: end;
-  position: relative;
-  bottom: 70px;
-  background: ${colors.secondaryLessO};
-  box-shadow: 20px -10px 1em ${colors.secondaryDarker};
-  padding: 0 1% 0 0;
+  position: absolute;
+  bottom: 5px;
+  background: ${colors.secondaryDarkerLessO};
+  box-shadow: 20px -10px 1em ${colors.dark};
+  padding: 0 2% 0 0;
+  width: 98%;
 `;
 export const StyledSecondaryTitle = styled.h2`
   position:relative;
@@ -92,6 +91,4 @@ export const StyledSubtitle = styled.span`
 `;
 export const StyledAboutContainer = styled.div`
   width: 25%;
-  position: relative;
-  bottom: 70px;
 `;
