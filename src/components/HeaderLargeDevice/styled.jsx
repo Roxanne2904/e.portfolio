@@ -9,11 +9,8 @@ export const StyledHeader = styled.header`
 `;
 
 export const StyledBlockList = styled.ul`
-  ${(props) => props.logo === true && "position:absolute;"}
-  ${(props) => props.logo === true && "top:0;right: 0;"}
-  ${(props) => props.logo === true && "width: 30%;"}
   display: flex;
-  flex-direction: ${(props) => (props.logo === true ? "row" : "column")};
+  flex-direction: column;
   align-items: center;
   list-style-type: none;
 `;

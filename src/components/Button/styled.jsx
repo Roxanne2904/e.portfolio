@@ -41,7 +41,7 @@ export const StyledButtonHover = styled.button`
   }
 `;
 
-export const StyledButton = styled.button`
+export const StyledHomeButton = styled.button`
   width: 100%;
   border: solid 1px ${colors.primary};
   padding: 10px 0;
@@ -56,3 +56,4 @@ export const StyledButton = styled.button`
     transition: all 0.5s ease-in;
   }
 `;
+export const StyledButton = styled.button``;

@@ -1,10 +1,11 @@
 import About from "../About/About";
-import { StyledGlobalContent } from "./styled";
+import Skills from "../Skills/Skills";
+import { StyledSectionContent } from "./styled";
 
-export default function CurrentContent() {
+export default function CurrentContent({ content }) {
   return (
-    <StyledGlobalContent>
-      <About />
-    </StyledGlobalContent>
+    <StyledSectionContent id={content}>
+      {content === "about" ? <About /> : content === "skills" ? <Skills /> : ""}
+    </StyledSectionContent>
   );
 }

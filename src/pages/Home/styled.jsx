@@ -9,12 +9,13 @@ import {
   beforeLineAnimation,
 } from "../../utils/GlobalStyled";
 
-export const StyledLogosContainer = styled.div`
+export const StyledLogosContainer = styled.ul`
   display: flex;
   flex-direction: column;
   width: 15%;
   justify-content: space-between;
   position: absolute;
+  list-style-type: none;
 `;
 
 export const StyledImg = styled.img`

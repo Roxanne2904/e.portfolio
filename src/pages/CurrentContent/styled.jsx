@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../utils/GlobalStyled";
 
-export const StyledGlobalContent = styled.div`
+export const StyledSectionContent = styled.section`
   position: relative;
   background: ${colors.white};
   width: 65%;

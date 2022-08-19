@@ -12,8 +12,8 @@ export default function Corner() {
       viewBox="0 0 56.69 56.69"
       xmlSpace="preserve"
       fill="url(#SVGID_1_)"
-      width="4%"
-      height="4%"
+      width="7%"
+      height="7%"
     >
       <g>
         <linearGradient

@@ -2,9 +2,12 @@
 import logo from "../../assets/my_logo_namesoff.png";
 //*Components
 import Button from "../../components/Button/Button";
-import Logo from "../../components/Logo/Logo";
+// import Logo from "../../components/Logo/Logo";
+import List from "../../components/List/List";
 // //*Font-Awesome
 // import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
+//*utils
+import { listLogo } from "../../utils/lists/lists";
 
 //*Styled
 import {
@@ -33,30 +36,7 @@ export default function Home() {
               }}
             >
               <StyledLogosContainer>
-                <Logo
-                  name={"github"}
-                  url={"https://github.com/Roxanne2904/"}
-                  width="85%"
-                  height="100%"
-                  margin={"15% 15% 0 0"}
-                  bool={false}
-                />
-                <Logo
-                  name={"linkedin"}
-                  url={"https://www.linkedin.com/in/roxanne-viette-15a365203/"}
-                  width="85%"
-                  height="100%"
-                  margin={"15% 15% 0 0"}
-                  bool={false}
-                />
-                <Logo
-                  name={"instagram"}
-                  url={"https://www.instagram.com/roxannevietteillustratrice/"}
-                  width="85%"
-                  height="100%"
-                  margin={"15% 15% 0 0"}
-                  bool={false}
-                />
+                <List arrayData={listLogo} location={"home"} />
               </StyledLogosContainer>
               <StyledImg src={logo} alt="logo" className="logo" />
 
@@ -71,7 +51,7 @@ export default function Home() {
                 Développeuse d'application
                 <StyledSubtitle>JavaScript React</StyledSubtitle>
               </StyledSecondaryTitle>
-              <Button title={"Bienvenue... "} titleSecondary={"...Entrer"} />
+              <Button title={"Bienvenue... "} />
             </StyledAboutContainer>
           </StyledContainer>
         </StyledMainContainer>

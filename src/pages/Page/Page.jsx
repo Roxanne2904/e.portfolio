@@ -9,8 +9,9 @@ import {
 //*components
 import HeaderLargeDevice from "../../components/HeaderLargeDevice/HeaderLargeDevice";
 import CurrentContent from "../CurrentContent/CurrentContent";
+import Footer from "../../components/Footer/Footer";
 
-export default function Page({ title }) {
+export default function Page({ title, content }) {
   return (
     <div>
       <main>
@@ -21,11 +22,12 @@ export default function Page({ title }) {
         </div>
         <StyledMainContent>
           <StyledHeaderContent>
-            <HeaderLargeDevice />
+            <HeaderLargeDevice content={content} />
           </StyledHeaderContent>
 
-          <CurrentContent />
+          <CurrentContent content={content} />
         </StyledMainContent>
+        <Footer content={content} />
       </main>
     </div>
   );

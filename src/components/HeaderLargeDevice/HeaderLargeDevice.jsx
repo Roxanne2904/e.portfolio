@@ -1,19 +1,23 @@
+// import { Link } from "react-router-dom";
+// import logo from "../../assets/my_logo_namesoff.png";
 //*components
-import NavList from "../NavList/NavList";
+import List from "../List/List";
 //*styled
 import { StyledHeader, StyledBlockList } from "./styled";
 //*utils
-import { listNav, listLogo } from "../../utils/lists/lists";
+import { listNav } from "../../utils/lists/lists";
 
-export default function HeaderLargeDevice() {
+export default function HeaderLargeDevice({ content }) {
   return (
     <StyledHeader>
       <nav style={{ width: "100%" }}>
-        <StyledBlockList logo={true}>
-          <NavList arrayData={listLogo} />
-        </StyledBlockList>
+        {/* <div style={{ position: "absolute", top: "0" }}>
+          <Link to={"/"}>
+            <img src={logo} alt="mon logo" style={{ width: "20%" }}></img>
+          </Link>
+        </div> */}
         <StyledBlockList>
-          <NavList arrayData={listNav} />
+          <List arrayData={listNav} content={content} />
         </StyledBlockList>
       </nav>
     </StyledHeader>

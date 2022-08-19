@@ -1,7 +1,15 @@
 import { StyledLogo } from "./styled";
-export default function Logo({ name, url, width, height, margin, bool }) {
+export default function Logo({
+  name,
+  url,
+  width,
+  height,
+  margin,
+  bool,
+  color,
+}) {
   return (
-    <StyledLogo href={url} target="_blank" logo={bool}>
+    <StyledLogo href={url} target="_blank" bool={bool}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"
@@ -10,7 +18,7 @@ export default function Logo({ name, url, width, height, margin, bool }) {
         y="0px"
         viewBox="0 0 56.69 56.69"
         xmlSpace="preserve"
-        fill="white"
+        fill={color}
         width={width}
         height={height}
         style={{ margin: `${margin}` }}

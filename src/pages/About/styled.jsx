@@ -7,7 +7,7 @@ export const StyledParagraphContent = styled.div`
   position: absolute;
   text-align: justify;
   box-sizing: border-box;
-  box-shadow: 0 20px 50px ${colors.secondaryDarkerLessO};
+  box-shadow: 0 0 1rem ${colors.secondaryDarkerLessO};
   border-radius: 10px;
   padding: 20px;
 `;
@@ -30,7 +30,8 @@ export const StyledWelcomeMsg = styled.span`
 `;
 
 export const StyledParagraph = styled.p`
-  font-size: ${fontSize.secondary};
+  font-size: 1.6vmin;
+
   padding: 10px;
 `;
 
@@ -40,4 +41,11 @@ export const StyledLink = styled.a`
   &:hover {
     color: ${colors.primary};
   }
+`;
+export const StyledSignatureContent = styled.span`
+  display: flex;
+  justify-content: end;
+  margin: 0 50px 0 50px;
+  position: relative;
+  bottom: 20px;
 `;
