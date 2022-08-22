@@ -21,15 +21,19 @@ export const StyledTitle = styled.span`
 `;
 export const StyledLinkA = styled.a`
   text-decoration: none;
-  color: black;
+  color: ${colors.secondaryDarker};
+  font-weight: bold;
   ${(props) =>
     props.$nav === true &&
-    `display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;color:${colors.primary}`}
+    `display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;color:${colors.primary};font-weight: inherit;`}
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
-  color: black;
   ${(props) =>
     props.$nav &&
     `display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;color:${colors.primary}`}
+`;
+export const StyledBasicSpan = styled.span`
+  color: ${colors.secondaryDarker};
+  font-weight: bold;
 `;

@@ -8,6 +8,7 @@ export const colors = {
   secondaryDarker: "#021d1e",
   secondaryDarkerLessO: "#021d1e99",
   tertiary: "#005959",
+  tertiaryLessO: "#00595950",
 
   purple: "#6229C9",
   white: "#FFFFFF",
@@ -47,6 +48,10 @@ export const buttonAnimation = keyframes`
 export const pointerEventsAnimation = keyframes`
 0%{pointer-events: none;}
 100%{pointer-events: inherit;}
+`;
+export const opacityAnimation = keyframes`
+0%{opacity:0}
+100%{opacity:1}
 `;
 
 // 0% {transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}

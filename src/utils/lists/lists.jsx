@@ -42,6 +42,10 @@ export const listLogo = [
     name: "github",
     type: "logo",
     url: "https://github.com/Roxanne2904/",
+    urlP1: "",
+    urlP2: "",
+    urlP3: "",
+    urlP4: "",
   },
   {
     id: "02",
@@ -79,5 +83,125 @@ export const listToContact = [
     title: "Lieu",
     content: "Chartres",
     url: "https://www.google.com/maps?q=chartres&rlz=1C1ONGR_frFR933FR933&um=1&ie=UTF-8&sa=X&ved=2ahUKEwidz7r6x9D5AhUM-xoKHYphCjoQ_AUoAXoECAIQAw",
+  },
+];
+
+export const listProgressBar = [
+  {
+    title: [
+      [{ name: "tech", id: "01", display: "Outils de Tech" }],
+      [
+        {
+          id: "01",
+          display: "HTML5/ CSS3",
+          name: "htmlCss",
+          level: "60%",
+        },
+        {
+          id: "02",
+          display: "JavaScript",
+          name: "javaScript",
+          level: "55%",
+        },
+        {
+          id: "03",
+          display: "React.js",
+          name: "react",
+          level: "55%",
+        },
+        {
+          id: "04",
+          display: "Redux",
+          name: "redux",
+          level: "45%",
+        },
+        {
+          id: "05",
+          display: "React Redux",
+          name: "reactRedux",
+          level: "55%",
+        },
+        {
+          id: "06",
+          display: "Sass",
+          name: "sass",
+          level: "60%",
+        },
+        {
+          id: "07",
+          display: "Styled-components",
+          name: "styledComponents",
+          level: "60%",
+        },
+        {
+          id: "08",
+          display: "Storybook",
+          name: "storybook",
+          level: "30%",
+        },
+        {
+          id: "09",
+          display: "Git et GitHub",
+          name: "storybook",
+          level: "55%",
+        },
+      ],
+    ],
+  },
+  {
+    title: [
+      [{ name: "design", id: "02", display: "Logiciels" }],
+      [
+        {
+          id: "01",
+          display: "Adobe Photoshop",
+          name: "photoshop",
+          level: "75%",
+        },
+        {
+          id: "02",
+          display: "Adobe Illustrator",
+          name: "illustrator",
+          level: "70%",
+        },
+        {
+          id: "03",
+          display: "Clip Studio Paint",
+          name: "clipStudioPaint",
+          level: "40%",
+        },
+        {
+          id: "04",
+          display: "Figma",
+          name: "figma",
+          level: "30%",
+        },
+      ],
+    ],
+  },
+  {
+    title: [
+      [{ name: "languages", id: "03", display: "Langues" }],
+      [
+        {
+          id: "01",
+          display: "Français",
+          name: "fr",
+          level: "100%",
+        },
+        {
+          id: "02",
+          display: "Anglais nv.B1",
+          name: "en",
+          level: "55%",
+        },
+        {
+          id: "03",
+          display: "Portuguais",
+          name: "por",
+          level: "30%",
+        },
+      ],
+    ],
   },
 ];

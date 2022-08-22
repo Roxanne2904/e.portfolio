@@ -1,5 +1,11 @@
 // import { Link } from "react-router-dom";
-import { StyledList, StyledTitle, StyledLinkA, StyledLink } from "./styled";
+import {
+  StyledList,
+  StyledTitle,
+  StyledLinkA,
+  StyledLink,
+  StyledBasicSpan,
+} from "./styled";
 import Logo from "../Logo/Logo";
 import { colors } from "../../utils/GlobalStyled";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -97,12 +103,12 @@ export default function List({ arrayData, location, content }) {
                 {`${elt.content}`}
               </StyledLinkA>
             ) : (
-              <span>
+              <StyledBasicSpan>
                 <StyledTitle>
                   {elt.name === "tel" && <FontAwesomeIcon icon={faPhone} />}
                 </StyledTitle>{" "}
                 {`${elt.content}`}
-              </span>
+              </StyledBasicSpan>
             )}
           </li>
         );

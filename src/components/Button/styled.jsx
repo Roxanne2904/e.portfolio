@@ -14,7 +14,7 @@ export const StyledLinkContainer = styled(Link)`
   width: 100%;
   text-decoration: none;
   pointer-events: none;
-  animation: ${pointerEventsAnimation} 1s 2.4s both;
+  animation: ${pointerEventsAnimation} 1s 4000ms both;
 `;
 
 export const StyledButtonHover = styled.button`
@@ -30,8 +30,8 @@ export const StyledButtonHover = styled.button`
   color: ${colors.secondary};
   font-size: 2.5rem;
   cursor: pointer;
-  animation: ${buttonAnimation} 1.5s cubic-bezier(0.73, 0.71, 0.5, 0.99) 1.2s
-    both;
+  animation: ${buttonAnimation} 1500ms cubic-bezier(0.73, 0.71, 0.5, 0.99)
+    2900ms both;
   ${StyledLinkContainer}:hover & {
     left: 35%;
     right: 35%;
@@ -49,8 +49,8 @@ export const StyledHomeButton = styled.button`
   color: ${colors.primary};
   font-size: 2.5rem;
   cursor: pointer;
-  animation: ${buttonAnimation} 1.5s cubic-bezier(0.73, 0.71, 0.5, 0.99) 1.2s
-    both;
+  animation: ${buttonAnimation} 1500ms cubic-bezier(0.73, 0.71, 0.5, 0.99)
+    2900ms both;
   ${StyledLinkContainer}:hover & {
     opacity: 0;
     transition: all 0.5s ease-in;

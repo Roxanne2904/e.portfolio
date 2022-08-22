@@ -7,6 +7,7 @@ import {
   fontSize,
   afterLineAnimation,
   beforeLineAnimation,
+  opacityAnimation,
 } from "../../utils/GlobalStyled";
 
 export const StyledLogosContainer = styled.ul`
@@ -16,10 +17,13 @@ export const StyledLogosContainer = styled.ul`
   justify-content: space-between;
   position: absolute;
   list-style-type: none;
+  animation: ${opacityAnimation} 1500ms 1500ms both;
+  z-index: 2;
 `;
 
 export const StyledImg = styled.img`
   width: 100%;
+  animation: ${opacityAnimation} 1500ms both;
 `;
 export const StyledMainTitle = styled.h1`
   font-size: ${fontSize.main};
@@ -30,6 +34,7 @@ export const StyledMainTitle = styled.h1`
   box-shadow: 20px -10px 1em ${colors.dark};
   padding: 0 2% 0 0;
   width: 98%;
+  animation: ${opacityAnimation} 1500ms 1500ms both;
 `;
 export const StyledSecondaryTitle = styled.h2`
   position:relative;
@@ -48,7 +53,7 @@ export const StyledSecondaryTitle = styled.h2`
     left:0;
     bottom:0;
     background-color: white;
-    animation: ${afterLineAnimation} 1.5s cubic-bezier(0.63, 0.34, 0.35, 0.95) 100ms both;
+    animation: ${afterLineAnimation} 1500ms cubic-bezier(0.63, 0.34, 0.35, 0.95) 2100ms both;
   }
   &:before {
     content: "";
@@ -59,7 +64,7 @@ export const StyledSecondaryTitle = styled.h2`
     left:0;
     bottom:70px;
     background-color: white;
-    animation: ${beforeLineAnimation} 1.5s cubic-bezier(0.63, 0.34, 0.35, 0.95) 290ms both;
+    animation: ${beforeLineAnimation} 1500ms cubic-bezier(0.63, 0.34, 0.35, 0.95) 2500ms both;
   }
 `;
 
@@ -92,4 +97,5 @@ export const StyledSubtitle = styled.span`
 `;
 export const StyledAboutContainer = styled.div`
   width: 25%;
+  animation: ${opacityAnimation} 1500ms 2000ms both;
 `;
