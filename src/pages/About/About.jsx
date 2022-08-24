@@ -16,7 +16,12 @@ import { colors } from "../../utils/GlobalStyled";
 
 export default function About() {
   return (
-    <StyledParagraphContent>
+    <StyledParagraphContent
+      initial={{ translateX: "-50vh" }}
+      animate={{ translateX: 0 }}
+      exit={{ translateX: "-50vh" }}
+      transition={{ duration: 1 }}
+    >
       {/* <div>
         <Corner />
       </div> */}

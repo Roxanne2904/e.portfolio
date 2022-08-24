@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { colors } from "../../utils/GlobalStyled";
+import { animationRules } from "../../utils/GlobalStyled";
 
 export const StyledTemplateContent = styled.span`
   display: block;
@@ -14,6 +15,7 @@ export const StyledTemplate = styled.span`
   background: ${(props) =>
     props.$above ? `${colors.primary}` : `${colors.tertiary}`};
   ${(props) => props.$above && `z-index:1;`}
+  ${(props) => props.$above && animationRules(props.width)}
 `;
 export const StyledTitle = styled.span`
   display: block;

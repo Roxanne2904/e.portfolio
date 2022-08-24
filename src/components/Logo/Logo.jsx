@@ -9,7 +9,7 @@ export default function Logo({
   color,
 }) {
   return (
-    <StyledLogo href={url} target="_blank" bool={bool}>
+    <StyledLogo href={url} target="_blank" bool={bool} color={color}>
       <svg
         xmlns="http://www.w3.org/2000/svg"
         xmlnsXlink="http://www.w3.org/1999/xlink"

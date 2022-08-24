@@ -22,9 +22,16 @@ import {
   StyledLogosContainer,
 } from "./styled";
 
+import { motion } from "framer-motion";
+
 export default function Home() {
   return (
-    <div>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <main>
         <StyledMainContainer>
           <StyledContainer>
@@ -56,6 +63,6 @@ export default function Home() {
           </StyledContainer>
         </StyledMainContainer>
       </main>
-    </div>
+    </motion.div>
   );
 }

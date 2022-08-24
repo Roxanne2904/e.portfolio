@@ -1,10 +1,17 @@
 import { StyledBlockList, StyledLi } from "./styled";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import { listProgressBar } from "../../utils/lists/lists";
+import { motion } from "framer-motion";
 
 export default function Skills() {
   return (
-    <div style={{ width: "70%" }}>
+    <motion.div
+      style={{ width: "70%" }}
+      initial={{ scaleY: 0 }}
+      animate={{ scaleY: 1 }}
+      exit={{ scaleY: 0 }}
+      transition={{ duration: 0.5 }}
+    >
       <div>
         <StyledBlockList>
           {listProgressBar.map((elt) => {
@@ -20,6 +27,6 @@ export default function Skills() {
           })}
         </StyledBlockList>
       </div>
-    </div>
+    </motion.div>
   );
 }

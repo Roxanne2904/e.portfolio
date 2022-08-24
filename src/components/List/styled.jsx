@@ -1,14 +1,15 @@
 import styled from "styled-components";
 import { Link } from "react-router-dom";
 import { colors, fontSize } from "../../utils/GlobalStyled";
+import { motion } from "framer-motion";
 
-export const StyledList = styled.li`
+export const StyledList = styled(motion.li)`
   display: flex;
   justify-content: center;
   align-items: center;
   color: ${colors.primary};
   width: 100%;
-  height: 15vh;
+  height: 10vmin;
   background: ${colors.primaryLessO};
   border: ${colors.primary} 2px solid;
   ${(props) => props.noTopBorder === true && `border-top-style: none;`}

@@ -1,4 +1,4 @@
-import { keyframes } from "styled-components";
+import { keyframes, css } from "styled-components";
 
 export const colors = {
   primary: "#4ac0bf",
@@ -53,6 +53,16 @@ export const opacityAnimation = keyframes`
 0%{opacity:0}
 100%{opacity:1}
 `;
+
+const animationProgressBar = (props) => keyframes`
+0%{width:0%;}
+100%{width:${props};}
+`;
+
+export const animationRules = (props) =>
+  css`
+    animation: ${animationProgressBar(props)} 1s both;
+  `;
 
 // 0% {transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
 // 50% {width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}

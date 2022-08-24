@@ -15,7 +15,40 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 export default function List({ arrayData, location, content }) {
-  const [currentArrayData, setCurrentArrayData] = useState(arrayData);
+  const [isOk, setIsOk] = useState(false);
+  const [test, setTest] = useState(window.location.pathname);
+  const [currentTabRemoved, setCurrentTabRemoved] = useState(null);
+  const [currentArrayData, setcurrentArrayData] = useState(arrayData);
+
+  useEffect(() => {
+    arrayData.map((elt) => {
+      if (window.location.pathname !== test) {
+        setTest(window.location.pathname);
+      }
+      if (test === elt.url) {
+        const myCurrentArrayData = arrayData[0].type === "nav" && [
+          ...arrayData,
+        ];
+        const tabIndex = myCurrentArrayData.indexOf(elt);
+        const tabRemoved = myCurrentArrayData.splice(tabIndex, 1);
+        const datasUpdated = [...myCurrentArrayData];
+
+        if (currentTabRemoved === null) {
+          setCurrentTabRemoved(tabRemoved);
+          setcurrentArrayData(datasUpdated);
+          // console.log(freshDatas);
+        } else if (currentTabRemoved[0].url !== test) {
+          setCurrentTabRemoved(tabRemoved);
+          setcurrentArrayData(datasUpdated);
+          // console.log(freshDatas);
+        }
+        // console.log(currentTabRemoved !== null && currentTabRemoved[0].url);
+
+        return currentArrayData;
+      }
+      return currentArrayData;
+    });
+  });
 
   //*a ranger
   const liDomContentForNavLink = (elt) => {
@@ -26,39 +59,6 @@ export default function List({ arrayData, location, content }) {
     );
   };
   //*
-
-  useEffect(() => {
-    if (currentArrayData[0].type === "nav") {
-      // console.log("okay01");
-      for (let i = 0; i < currentArrayData.length; i++) {
-        if (currentArrayData[i].name === content) {
-          // console.log("okay02");
-          const currentIndex = currentArrayData.indexOf(currentArrayData[i]);
-          const upToDateCurrentArrayData = [...currentArrayData];
-          const isAboutButtonExist = upToDateCurrentArrayData.some(
-            (elt) => elt.name === "about"
-          );
-
-          if (isAboutButtonExist === false) {
-            // console.log("okay03");
-            upToDateCurrentArrayData.splice(currentIndex, 1, {
-              id: `0${currentIndex}`,
-              content: "À propos",
-              name: "about",
-              borderTop: false,
-              type: "nav",
-              url: "/about",
-            });
-
-            setCurrentArrayData(upToDateCurrentArrayData);
-          } else {
-            // console.log("okay04");
-            setCurrentArrayData(arrayData);
-          }
-        }
-      }
-    }
-  }, [content, currentArrayData, arrayData]);
 
   return currentArrayData.map((elt) => {
     switch (elt.type) {
@@ -114,11 +114,24 @@ export default function List({ arrayData, location, content }) {
         );
       default:
         return elt.borderTop === false ? (
-          <StyledList noTopBorder={true} key={`${elt.id}-${elt.name}`}>
+          <StyledList
+            noTopBorder={true}
+            key={`${elt.id}-${elt.name}`}
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            exit={{ scaleY: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             {liDomContentForNavLink(elt)}
           </StyledList>
         ) : (
-          <StyledList key={`${elt.id}-${elt.name}`}>
+          <StyledList
+            key={`${elt.id}-${elt.name}`}
+            initial={{ scaleY: 0 }}
+            animate={{ scaleY: 1 }}
+            exit={{ scaleY: 0 }}
+            transition={{ duration: 0.5 }}
+          >
             {liDomContentForNavLink(elt)}
           </StyledList>
         );

@@ -31,6 +31,14 @@ export const listNav = [
     type: "nav",
     url: "/skills",
   },
+  {
+    id: "04",
+    content: "À propos",
+    name: "about",
+    borderTop: false,
+    type: "nav",
+    url: "/about",
+  },
 ];
 
 export const openclassroomsTrainingUrl =
@@ -42,10 +50,63 @@ export const listLogo = [
     name: "github",
     type: "logo",
     url: "https://github.com/Roxanne2904/",
-    urlP1: "",
-    urlP2: "",
-    urlP3: "",
-    urlP4: "",
+    projects: [
+      {
+        id: "01",
+        urlP: "https://github.com/Roxanne2904/VietteRoxanne_14_25052022",
+        urlApp: "https://oc-rv-hrnet-app.netlify.app/",
+        display: "Hrnet",
+        name: "hrnet",
+        tools: [
+          "React",
+          "Redux",
+          "React-Redux",
+          "storybook",
+          "styled-components",
+        ],
+        library: "https://github.com/Roxanne2904/react-calendar-library",
+        description: `Convertir une ancienne application JQuery en une application React. Les librairies jQuery seront elles aussi à convertir, mais dans un premier temps seule une librairy doit être converti. Dans mon cas j'ai choisis de travailler sur la library JQuery du date picker réalisé "from scratch".`,
+      },
+      {
+        id: "02",
+        urlP: "https://github.com/Roxanne2904/VietteRoxanne_13_18042022",
+        urlApp: "https://oc-rv-argent-bank.netlify.app/",
+        display: "ArgentBank",
+        name: "argentBank",
+        tools: ["React", "Redux", "React Redux", "styled-components"],
+
+        description: [
+          "Phase 1:",
+          "Créer une application web complète et responsive avec React et utiliser Redux pour le state global. Ltilisateur doit pouvoir se connecter et se déconnecter du système, avoir accès à son profil et le modifier tout en mettant à jour la base de donées.",
+          "Phase 2:",
+          "Faire une proposition d'endpoints pour la phase de transaction via un fichier swagger au format YML",
+        ],
+      },
+      {
+        id: "03",
+        urlP: "https://github.com/Roxanne2904/VietteRoxanne_12_23122020",
+        urlApp: "https://oc-rv-sportsee.netlify.app/",
+        display: "SportSee",
+        name: "sportSee",
+        tools: ["React.js", "Recharts", "JSDoc", "Sass"],
+        maquette:
+          "https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1",
+        description:
+          "Particper au lancement de la nouvelle page de profil de l'utilisateur, afin de lui permettre de suivre ses sessions sportives. L'objectif est de mettre en place une application sous React, documenter son code avec jsdoc, récupérer des données auprès de l'API et créer l'affichage des graphiques. L'application est visitable avec des données mockées.",
+      },
+      {
+        id: "04",
+        urlP: "https://github.com/Roxanne2904/VietteRoxanne_11_23122020",
+        urlApp: "https://kasa-rv-project.netlify.app/",
+        display: "Kasa",
+        name: "kasa",
+        tools: ["React.js", "Sass"],
+        maquette:
+          "https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1",
+        description:
+          "Mettre en place l'application sous React et développer l'ensemble en créant des composants réutilisables et des routes React Router, Le tout en suivant la maquette Figma mise à disposition.",
+      },
+    ],
   },
   {
     id: "02",
