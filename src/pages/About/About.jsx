@@ -14,22 +14,23 @@ import {
 import { openclassroomsTrainingUrl } from "../../utils/lists/lists";
 import { colors } from "../../utils/GlobalStyled";
 
-export default function About() {
+export default function About({ width }) {
   return (
     <StyledParagraphContent
-      initial={{ translateX: "-50vh" }}
-      animate={{ translateX: 0 }}
-      exit={{ translateX: "-50vh" }}
-      transition={{ duration: 1 }}
+      width={width}
+      initial={{ scale: 0, opacity: 0 }}
+      animate={{ scale: 1, opacity: 1 }}
+      exit={{ scale: 0, opacity: 0 }}
+      transition={{ duration: 1.7, type: "spring", delay: 0.1 }}
     >
       {/* <div>
         <Corner />
       </div> */}
-      <StyledProfilImage></StyledProfilImage>
-      <StyledWelcomeMsg>Bonjour,</StyledWelcomeMsg>
+      <StyledProfilImage width={width}></StyledProfilImage>
+      <StyledWelcomeMsg width={width}>Bonjour,</StyledWelcomeMsg>
       <br />
       <br />
-      <StyledParagraph>
+      <StyledParagraph width={width}>
         Après 9 ans d'expérience dans l'entrepreneuriat en tant
         qu'illustratrice/graphiste mais également peintre décoratrice, j'aspire
         à ce jour à me réorienter vers une activité professionnelle plus

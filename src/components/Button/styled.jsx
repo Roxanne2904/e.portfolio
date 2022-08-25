@@ -28,7 +28,7 @@ export const StyledButtonHover = styled.button`
   padding: 10px 0;
   background: ${colors.primary};
   color: ${colors.secondary};
-  font-size: 2.5rem;
+  font-size: ${({ width }) => (width < 600 ? "6vmin" : "3.5vmin")};
   cursor: pointer;
   animation: ${buttonAnimation} 1500ms cubic-bezier(0.73, 0.71, 0.5, 0.99)
     2900ms both;
@@ -47,7 +47,7 @@ export const StyledHomeButton = styled.button`
   padding: 10px 0;
   background: ${colors.secondary};
   color: ${colors.primary};
-  font-size: 2.5rem;
+  font-size: ${({ width }) => (width < 600 ? "5vmin" : "3vmin")};
   cursor: pointer;
   animation: ${buttonAnimation} 1500ms cubic-bezier(0.73, 0.71, 0.5, 0.99)
     2900ms both;

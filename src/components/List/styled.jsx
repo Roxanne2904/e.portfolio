@@ -11,10 +11,16 @@ export const StyledList = styled(motion.li)`
   width: 100%;
   height: 10vmin;
   background: ${colors.primaryLessO};
-  border: ${colors.primary} 2px solid;
-  ${(props) => props.noTopBorder === true && `border-top-style: none;`}
+  ${({ width, topborder }) =>
+    width < 1100
+      ? `border: ${colors.primary} 2px solid; border-left-style: none; border-top-style: none; border-bottom-style: none;`
+      : topborder === "false"
+      ? `border: ${colors.primary} 2px solid; border-top-style: none; `
+      : `border: ${colors.primary} 2px solid; color:red;`}
+
   cursor: pointer;
-  font-size: ${fontSize.mainLessB};
+  font-size: ${({ width }) =>
+    width < 1100 ? (width < 600 ? `1rem` : `2.5vmin`) : `2.7vmin`};
 `;
 export const StyledTitle = styled.span`
   color: ${colors.tertiary};
@@ -27,9 +33,26 @@ export const StyledLinkA = styled.a`
   ${(props) =>
     props.$nav === true &&
     `display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;color:${colors.primary};font-weight: inherit;`}
+  &:hover {
+    ${(props) => props.$nav && `color: ${colors.white};`}
+  }
+  &:not(:hover) {
+    ${(props) =>
+      props.$nav &&
+      `color: ${colors.primary};
+    transition: all 0.5s;`}
+  }
 `;
 export const StyledLink = styled(Link)`
   text-decoration: none;
+  &:hover {
+    color: ${colors.white};
+    transition: all 0.5s;
+  }
+  &:not(:hover) {
+    color: ${colors.primary};
+    transition: all 0.5s;
+  }
   ${(props) =>
     props.$nav &&
     `display: flex;justify-content: center;align-items: center;width: 100%;height: 100%;color:${colors.primary}`}

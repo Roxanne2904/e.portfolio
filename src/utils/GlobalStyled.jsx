@@ -31,12 +31,22 @@ export const fontSize = {
 };
 
 export const afterLineAnimation = keyframes`
-0% {left:100vh;}
+0% {left:100%;}
 100% {left:0;}
 `;
+
 export const beforeLineAnimation = keyframes`
 0% {width:0;}
 100% {width:100%;}
+`;
+export const afterLineAnimationPage = keyframes`
+0% {top:0;}
+100% {top:94%;}
+`;
+
+export const beforeLineAnimationPage = keyframes`
+0% {bottom:0;}
+100% {bottom:94%;}
 `;
 export const buttonAnimation = keyframes`
 0%{transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
@@ -61,7 +71,7 @@ const animationProgressBar = (props) => keyframes`
 
 export const animationRules = (props) =>
   css`
-    animation: ${animationProgressBar(props)} 1s both;
+    animation: ${animationProgressBar(props)} 1s 0.7s both;
   `;
 
 // 0% {transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}

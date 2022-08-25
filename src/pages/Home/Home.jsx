@@ -8,7 +8,7 @@ import List from "../../components/List/List";
 // import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 //*utils
 import { listLogo } from "../../utils/lists/lists";
-
+import { useState, useEffect } from "react";
 //*Styled
 import {
   StyledImg,
@@ -20,11 +20,29 @@ import {
   StyledSecondaryTitle,
   StyledAboutContainer,
   StyledLogosContainer,
+  StyledCurrentContent,
 } from "./styled";
 
 import { motion } from "framer-motion";
 
 export default function Home() {
+  const [width, setWidth] = useState(window.innerWidth); //*useState
+  const [heigth, setHeigth] = useState(window.innerHeight); //*useState
+
+  useEffect(() => {
+    const updateCurrentWidthAndHeight = () => {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      setWidth(currentWidth);
+      setHeigth(currentHeight);
+    };
+    window.addEventListener("resize", updateCurrentWidthAndHeight);
+
+    return () =>
+      window.removeEventListener("resize", updateCurrentWidthAndHeight);
+  }, [width, heigth]);
+
+  console.log(width);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -35,30 +53,24 @@ export default function Home() {
       <main>
         <StyledMainContainer>
           <StyledContainer>
-            <div
-              style={{
-                position: "relative",
-                textAlign: "center",
-                width: "25%",
-              }}
-            >
+            <StyledCurrentContent width={width}>
               <StyledLogosContainer>
                 <List arrayData={listLogo} location={"home"} />
               </StyledLogosContainer>
               <StyledImg src={logo} alt="logo" className="logo" />
 
-              <StyledMainTitle>
-                <StyledStrongString>V</StyledStrongString>iette{" "}
-                <StyledStrongString>R</StyledStrongString>oxanne
+              <StyledMainTitle width={width}>
+                <StyledStrongString width={width}>V</StyledStrongString>iette{" "}
+                <StyledStrongString width={width}>R</StyledStrongString>oxanne
               </StyledMainTitle>
-            </div>
+            </StyledCurrentContent>
 
-            <StyledAboutContainer>
-              <StyledSecondaryTitle>
+            <StyledAboutContainer width={width}>
+              <StyledSecondaryTitle width={width}>
                 Développeuse d'application
-                <StyledSubtitle>JavaScript React</StyledSubtitle>
+                <StyledSubtitle width={width}>JavaScript React</StyledSubtitle>
               </StyledSecondaryTitle>
-              <Button title={"Bienvenue... "} />
+              <Button title={"Bienvenue... "} width={width} />
             </StyledAboutContainer>
           </StyledContainer>
         </StyledMainContainer>

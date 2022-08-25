@@ -3,11 +3,11 @@ import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import { StyledSectionContent } from "./styled";
 
-export default function CurrentContent({ content }) {
+export default function CurrentContent({ content, width }) {
   return (
-    <StyledSectionContent id={content}>
+    <StyledSectionContent id={content} width={width}>
       {content === "about" ? (
-        <About />
+        <About width={width} />
       ) : content === "skills" ? (
         <Skills />
       ) : (

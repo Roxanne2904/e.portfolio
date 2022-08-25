@@ -12,8 +12,26 @@ import CurrentContent from "../CurrentContent/CurrentContent";
 import Footer from "../../components/Footer/Footer";
 
 import { motion } from "framer-motion";
+import { useState, useEffect } from "react";
 
 export default function Page({ title, content }) {
+  const [width, setWidth] = useState(window.innerWidth); //*useState
+  const [heigth, setHeigth] = useState(window.innerHeight); //*useState
+
+  useEffect(() => {
+    const updateCurrentWidthAndHeight = () => {
+      const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
+      setWidth(currentWidth);
+      setHeigth(currentHeight);
+    };
+    window.addEventListener("resize", updateCurrentWidthAndHeight);
+
+    return () =>
+      window.removeEventListener("resize", updateCurrentWidthAndHeight);
+  }, [width, heigth]);
+
+  console.log(width);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -27,12 +45,12 @@ export default function Page({ title, content }) {
             <StyledTitle>{title}</StyledTitle>
           </StyledMainTitle>
         </div>
-        <StyledMainContent>
+        <StyledMainContent width={width}>
           <StyledHeaderContent>
-            <HeaderLargeDevice content={content} />
+            <HeaderLargeDevice content={content} width={width} />
           </StyledHeaderContent>
 
-          <CurrentContent content={content} />
+          <CurrentContent content={content} width={width} />
         </StyledMainContent>
         <Footer content={content} />
       </main>

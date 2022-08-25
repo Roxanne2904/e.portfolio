@@ -14,11 +14,19 @@ import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
-export default function List({ arrayData, location, content }) {
+export default function List({ arrayData, location, content, width }) {
   const [isOk, setIsOk] = useState(false);
   const [test, setTest] = useState(window.location.pathname);
   const [currentTabRemoved, setCurrentTabRemoved] = useState(null);
   const [currentArrayData, setcurrentArrayData] = useState(arrayData);
+
+  const item = {
+    hidden: { translateX: "-150vw" },
+    show: {
+      translateX: 0,
+      transition: { duration: 0.5, type: "spring", stiffness: 40 },
+    },
+  };
 
   useEffect(() => {
     arrayData.map((elt) => {
@@ -113,24 +121,20 @@ export default function List({ arrayData, location, content }) {
           </li>
         );
       default:
-        return elt.borderTop === false ? (
+        return elt.borderTop === "false" ? (
           <StyledList
-            noTopBorder={true}
+            width={width}
+            topborder={elt.borderTop}
             key={`${elt.id}-${elt.name}`}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            exit={{ scaleY: 0 }}
-            transition={{ duration: 0.5 }}
+            variants={item}
           >
             {liDomContentForNavLink(elt)}
           </StyledList>
         ) : (
           <StyledList
             key={`${elt.id}-${elt.name}`}
-            initial={{ scaleY: 0 }}
-            animate={{ scaleY: 1 }}
-            exit={{ scaleY: 0 }}
-            transition={{ duration: 0.5 }}
+            variants={item}
+            width={width}
           >
             {liDomContentForNavLink(elt)}
           </StyledList>

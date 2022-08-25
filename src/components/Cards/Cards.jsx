@@ -184,9 +184,10 @@ export const StyledFigma = styled.div`
 export const StyledTechLi = styled.li`
   color: ${colors.white};
   background: ${colors.tertiary};
-  padding: 2% 8%;
+  padding: 2% 4%;
   border-radius: 10px;
   margin: 1%;
+  font-size: 1.1vmin;
 `;
 
 export default function Cards() {

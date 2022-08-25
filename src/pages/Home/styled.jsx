@@ -20,13 +20,20 @@ export const StyledLogosContainer = styled.ul`
   animation: ${opacityAnimation} 1500ms 1500ms both;
   z-index: 2;
 `;
+export const StyledCurrentContent = styled.div`
+  position: relative;
+  text-align: center;
+  width: ${({ width }) =>
+    width > 900 ? (width < 1100 ? `40%` : `25%`) : width > 600 ? `60%` : `85%`};
+`;
 
 export const StyledImg = styled.img`
   width: 100%;
   animation: ${opacityAnimation} 1500ms both;
 `;
 export const StyledMainTitle = styled.h1`
-  font-size: ${fontSize.main};
+  font-size: ${({ width }) =>
+    width < 1100 ? (width < 600 ? "5vmin" : "3vmin") : "2vmin"};
   text-align: end;
   position: absolute;
   bottom: 5px;
@@ -38,17 +45,18 @@ export const StyledMainTitle = styled.h1`
 `;
 export const StyledSecondaryTitle = styled.h2`
   position:relative;
-  padding: 0 0 10px 0;
+  padding: 10px 0;
   margin: 20px 0;
   width: 100%;
-  font-size: 1.5rem;
-  background-color: #032628;
+  font-size:${({ width }) =>
+    width < 1100 ? (width < 600 ? "4vmin" : "2.5vmin") : "2vmin"};
+  background-color: ${colors.secondaryDarker};
   z-index:1;
   &:after {
     content: "";
     display: block;
     position absolute;
-    top:65px;
+    top:95%;
     right:0;
     left:0;
     bottom:0;
@@ -59,10 +67,10 @@ export const StyledSecondaryTitle = styled.h2`
     content: "";
     display: block;
     position absolute;
-    top:-5px;
+    top:0;
     right:0;
     left:0;
-    bottom:70px;
+    bottom:95%;
     background-color: white;
     animation: ${beforeLineAnimation} 1500ms cubic-bezier(0.63, 0.34, 0.35, 0.95) 2500ms both;
   }
@@ -71,7 +79,8 @@ export const StyledSecondaryTitle = styled.h2`
 export const StyledStrongString = styled.span`
   color: ${colors.primary};
   font-family: auto;
-  font-size: 4rem;
+  font-size: ${({ width }) =>
+    width < 1100 ? (width < 600 ? "15vmin" : "9vmin") : "7vmin"};
   font-weight: normal;
 `;
 
@@ -93,9 +102,11 @@ export const StyledContainer = styled.div`
 `;
 export const StyledSubtitle = styled.span`
   display: ${display.block};
-  font-size: 1.2rem;
+  font-size: ${({ width }) =>
+    width < 1100 ? (width < 600 ? "3.5vmin" : "2vmin") : "1.5vmin"};
 `;
 export const StyledAboutContainer = styled.div`
-  width: 25%;
+  width: ${({ width }) =>
+    width > 900 ? (width < 1100 ? `40%` : `25%`) : width > 600 ? `60%` : `85%`};
   animation: ${opacityAnimation} 1500ms 2000ms both;
 `;

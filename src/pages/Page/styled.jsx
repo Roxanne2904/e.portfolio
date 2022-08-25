@@ -3,12 +3,12 @@ import styled from "styled-components";
 import {
   colors,
   fontSize,
-  afterLineAnimation,
-  beforeLineAnimation,
+  afterLineAnimationPage,
+  beforeLineAnimationPage,
 } from "../../utils/GlobalStyled";
 
 export const StyledMainContent = styled.div`
-  display: flex;
+  display: ${({ width }) => (width < 1100 ? "block" : "flex")};
   flex-direction: row-reverse;
   justify-content: space-between;
 `;
@@ -38,7 +38,7 @@ export const StyledMainTitle = styled.h1`
     left:0;
     bottom:0;
     background-color: ${colors.tertiary};
-    animation: ${afterLineAnimation} 1.5s cubic-bezier(0.63, 0.34, 0.35, 0.95) 100ms both;
+    animation: ${afterLineAnimationPage} 1.5s cubic-bezier(0.63, 0.34, 0.35, 0.95) 100ms both;
   }
   &:before {
     content: "";
@@ -49,6 +49,6 @@ export const StyledMainTitle = styled.h1`
     left:0;
     bottom:63px;
     background-color: ${colors.tertiary};
-    animation: ${beforeLineAnimation} 1.5s cubic-bezier(0.63, 0.34, 0.35, 0.95) 290ms both;
+    animation: ${beforeLineAnimationPage} 1.5s cubic-bezier(0.63, 0.34, 0.35, 0.95) 100ms both;
   }
 `;

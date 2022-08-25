@@ -8,7 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faDoorOpen } from "@fortawesome/free-solid-svg-icons";
 import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
-export default function Button({ title, type }) {
+export default function Button({ title, type, width }) {
   switch (type) {
     case "returnToTop":
       return (
@@ -20,10 +20,10 @@ export default function Button({ title, type }) {
     default:
       return (
         <StyledLinkContainer to={"/about"}>
-          <StyledButtonHover>
+          <StyledButtonHover width={width}>
             <FontAwesomeIcon icon={faDoorOpen} />
           </StyledButtonHover>
-          <StyledHomeButton>{`${title}`}</StyledHomeButton>
+          <StyledHomeButton width={width}>{`${title}`}</StyledHomeButton>
         </StyledLinkContainer>
       );
   }
