@@ -15,7 +15,7 @@ import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { useEffect, useState } from "react";
 
 export default function List({ arrayData, location, content, width }) {
-  const [isOk, setIsOk] = useState(false);
+  // const [isOk, setIsOk] = useState(false);
   const [test, setTest] = useState(window.location.pathname);
   const [currentTabRemoved, setCurrentTabRemoved] = useState(null);
   const [currentArrayData, setcurrentArrayData] = useState(arrayData);

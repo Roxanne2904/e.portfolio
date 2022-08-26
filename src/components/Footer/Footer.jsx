@@ -1,7 +1,7 @@
 import List from "../List/List";
 // import Corner from "../Corner/Corner";
 import { listLogo, listToContact } from "../../utils/lists/lists";
-import logo from "../../assets/my_logo_namesoff.png";
+// import logo from "../../assets/my_logo_namesoff.png";
 // import { colors } from "../../utils/GlobalStyled";
 import {
   StyledFooter,
@@ -11,8 +11,6 @@ import {
   StyledListContent,
   StyledSecondaryTitle,
   StyledContactMeBlock,
-  StyledImgContent,
-  StyledTriangle,
 } from "./styled";
 export default function Footer({ content, width }) {
   return (

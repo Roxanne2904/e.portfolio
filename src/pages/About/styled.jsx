@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import profileImg from "../../assets/img/cv.jpg";
-import { colors, fontSize } from "../../utils/GlobalStyled";
+import { colors } from "../../utils/GlobalStyled";
 import { motion } from "framer-motion";
 
 export const StyledParagraphContent = styled(motion.div)`
