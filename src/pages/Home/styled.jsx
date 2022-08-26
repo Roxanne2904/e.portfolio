@@ -4,7 +4,6 @@ import {
   colors,
   display,
   flexDirection,
-  fontSize,
   afterLineAnimation,
   beforeLineAnimation,
   opacityAnimation,
