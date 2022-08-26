@@ -9,5 +9,5 @@ export const StyledSectionContent = styled.section`
   display: flex;
   justify-content: center;
   align-items: center;
-  ${({ width }) => width < 1100 && `height:100vh`};
+  ${({ width, id }) => width < 1100 && id === "about" && `height:100vh`};
 `;

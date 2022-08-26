@@ -10,40 +10,37 @@ import {
   StyledMainContent,
   StyledListContent,
   StyledSecondaryTitle,
+  StyledContactMeBlock,
   StyledImgContent,
   StyledTriangle,
 } from "./styled";
-export default function Footer({ content }) {
+export default function Footer({ content, width }) {
   return (
     <StyledFooter>
       <StyledSectionContent id="toContact">
         {/* <StyledTriangle></StyledTriangle> */}
-        <div
-          style={{
-            position: "absolute",
-            top: "-14%",
-            right: "65%",
-          }}
-        >
-          <StyledSecondaryTitle>
+        <StyledContactMeBlock width={width}>
+          <StyledSecondaryTitle width={width}>
             {/* <StyledTriangle $smaller></StyledTriangle> */}
             <span>Me contacter</span>
           </StyledSecondaryTitle>
-        </div>
-        <StyledMainContent>
+        </StyledContactMeBlock>
+        <StyledMainContent width={width}>
           {/* <StyledImgContent>
             <img src={logo} alt="mon logo" />
           </StyledImgContent> */}
           <StyledListContent>
-            <StyledFooterBlockList>
+            <StyledFooterBlockList width={width}>
               <List
+                width={width}
                 arrayData={listToContact}
                 location={"footer"}
                 content={content}
               />
             </StyledFooterBlockList>
-            <StyledFooterBlockList type={"logo"}>
+            <StyledFooterBlockList type={"logo"} width={width}>
               <List
+                width={width}
                 arrayData={listLogo}
                 location={"footer"}
                 content={content}

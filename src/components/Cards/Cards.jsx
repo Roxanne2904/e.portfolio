@@ -31,16 +31,16 @@ const isNotHover = css`
 // `;
 export const StyledMainContent = styled.li`
   position: relative;
-  width: 35%;
+  width: ${({ width }) => (width < 900 ? `100%` : `35%`)};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
-  margin: 1vmin 1vmin;
+  margin: ${({ width }) => (width < 900 ? `50px 0px` : `1vmin 1vmin`)};
   border-radius: 5px;
   box-shadow: 0 0 1rem ${colors.secondaryLessO};
   overflow: hidden;
-  height: 50vmin;
+  height: ${({ width }) => (width < 900 ? `inherit` : ` 50vmin`)};
 `;
 
 export const StyledSecondaryTitle = styled.h2`
@@ -63,6 +63,15 @@ export const StyledSecondaryTitle = styled.h2`
     font-size: 2.2vmin;
     transition: all 1s;
   }
+`;
+export const StyledSecondarySmallDevice = styled.h2`
+  opacity: 1;
+  padding: 10px 0;
+  color: ${colors.white};
+  background: ${colors.tertiary};
+  width: 100%;
+  text-align: center;
+  ${({ width }) => width < 450 && `font-size:1.2rem;`}
 `;
 export const StyledSecondaryTitleCopy = styled.div`
   opacity: 0;
@@ -98,23 +107,24 @@ export const StyledTitleTxt = styled.span`
 
 export const StyledProjectsParagraph = styled.p`
   text-align: justify;
-  padding: 1vmin 2vmin;
-  font-size: 1.5vmin;
+  padding: ${({ width }) => (width < 900 ? `4vmin` : `1vmin 2vmin`)};
+  font-size: ${({ width }) =>
+    width < 900 ? (width < 900 ? `0.8rem` : `1rem`) : ` 1.6vmin`};
 `;
 export const StyledUlBlock = styled.div`
-  display: flex;
+  display: ${({ width }) => (width < 900 ? `inherit` : `flex`)};
   flex-wrap: wrap;
-  max-height: 10vmin;
-  width: 70%;
+  max-height: ${({ width }) => (width < 900 ? `inherit` : ` 10vmin`)};
+  width: ${({ width }) => (width < 900 ? `50%` : `70%`)};
   margin: 1vmin 0;
   font-weight: bold;
-  padding: 5%;
+  padding: ${({ width }) => (width < 900 ? `1% 5%` : `2% 5%`)};
   font-size: 1.5vmin;
 `;
 export const StyledUl = styled.ul`
   display: flex;
   flex-wrap: wrap;
-  width: 100%;
+  width: ${({ width }) => (width < 900 ? `initial` : ` 100%`)};
 `;
 export const StyledListContent = styled.div`
   position: relative;
@@ -161,9 +171,10 @@ export const StyledLink = styled.a`
   }
 `;
 export const StyledFigma = styled.div`
-  font-size: 1.7vmin;
+  font-size: ${({ width }) =>
+    width < 900 ? (width < 450 ? `1rem` : `3vmin`) : ` 1.7vmin`};
   display: block;
-  margin: 5%;
+  margin: 2% 5%;
   text-decoration: none;
   a {
     color: ${colors.tertiary};
@@ -184,26 +195,42 @@ export const StyledFigma = styled.div`
 export const StyledTechLi = styled.li`
   color: ${colors.white};
   background: ${colors.tertiary};
-  padding: 2% 4%;
+  padding: ${({ width }) => (width < 900 ? `0.2rem 0.5rem` : `1% 4% 1.5%`)};
   border-radius: 10px;
-  margin: 1%;
-  font-size: 1.1vmin;
+  margin: ${({ width }) => (width < 900 ? `1% 1% 1% 0` : `1%`)};
+  font-size: ${({ width }) => (width < 900 ? `0.7rem` : `1.25vmin`)};
+`;
+export const StyledTagsTitle = styled.span`
+  font-size: ${({ width }) => (width < 900 ? `1rem` : ` 1.7vmin`)};
+  margin: 0 0 0.2vmin 0.5vmin;
 `;
 
-export default function Cards() {
+export default function Cards({ width }) {
   const projectsList = listLogo[0].projects;
   const logoGitHub = listLogo[0];
   let id = 0;
 
   return projectsList.map((elt) => {
     return (
-      <StyledMainContent data-id={`${elt.id}`} key={`${elt.id}-${elt.name}`}>
-        <StyledSecondaryTitle>
-          <StyledTitleTxt>{elt.display}</StyledTitleTxt>
-        </StyledSecondaryTitle>
-        <StyledSecondaryTitleCopy>{elt.display}</StyledSecondaryTitleCopy>
+      <StyledMainContent
+        data-id={`${elt.id}`}
+        key={`${elt.id}-${elt.name}`}
+        width={width}
+      >
+        {width > 1000 ? (
+          <StyledSecondaryTitle>
+            <StyledTitleTxt>{elt.display}</StyledTitleTxt>
+          </StyledSecondaryTitle>
+        ) : (
+          <StyledSecondarySmallDevice width={width}>
+            {elt.display}
+          </StyledSecondarySmallDevice>
+        )}
+        {width > 1000 && (
+          <StyledSecondaryTitleCopy>{elt.display}</StyledSecondaryTitleCopy>
+        )}
 
-        <StyledProjectsParagraph>
+        <StyledProjectsParagraph width={width}>
           {typeof elt.description !== "string" ? (
             <span>
               {elt.description[0]}
@@ -223,26 +250,21 @@ export default function Cards() {
 
         <div style={{ width: "100%" }}>
           <StyledListContent>
-            <StyledUlBlock>
-              <span
-                style={{
-                  fontSize: "1.7vmin",
-
-                  marginBottom: "0.2vmin",
-                }}
-              >
-                Outils de tech:
-              </span>
-              <StyledUl>
+            <StyledUlBlock width={width}>
+              <StyledTagsTitle width={width}>Outils de tech:</StyledTagsTitle>
+              <StyledUl width={width}>
                 {elt.tools.map((elt) => {
                   id++;
                   return (
-                    <StyledTechLi key={`${elt}-${id}`}>{`${elt}`}</StyledTechLi>
+                    <StyledTechLi
+                      width={width}
+                      key={`${elt}-${id}`}
+                    >{`${elt}`}</StyledTechLi>
                   );
                 })}
               </StyledUl>
             </StyledUlBlock>
-            <StyledFigma>
+            <StyledFigma width={width}>
               {elt.maquette === undefined ? (
                 elt.library === undefined ? (
                   ""
@@ -271,8 +293,12 @@ export default function Cards() {
               <Logo
                 name={logoGitHub.name}
                 url={elt.urlP}
-                width="4vmin"
-                height="4vmin"
+                width={
+                  width < 900 ? (width < 450 ? `2.3rem` : `7vmin`) : `4vmin`
+                }
+                height={
+                  width < 900 ? (width < 450 ? `2.3rem` : `7vmin`) : `4vmin`
+                }
                 margin="inherit"
                 bool={false}
                 color={colors.tertiary}

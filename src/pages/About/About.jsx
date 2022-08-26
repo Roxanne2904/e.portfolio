@@ -74,9 +74,11 @@ export default function About({ width }) {
         <br />
         <br />
         Très bonne visite à vous {":)"}
-        <StyledSignatureContent>
-          <Signature color={colors.tertiary} />
-        </StyledSignatureContent>
+        {width > 700 && (
+          <StyledSignatureContent>
+            <Signature color={colors.tertiary} />
+          </StyledSignatureContent>
+        )}
       </StyledParagraph>
       {/* <div style={{ transform: "rotate(180deg)" }}>
         <Corner />

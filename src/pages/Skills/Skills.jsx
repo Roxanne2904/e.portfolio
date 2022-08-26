@@ -3,10 +3,10 @@ import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import { listProgressBar } from "../../utils/lists/lists";
 import { motion } from "framer-motion";
 
-export default function Skills() {
+export default function Skills({ width }) {
   return (
     <motion.div
-      style={{ width: "70%" }}
+      style={{ width: width < 800 ? "100%" : "70%" }}
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
@@ -19,9 +19,12 @@ export default function Skills() {
             const listDatas = elt.title[1];
 
             return (
-              <StyledLi key={`${arrayDatas[0].name}=${arrayDatas[0].id}`}>
-                <h3> {arrayDatas[0].display} </h3>
-                <ProgressBar list={listDatas} />
+              <StyledLi
+                key={`${arrayDatas[0].name}=${arrayDatas[0].id}`}
+                width={width}
+              >
+                <div> {arrayDatas[0].display} </div>
+                <ProgressBar list={listDatas} width={width} />
               </StyledLi>
             );
           })}

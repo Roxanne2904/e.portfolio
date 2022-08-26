@@ -11,6 +11,7 @@ export default function Logo({
   return (
     <StyledLogo
       href={url}
+      title={name}
       target="_blank"
       bool={bool}
       color={color}

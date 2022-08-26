@@ -14,4 +14,5 @@ export const StyledBlockList = styled(motion.ul)`
   flex-direction: ${({ width }) => (width < 1100 ? "row" : "column")};
   align-items: center;
   list-style-type: none;
+  ${({ width }) => width < 800 && `flex-wrap:wrap; justify-content:center;`}
 `;

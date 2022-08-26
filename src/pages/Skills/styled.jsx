@@ -7,5 +7,5 @@ export const StyledBlockList = styled.ul`
 export const StyledLi = styled.li`
   margin: 30px;
   padding: 25px;
-  font-size: 2.5vmin;
+  font-size: ${({ width }) => (width < 1100 ? `1.5rem` : ` 2.5vmin`)};
 `;

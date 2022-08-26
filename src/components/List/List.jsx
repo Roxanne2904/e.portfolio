@@ -100,7 +100,12 @@ export default function List({ arrayData, location, content, width }) {
         return (
           <li key={`${elt.id}-${elt.name}-${location}`}>
             {elt.name !== "tel" ? (
-              <StyledLinkA target={"_blank"} href={elt.url} rel="noreferrer">
+              <StyledLinkA
+                target={"_blank"}
+                href={elt.url}
+                rel="noreferrer"
+                title={elt.alt}
+              >
                 <StyledTitle>
                   {elt.name === "email" ? (
                     <FontAwesomeIcon icon={faEnvelope} />

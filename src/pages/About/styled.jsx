@@ -8,7 +8,8 @@ export const StyledParagraphContent = styled(motion.div)`
   position: ${({ width }) => (width < 1100 ? "inherit" : "absolute")};
   text-align: justify;
   box-sizing: ${({ width }) => (width < 800 ? "content-box" : "border-box;")};
-  box-shadow: 0 0 1rem ${colors.secondaryDarkerLessO};
+  box-shadow: ${({ width }) =>
+    width < 800 ? `inherit` : `0 0 1rem ${colors.secondaryDarkerLessO};`}
   border-radius: 10px;
   padding: ${({ width }) => (width < 800 ? `inherit` : `20px`)};
   ${({ width }) =>
@@ -37,7 +38,7 @@ export const StyledWelcomeMsg = styled.span`
 
 export const StyledParagraph = styled.p`
   font-size: ${({ width }) => (width < 800 ? "1rem" : " 1.6vmin")};
-  padding: 10px;
+  padding: ${({ width }) => (width < 800 ? "25px" : " 10px")};
 
   ${({ width }) => width < 800 && "overflow: scroll;"}
 `;

@@ -56,4 +56,18 @@ export const StyledHomeButton = styled.button`
     transition: all 0.5s ease-in;
   }
 `;
-export const StyledButton = styled.button``;
+export const StyledButton = styled.button`
+  display: ${({ display }) => (display === `none` ? "none" : "block")};
+  position: fixed;
+  bottom: ${({ width }) => (width < 1100 ? `2.5%` : `8%`)};
+  right: ${({ width }) => (width < 1100 ? `12%` : `8%`)};
+  font-size: 2rem;
+  padding: 1rem;
+  color: ${colors.tertiary};
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1rem ${colors.secondaryDarker};
+  z-index: 2;
+  cursor: pointer;
+  background: ${colors.white};
+`;

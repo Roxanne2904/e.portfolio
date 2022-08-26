@@ -124,6 +124,7 @@ export const listLogo = [
 export const listToContact = [
   {
     id: "00",
+    alt: "téléphone",
     type: "toContact",
     name: "tel",
     title: "Tèl",
@@ -131,6 +132,7 @@ export const listToContact = [
   },
   {
     id: "01",
+    alt: "email",
     type: "toContact",
     name: "email",
     title: "E-mail",
@@ -139,6 +141,7 @@ export const listToContact = [
   },
   {
     id: "02",
+    alt: "localisation",
     type: "toContact",
     name: "lieu",
     title: "Lieu",

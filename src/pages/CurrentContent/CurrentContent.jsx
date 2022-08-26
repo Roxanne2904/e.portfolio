@@ -9,9 +9,9 @@ export default function CurrentContent({ content, width }) {
       {content === "about" ? (
         <About width={width} />
       ) : content === "skills" ? (
-        <Skills />
+        <Skills width={width} />
       ) : (
-        <Projects />
+        <Projects width={width} />
       )}
     </StyledSectionContent>
   );

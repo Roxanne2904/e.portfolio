@@ -19,7 +19,8 @@ export const StyledTemplate = styled.span`
 `;
 export const StyledTitle = styled.span`
   display: block;
-  font-size: 1.9vmin;
+  font-size: ${({ width }) =>
+    width < 1100 ? (width < 800 ? `1rem` : `1.2rem`) : `1.9vmin`};
   margin: 0 0 1% 0.5%;
 `;
 export const StyledUl = styled.ul`

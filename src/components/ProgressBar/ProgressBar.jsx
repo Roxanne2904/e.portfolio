@@ -5,12 +5,12 @@ import {
   StyledUl,
 } from "./styled";
 
-export default function ProgressBar({ list }) {
+export default function ProgressBar({ list, width }) {
   return list.map((elt) => {
     return (
       <StyledUl key={`${elt.id}-${elt.name}`}>
         <li>
-          <StyledTitle>{elt.display}</StyledTitle>
+          <StyledTitle width={width}>{elt.display}</StyledTitle>
           <StyledTemplateContent>
             <StyledTemplate $above width={elt.level}></StyledTemplate>
             <StyledTemplate></StyledTemplate>

@@ -8,12 +8,15 @@ export const StyledList = styled(motion.li)`
   justify-content: center;
   align-items: center;
   color: ${colors.primary};
-  width: 100%;
-  height: 10vmin;
-  background: ${colors.primaryLessO};
+  width: ${({ width }) => (width < 800 ? "inherit" : `100%`)};
+  height: ${({ width }) => (width < 800 ? `inherit` : `10vmin`)};
+  background: ${({ width }) =>
+    width < 800 ? `inherit` : `${colors.primaryLessO}`};
   ${({ width, topborder }) =>
     width < 1100
-      ? `border: ${colors.primary} 2px solid; border-left-style: none; border-top-style: none; border-bottom-style: none;`
+      ? width < 800
+        ? `padding:20px; border:none;`
+        : `border: ${colors.primary} 2px solid; border-left-style: none; border-top-style: none; border-bottom-style: none;`
       : topborder === "false"
       ? `border: ${colors.primary} 2px solid; border-top-style: none; `
       : `border: ${colors.primary} 2px solid; color:red;`}

@@ -15,16 +15,17 @@ export const StyledMainContent = styled.div`
 export const StyledHeaderContent = styled.div`
   flex: 1;
 `;
+
 export const StyledTitle = styled.span`
   display: block;
   position: relative;
-  right: 18%;
+  ${({ width }) => (width < 1100 ? `inherit` : ` right: 18%;`)}
 `;
 
 export const StyledMainTitle = styled.h1`
   font-family: auto;
   top: 5%;
-  font-size: ${fontSize.main};
+  font-size: ${({ width }) => (width < 800 ? `1.8rem;` : `${fontSize.main};`)} 
   color: ${colors.tertiary};
   background:${colors.white};
   padding:10px;
