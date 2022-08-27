@@ -145,7 +145,7 @@ export const listToContact = [
     type: "toContact",
     name: "lieu",
     title: "Lieu",
-    content: "Chartres",
+    content: "28000 Chartres",
     url: "https://www.google.com/maps?q=chartres&rlz=1C1ONGR_frFR933FR933&um=1&ie=UTF-8&sa=X&ved=2ahUKEwidz7r6x9D5AhUM-xoKHYphCjoQ_AUoAXoECAIQAw",
   },
 ];
