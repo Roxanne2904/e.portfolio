@@ -129,6 +129,7 @@ export const StyledUl = styled.ul`
 `;
 export const StyledListContent = styled.div`
   position: relative;
+  ${({ width }) => width < 450 && `padding-top: 1.5px`};
   &:before {
     content: "";
     position: absolute;
@@ -252,7 +253,7 @@ export default function Cards({ width }) {
         </StyledProjectsParagraph>
 
         <div style={{ width: "100%" }}>
-          <StyledListContent>
+          <StyledListContent width={width}>
             <StyledUlBlock width={width}>
               <StyledTagsTitle width={width}>Outils de tech:</StyledTagsTitle>
               <StyledUl width={width}>
