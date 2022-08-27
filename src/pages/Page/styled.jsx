@@ -8,7 +8,7 @@ import {
 } from "../../utils/GlobalStyled";
 
 export const StyledMainContent = styled.div`
-  display: ${({ width }) => (width < 1100 ? "block" : "flex")};
+  display: ${({ width }) => (width < 1200 ? "block" : "flex")};
   flex-direction: row-reverse;
   justify-content: space-between;
 `;
@@ -19,16 +19,17 @@ export const StyledHeaderContent = styled.div`
 export const StyledTitle = styled.span`
   display: block;
   position: relative;
-  ${({ width }) => (width < 1100 ? `inherit` : ` right: 18%;`)}
+  ${({ width }) => (width < 1200 ? `inherit` : ` right: 18%;`)}
 `;
 
 export const StyledMainTitle = styled.h1`
   font-family: auto;
   top: 5%;
-  font-size: ${({ width }) => (width < 800 ? `1.8rem;` : `${fontSize.main};`)} 
+  font-size: ${({ width }) =>
+    width < 800 ? `1.8rem;` : width > 1950 ? `5vmin` : `${fontSize.main}`};
   color: ${colors.tertiary};
   background:${colors.white};
-  padding:10px;
+  padding: ${({ width }) => (width > 1950 ? `2vmin` : `10px`)}; 
   text-align: center;
   &:after {
     content: "";

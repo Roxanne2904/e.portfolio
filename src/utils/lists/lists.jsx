@@ -65,7 +65,7 @@ export const listLogo = [
           "styled-components",
         ],
         library: "https://github.com/Roxanne2904/react-calendar-library",
-        description: `Convertir une ancienne application JQuery en une application React. Les librairies jQuery seront elles aussi à convertir, mais dans un premier temps seule une librairy doit être converti. Dans mon cas j'ai choisis de travailler sur la library JQuery du date picker réalisé "from scratch".`,
+        description: `Convertir une ancienne application JQuery en une application React. Les librairies jQuery seront elles aussi à convertir, mais dans un premier temps seule une d'entre elles doit l'être. Dans mon cas j'ai choisi de travailler sur la librairie JQuery du date picker réalisée "from scratch".`,
       },
       {
         id: "02",
@@ -77,9 +77,9 @@ export const listLogo = [
 
         description: [
           "Phase 1:",
-          "Créer une application web complète et responsive avec React et utiliser Redux pour le state global. Ltilisateur doit pouvoir se connecter et se déconnecter du système, avoir accès à son profil et le modifier tout en mettant à jour la base de donées.",
+          "Intégrer une application web, d'après une maquette, complète et responsive avec React et utiliser Redux pour le state global. L'utilisateur doit pouvoir se connecter et se déconnecter du système, avoir accès à son profil et le modifier tout en mettant à jour la base de données.",
           "Phase 2:",
-          "Faire une proposition d'endpoints pour la phase de transaction via un fichier swagger au format YML",
+          "Faire une proposition d'endpoints pour la phase de transaction via un fichier swagger au format YML.",
         ],
       },
       {
@@ -92,7 +92,7 @@ export const listLogo = [
         maquette:
           "https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1",
         description:
-          "Particper au lancement de la nouvelle page de profil de l'utilisateur, afin de lui permettre de suivre ses sessions sportives. L'objectif est de mettre en place une application sous React, documenter son code avec jsdoc, récupérer des données auprès de l'API et créer l'affichage des graphiques. L'application est visitable avec des données mockées.",
+          "Intégrer la nouvelle interface de la page de profil utilisateur d'une application de sport. L'objectif est d'utiliser React, bien documenter son code avec jsdoc, récupérer des données auprès de l'API et créer l'affichage des graphiques. L'application est visitable avec des données mockées et doit être responsive, dans un premier temps, seulement en version desktop.",
       },
       {
         id: "04",
@@ -104,7 +104,7 @@ export const listLogo = [
         maquette:
           "https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1",
         description:
-          "Mettre en place l'application sous React et développer l'ensemble en créant des composants réutilisables et des routes React Router, Le tout en suivant la maquette Figma mise à disposition.",
+          "Mettre en place l'application sous React et développer l'ensemble en créant des composants réutilisables et des routes React Router. Une maquette Figma a été mise à disposition et certaines contraintes fonctionnelles sont à prendre en compte.",
       },
     ],
   },

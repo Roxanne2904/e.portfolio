@@ -7,6 +7,7 @@ import {
 import { Link } from "react-router-dom";
 
 export const StyledLinkContainer = styled(Link)`
+  ${({ width }) => width > 2000 && `margin-top: 2vmin;`}
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,7 +44,8 @@ export const StyledButtonHover = styled.button`
 
 export const StyledHomeButton = styled.button`
   width: 100%;
-  border: solid 1px ${colors.primary};
+  border: solid ${({ width }) => (width > 2000 ? "0.3vmin" : "1px")}
+    ${colors.primary};
   padding: 10px 0;
   background: ${colors.secondary};
   color: ${colors.primary};
@@ -61,8 +63,8 @@ export const StyledButton = styled.button`
   position: fixed;
   bottom: ${({ width }) => (width < 1100 ? `2.5%` : `8%`)};
   right: ${({ width }) => (width < 1100 ? `12%` : `8%`)};
-  font-size: 2rem;
-  padding: 1rem;
+  font-size: ${({ width }) => (width > 2000 ? `5vmin` : `2rem`)};
+  padding: ${({ width }) => (width > 2000 ? `2vmin` : `1rem`)};
   color: ${colors.tertiary};
   border: none;
   border-radius: 50%;

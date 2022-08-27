@@ -59,7 +59,9 @@ export default function Home() {
                 <List arrayData={listLogo} location={"home"} />
               </StyledLogosContainer>
               {/* <StyledImg src={logo} alt="logo" className="logo" /> */}
-              <MainLogo />
+              <div>
+                <MainLogo />
+              </div>
               <StyledMainTitle width={width}>
                 <StyledStrongString width={width}>V</StyledStrongString>iette{" "}
                 <StyledStrongString width={width}>R</StyledStrongString>oxanne

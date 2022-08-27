@@ -9,9 +9,14 @@ export const StyledParagraphContent = styled(motion.div)`
   text-align: justify;
   box-sizing: ${({ width }) => (width < 800 ? "content-box" : "border-box;")};
   box-shadow: ${({ width }) =>
-    width < 800 ? `inherit` : `0 0 1rem ${colors.secondaryDarkerLessO};`}
+    width < 800
+      ? `inherit`
+      : `0 0 ${width > 1700 ? `5vmin` : `1rem`} ${
+          colors.secondaryDarkerLessO
+        };`}
   border-radius: 10px;
-  padding: ${({ width }) => (width < 800 ? `inherit` : `20px`)};
+  padding: ${({ width }) =>
+    width < 800 ? `inherit` : width > 1700 ? `1.5vmin` : `20px`};
   ${({ width }) =>
     width < 800 &&
     `display:flex;flex-direction:column;align-items:center;height: 100vh;`}

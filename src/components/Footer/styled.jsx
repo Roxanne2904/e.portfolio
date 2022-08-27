@@ -27,7 +27,8 @@ export const StyledSectionContent = styled.section`
     ${colors.secondaryDarker} 100%
   );
   width: 100%;
-  box-shadow: 0px 0 1rem ${colors.secondaryLessO};
+  box-shadow: 0px 0 ${({ width }) => (width > 2000 ? `2vmin` : `1rem`)}
+    ${colors.secondaryLessO};
 `;
 export const StyledMainContent = styled.div`
   display: flex;
@@ -45,9 +46,10 @@ export const StyledListContent = styled.div`
 `;
 export const StyledSecondaryTitle = styled.h2`
   background: ${colors.white};
-  padding: 10px;
+  padding: ${({ width }) => (width > 2000 ? `1vmin` : `10px`)};
   color: ${colors.tertiary};
-  box-shadow: 0 0 1rem ${colors.secondaryLessO};
+  box-shadow: 0 0 ${({ width }) => (width > 2000 ? `1vmin` : `1rem`)}
+    ${colors.secondaryLessO};
   font-size: ${({ width }) => (width < 800 ? `1rem` : `2.5vmin`)};
   border-radius: 5px;
 `;

@@ -46,7 +46,7 @@ export default function Button({ title, type, width }) {
 
     default:
       return (
-        <StyledLinkContainer to={"/about"}>
+        <StyledLinkContainer to={"/about"} width={width}>
           <StyledButtonHover width={width} aria-label={"le logo d'une porte"}>
             <FontAwesomeIcon icon={faDoorOpen} />
           </StyledButtonHover>

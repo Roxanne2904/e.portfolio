@@ -83,8 +83,9 @@ export const StyledTitleTxt = styled.span`
   align-items: center;
   display: flex;
   bottom: 35%;
-  border: solid 1.5px white;
-  box-shadow: 0 0 1rem ${colors.secondaryDarker};
+  border: solid ${({ width }) => (width > 2000 ? `0.2vmin` : `1.5px`)} white;
+  box-shadow: 0 0 ${({ width }) => (width > 2000 ? `2vmin` : `1rem`)}
+    ${colors.secondaryDarker};
   width: 15vmin;
   height: 15vmin;
   border-radius: 50%;
@@ -109,7 +110,7 @@ export const StyledProjectsParagraph = styled.p`
   text-align: justify;
   padding: ${({ width }) => (width < 900 ? `4vmin` : `1vmin 2vmin`)};
   font-size: ${({ width }) =>
-    width < 900 ? (width < 900 ? `0.8rem` : `1rem`) : ` 1.6vmin`};
+    width < 900 ? (width < 900 ? `0.8rem` : `1rem`) : ` 1.4vmin`};
 `;
 export const StyledUlBlock = styled.div`
   display: ${({ width }) => (width < 900 ? `inherit` : `flex`)};
@@ -156,9 +157,12 @@ export const StyledLink = styled.a`
   display: flex;
   justify-content: center;
   font-weight: bold;
+  font-size: ${({ width }) => (width < 900 ? `1rem` : `1.5vmin`)};
   ${(props) =>
     props.$app &&
-    `background:${colors.tertiary}; color:${colors.white};padding:0.8vmin;`}
+    `background:${colors.tertiary}; color:${colors.white};padding: ${
+      props.width < 900 ? `0.7rem` : `0.8vmin`
+    };`}
   &:hover {
     background: ${colors.secondaryDarker};
     color: ${colors.primary};
@@ -172,9 +176,9 @@ export const StyledLink = styled.a`
 `;
 export const StyledFigma = styled.div`
   font-size: ${({ width }) =>
-    width < 900 ? (width < 450 ? `1rem` : `3vmin`) : ` 1.7vmin`};
+    width < 900 ? (width < 450 ? `0.8rem` : `1rem`) : ` 1.7vmin`};
   display: block;
-  margin: 2% 5%;
+  margin: 4% 5%;
   text-decoration: none;
   a {
     color: ${colors.tertiary};
@@ -219,7 +223,7 @@ export default function Cards({ width }) {
       >
         {width > 1000 ? (
           <StyledSecondaryTitle>
-            <StyledTitleTxt>{elt.display}</StyledTitleTxt>
+            <StyledTitleTxt width={width}>{elt.display}</StyledTitleTxt>
           </StyledSecondaryTitle>
         ) : (
           <StyledSecondarySmallDevice width={width}>
@@ -236,7 +240,6 @@ export default function Cards({ width }) {
               {elt.description[0]}
               <br />
               {elt.description[1]}
-              <br />
               <br />
               {elt.description[2]}
               <br />
@@ -275,7 +278,7 @@ export default function Cards({ width }) {
                     target={"_blank"}
                     rel={"noreferrer"}
                   >
-                    react-calendar-library
+                    {` ->Lien gitHub de mon plugin<-`}
                   </a>
                 )
               ) : (
@@ -285,7 +288,7 @@ export default function Cards({ width }) {
                   target={"_blank"}
                   rel={"noreferrer"}
                 >
-                  Figma
+                  {`->Lien Figma<-`}
                 </a>
               )}
             </StyledFigma>
@@ -307,6 +310,7 @@ export default function Cards({ width }) {
           </StyledListContent>
           <div>
             <StyledLink
+              width={width}
               $app
               href={`${elt.urlApp}`}
               alt="l'appli"

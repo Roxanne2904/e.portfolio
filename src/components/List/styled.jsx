@@ -13,17 +13,21 @@ export const StyledList = styled(motion.li)`
   background: ${({ width }) =>
     width < 800 ? `inherit` : `${colors.primaryLessO}`};
   ${({ width, topborder }) =>
-    width < 1100
+    width < 1200
       ? width < 800
         ? `padding:20px; border:none;`
-        : `border: ${colors.primary} 2px solid; border-left-style: none; border-top-style: none; border-bottom-style: none;`
+        : `border: ${colors.primary} ${
+            width > 2000 ? `0.3vmin` : `2px`
+          } solid; border-left-style: none; border-top-style: none; border-bottom-style: none;`
       : topborder === "false"
-      ? `border: ${colors.primary} 2px solid; border-top-style: none; `
-      : `border: ${colors.primary} 2px solid; color:red;`}
+      ? `border: ${colors.primary} ${
+          width > 2000 ? `0.3vmin` : `2px`
+        } solid; border-top-style: none; `
+      : `border: ${colors.primary} ${width > 2000 ? `0.3vmin` : `2px`} solid; `}
 
   cursor: pointer;
   font-size: ${({ width }) =>
-    width < 1100 ? (width < 600 ? `1rem` : `2.5vmin`) : `2.7vmin`};
+    width < 1200 ? (width < 600 ? `1rem` : `2.5vmin`) : `2.7vmin`};
 `;
 export const StyledTitle = styled.span`
   color: ${colors.tertiary};

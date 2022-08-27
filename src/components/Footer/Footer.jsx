@@ -15,7 +15,7 @@ import {
 export default function Footer({ content, width }) {
   return (
     <StyledFooter>
-      <StyledSectionContent id="toContact">
+      <StyledSectionContent id="toContact" width={width}>
         {/* <StyledTriangle></StyledTriangle> */}
         <StyledContactMeBlock width={width}>
           <StyledSecondaryTitle width={width}>

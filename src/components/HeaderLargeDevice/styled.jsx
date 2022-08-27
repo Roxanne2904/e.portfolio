@@ -6,12 +6,12 @@ export const StyledHeader = styled.header`
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: ${({ width }) => (width < 1100 ? "inherit" : "100vh")};
+  min-height: ${({ width }) => (width < 1200 ? "inherit" : "100vh")};
 `;
 
 export const StyledBlockList = styled(motion.ul)`
   display: flex;
-  flex-direction: ${({ width }) => (width < 1100 ? "row" : "column")};
+  flex-direction: ${({ width }) => (width < 1200 ? "row" : "column")};
   align-items: center;
   list-style-type: none;
   ${({ width }) => width < 800 && `flex-wrap:wrap; justify-content:center;`}

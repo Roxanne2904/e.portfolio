@@ -21,7 +21,7 @@ export default function About({ width }) {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0, opacity: 0 }}
-      transition={{ duration: 1.7, type: "spring", delay: 0.1 }}
+      transition={{ duration: 1.7, type: "spring", delay: 0.5 }}
     >
       {/* <div>
         <Corner />
@@ -51,29 +51,28 @@ export default function About({ width }) {
         à me dépasser et à faire face aux difficultés. J'y ai découvert une
         vraie passion pour le CSS et côté programmation, j'ai très rapidement
         accroché avec React et Redux. Lors de certains projets, mes compétences
-        de graphiste/ illustratrice ont été utile sur FIGMA, outil de design
-        graphique, pour la création de gabarit. Habituée à communiquer avec
-        d'autre intervenants ou à gérer plusieurs missions simultanément, mon
-        expérience m’a permis de bien cerner qu’un code bien commenté est
+        de graphiste/ illustratrice ont été utile, par exemple, sur FIGMA, outil
+        de design graphique, pour la création de gabarit. Habituée à communiquer
+        avec d'autre intervenants ou à gérer plusieurs missions simultanément,
+        mon expérience m’a permis de bien cerner qu’un code bien commenté est
         essentiel, aussi bien pour ses collègues que pour soi. Le bilan de cette
         expérience n'a fait qu’accroître mon goût pour le développement qui me
         motive à tenir une veille technologique, entreprendre des projets
         personnels et à progresser.
         <br />
         <br />
-        Gestion ( des délais, des priorités...), relation ( clients ),
-        communication ( équipes ou autre intervenants ), efficacité ou encore
-        exigence sont les maîtres mots de l'auto-entrepreneuriat, atouts pouvant
-        être mis à profit autour d'un projet. Au regard de toute mon expérience,
-        et en toute humilité, j’ai bel et bien conscience de l’étendu des
-        connaissances qu’il me reste encore à découvrir. Ce faisant, je me
-        complairais à l’idée de poursuivre cette aventure avec vous. En espérant
-        pouvoir vous captiver davantage, c'est avec fierté que je vous invite à
-        découvrir mon travail à travers ce e-portfolio mis en place par mes
-        soin.
+        Au regard de toute mon expérience, et en toute humilité, j’ai bel et
+        bien conscience de l’étendu des connaissances qu’il me reste encore à
+        découvrir. Ce faisant, je me complairais à l’idée de poursuivre cette
+        aventure à travers un nouvel emploi ou des projets.
         <br />
         <br />
-        Très bonne visite à vous {":)"}
+        En espérant pouvoir vous captiver davantage à travers ce e-portfolio, je
+        vous souhaite une très bonne visite {"🤗"}
+        .
+        <br />
+        <br />
+        <br />
         {width > 700 && (
           <StyledSignatureContent>
             <Signature color={colors.tertiary} />

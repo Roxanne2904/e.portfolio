@@ -10,10 +10,14 @@ export default function ProgressBar({ list, width }) {
     return (
       <StyledUl key={`${elt.id}-${elt.name}`}>
         <li>
-          <StyledTitle width={width}>{elt.display}</StyledTitle>
-          <StyledTemplateContent>
-            <StyledTemplate $above width={elt.level}></StyledTemplate>
-            <StyledTemplate></StyledTemplate>
+          <StyledTitle widthDevice={width}>{elt.display}</StyledTitle>
+          <StyledTemplateContent widthDevice={width}>
+            <StyledTemplate
+              $above
+              width={elt.level}
+              widthDevice={width}
+            ></StyledTemplate>
+            <StyledTemplate widthDevice={width}></StyledTemplate>
           </StyledTemplateContent>
         </li>
       </StyledUl>
