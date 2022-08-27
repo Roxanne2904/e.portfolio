@@ -1,5 +1,5 @@
 //*Assets
-import logo from "../../assets/my_logo_namesoff.png";
+// import logo from "../../assets/my_logo_namesoff.png";
 //*Components
 import Button from "../../components/Button/Button";
 // import Logo from "../../components/Logo/Logo";
@@ -11,7 +11,7 @@ import { listLogo } from "../../utils/lists/lists";
 import { useState, useEffect } from "react";
 //*Styled
 import {
-  StyledImg,
+  // StyledImg,
   StyledMainContainer,
   StyledContainer,
   StyledSubtitle,
@@ -24,6 +24,7 @@ import {
 } from "./styled";
 
 import { motion } from "framer-motion";
+import MainLogo from "../../components/MainLogo/MainLogo";
 
 export default function Home() {
   const [width, setWidth] = useState(window.innerWidth); //*useState
@@ -57,8 +58,8 @@ export default function Home() {
               <StyledLogosContainer>
                 <List arrayData={listLogo} location={"home"} />
               </StyledLogosContainer>
-              <StyledImg src={logo} alt="logo" className="logo" />
-
+              {/* <StyledImg src={logo} alt="logo" className="logo" /> */}
+              <MainLogo />
               <StyledMainTitle width={width}>
                 <StyledStrongString width={width}>V</StyledStrongString>iette{" "}
                 <StyledStrongString width={width}>R</StyledStrongString>oxanne
