@@ -26,7 +26,7 @@ export const StyledParagraphContent = styled(motion.div)`
       : `5rem 2rem 1rem 2rem`};
   ${({ width }) =>
     width < device.medium &&
-    `display:flex;flex-direction:column;align-items:center;height: 100vh;`}
+    `display:flex;flex-direction:column;align-items:center;`}
 `;
 
 export const StyledProfilImage = styled.div`
