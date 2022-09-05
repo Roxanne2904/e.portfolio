@@ -7,7 +7,7 @@ export default function Projects({ width, height }) {
       initial={{ scaleY: 0 }}
       animate={{ scaleY: 1 }}
       exit={{ scaleY: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.7 }}
     >
       <Cards width={width} height={height} />
     </StyledMainContent>
