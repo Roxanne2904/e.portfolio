@@ -33,7 +33,7 @@ export const StyledList = styled.div`
       : `1.2rem`};
   &:hover {
     color: ${colors.white};
-    border: ${colors.tertiary} solid 2px;
+    border: ${colors.primary} solid 2px;
     ${rightAndLeftNone}
     transition: all 0.5s;
   }
