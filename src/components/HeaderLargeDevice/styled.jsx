@@ -37,6 +37,6 @@ export const StyledNav = styled.nav`
 `;
 export const StyledBlockListContent = styled(motion.div)`
   background: ${({ width }) =>
-    width < device.smallXL ? `transparent` : `${colors.primaryLessO}`};
+    width < device.smallXL ? `transparent` : `${colors.fourth}`};
   transform-origin: right;
 `;

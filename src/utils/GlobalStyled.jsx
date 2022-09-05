@@ -9,6 +9,7 @@ export const colors = {
   secondaryDarkerLessO: "#021d1e99",
   tertiary: "#005959",
   tertiaryLessO: "#00595950",
+  fourth: "#002528",
 
   purple: "#6229C9",
   white: "#FFFFFF",
