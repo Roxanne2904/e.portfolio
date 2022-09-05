@@ -30,7 +30,6 @@ export const StyledBlockList = styled(motion.ul)`
 export const StyledNav = styled.nav`
   width: 100%;
   display: flex;
-  font-weight: 500;
   align-items: center;
   justify-content: ${({ width }) =>
     width <= 900 ? `center` : `space-between`};
