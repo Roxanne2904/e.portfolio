@@ -8,7 +8,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 //*react
-// import { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 //*utils
 import { colors } from "../../utils/GlobalStyled";
 //*Ui reusable functions
@@ -17,39 +17,39 @@ import { liDomContentForNavLink } from "./UI";
 import { item } from "./framerMotionTools";
 
 export default function List({ arrayData, location, content, width, height }) {
-  // const [test, setTest] = useState(window.location.pathname);
-  // const [currentTabRemoved, setCurrentTabRemoved] = useState(null);
-  // const [currentArrayData, setcurrentArrayData] = useState(arrayData);
+  const [test, setTest] = useState(window.location.pathname);
+  const [currentTabRemoved, setCurrentTabRemoved] = useState(null);
+  const [currentArrayData, setcurrentArrayData] = useState(arrayData);
 
-  // useEffect(() => {
-  //   arrayData.map((elt) => {
-  //     if (window.location.pathname !== test) {
-  //       setTest(window.location.pathname);
-  //     }
-  //     if (test === elt.url) {
-  //       const myCurrentArrayData = arrayData[0].type === "nav" && [
-  //         ...arrayData,
-  //       ];
-  //       const tabIndex = myCurrentArrayData.indexOf(elt);
-  //       const tabRemoved = myCurrentArrayData.splice(tabIndex, 1);
-  //       const datasUpdated = [...myCurrentArrayData];
+  useEffect(() => {
+    arrayData.map((elt) => {
+      if (window.location.pathname !== test) {
+        setTest(window.location.pathname);
+      }
+      if (test === elt.url) {
+        const myCurrentArrayData = arrayData[0].type === "nav" && [
+          ...arrayData,
+        ];
+        const tabIndex = myCurrentArrayData.indexOf(elt);
+        const tabRemoved = myCurrentArrayData.splice(tabIndex, 1);
+        const datasUpdated = [...myCurrentArrayData];
 
-  //       if (currentTabRemoved === null) {
-  //         setCurrentTabRemoved(tabRemoved);
-  //         setcurrentArrayData(datasUpdated);
-  //       } else if (currentTabRemoved[0].url !== test) {
-  //         setCurrentTabRemoved(tabRemoved);
-  //         setcurrentArrayData(datasUpdated);
-  //       }
-  //       return currentArrayData;
-  //     }
-  //     return currentArrayData;
-  //   });
-  // });
+        if (currentTabRemoved === null) {
+          setCurrentTabRemoved(tabRemoved);
+          setcurrentArrayData(datasUpdated);
+        } else if (currentTabRemoved[0].url !== test) {
+          setCurrentTabRemoved(tabRemoved);
+          setcurrentArrayData(datasUpdated);
+        }
+        return currentArrayData;
+      }
+      return currentArrayData;
+    });
+  });
 
   //*case Logo = all logo list
   //*case ToContact = footer list (tel, e-mail...)
-  return arrayData.map((elt) => {
+  return currentArrayData.map((elt) => {
     switch (elt.type) {
       case "logo":
         return location === "home" ? (
