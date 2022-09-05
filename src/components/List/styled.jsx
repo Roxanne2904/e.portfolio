@@ -20,7 +20,12 @@ import { motion } from "framer-motion";
 export const StyledList = styled.div`
   color: ${colors.primaryMoreSaturated};
   padding: ${({ width }) =>
-    width < device.smallXL ? `1.3rem 2rem` : `2rem 3rem`};
+    width < device.smallXL
+      ? width <= 315
+        ? `0.5rem 5rem`
+        : `1.3rem 1.5rem`
+      : `2rem 2rem`};
+
   cursor: pointer;
   ${borderTransparentSolid}
   font-size: ${({ width, height }) =>
@@ -56,6 +61,8 @@ export const StyledLinkA = styled(motion.a)`
     props.$nav === true && `color:${colors.primary};font-weight: inherit;`}
 `;
 export const StyledLink = styled(Link)`
+  display: block;
+  ${({ width }) => width < 415 && `width:100%`};
   text-decoration: none;
   &:hover {
     color: ${colors.white};

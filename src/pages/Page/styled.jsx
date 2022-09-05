@@ -14,7 +14,7 @@ export const StyledMainTitle = styled(motion.h1)`
   justify-content: center;
   padding: ${({ width }) => (width < device.smallXL ? `0.5rem` : `1rem`)};
   font-size: ${({ width }) =>
-    width < device.smallXL ? `1.6rem` : width > 1500 ? `3rem` : `2rem`};
+    width < device.smallXL ? `1.6rem` : width > 2000 ? `3rem` : `2rem`};
   box-shadow: 0 0 1rem ${colors.secondaryDarker};
 `;
 export const StyledTitleContent = styled.div`
