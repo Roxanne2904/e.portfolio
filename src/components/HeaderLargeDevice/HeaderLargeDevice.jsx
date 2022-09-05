@@ -19,7 +19,10 @@ export default function HeaderLargeDevice({ content, width, height }) {
     <StyledHeader width={width}>
       <StyledNav height={height} width={width}>
         {width > 900 && (
-          <StyledMainLogoContent to={"/"}>
+          <StyledMainLogoContent
+            to={"/"}
+            aria-label="logo lien pour aller sur la page d'accueil"
+          >
             <MainLogo />
           </StyledMainLogoContent>
         )}
