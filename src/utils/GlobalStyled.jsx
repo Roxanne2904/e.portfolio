@@ -2,6 +2,7 @@ import { keyframes, css } from "styled-components";
 
 export const colors = {
   primary: "#4ac0bf",
+  primaryMoreSaturated: "#5DD3D2",
   primaryLessO: "#4ac0bf09",
   secondary: "#032628",
   secondaryLessO: "#03262899",

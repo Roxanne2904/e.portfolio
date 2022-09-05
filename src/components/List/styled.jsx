@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 // align-items: center;
 // }
 export const StyledList = styled.div`
-  color: ${colors.primary};
+  color: ${colors.primaryMoreSaturated};
   padding: ${({ width }) =>
     width < device.smallXL ? `1.3rem 2rem` : `2rem 3rem`};
   cursor: pointer;
@@ -38,7 +38,7 @@ export const StyledList = styled.div`
     transition: all 0.5s;
   }
   &:not(:hover) {
-    color: ${colors.primary};
+    color: ${colors.primaryMoreSaturated};
     ${borderTransparentSolid}
     ${rightAndLeftNone}
     transition: all 1.2s;
