@@ -9,11 +9,17 @@ export const StyledFooterBlockList = styled.ul`
   flex-direction: ${(props) => (props.type !== "logo" ? "column" : "row")};
   list-style-type: none;
   width: ${(props) =>
-    props.type !== "logo" ? "100%" : props.width < 800 ? `10rem` : "15vmin"};
+    props.type !== "logo"
+      ? "100%"
+      : props.width < 800
+      ? `10rem`
+      : props.height < 890
+      ? `30%`
+      : "15vmin"};
   ${(props) =>
     props.type !== "logo" && props.width < 800
       ? `font-size:1.2rem;`
-      : `font-size:2.1vmin; `}
+      : `font-size: ${props.height < 890 ? `1rem` : `2.1vmin`} ; `}
   margin: 10px 15px;
 `;
 
@@ -21,11 +27,14 @@ export const StyledFooterBlockList = styled.ul`
 
 export const StyledSectionContent = styled.section`
   position: relative;
-  background: linear-gradient(
+  background: ${({ width }) =>
+    width < 400
+      ? `${colors.white}`
+      : `linear-gradient(
     to right,
     ${colors.tertiary} 0%,
     ${colors.secondaryDarker} 100%
-  );
+  )`};
   width: 100%;
   box-shadow: 0px 0 ${({ width }) => (width > 2000 ? `2vmin` : `1rem`)}
     ${colors.secondaryLessO};
@@ -42,7 +51,7 @@ export const StyledListContent = styled.div`
   flex-direction: column;
   justify-content: space-evenly;
   width: 100%;
-  margin: 2% 4% 3% 4%;
+  margin: ${({ width }) => (width < 500 ? `6%` : `2%`)} 4% 3% 4%;
 `;
 export const StyledSecondaryTitle = styled.h2`
   background: ${colors.white};
@@ -50,7 +59,14 @@ export const StyledSecondaryTitle = styled.h2`
   color: ${colors.tertiary};
   box-shadow: 0 0 ${({ width }) => (width > 2000 ? `1vmin` : `1rem`)}
     ${colors.secondaryLessO};
-  font-size: ${({ width }) => (width < 800 ? `1rem` : `2.5vmin`)};
+  font-size: ${({ width, height }) =>
+    width < 800
+      ? width < 300
+        ? `1rem`
+        : `1.2rem`
+      : height < 890
+      ? `1rem`
+      : `2.5vmin`};
   border-radius: 5px;
 `;
 export const StyledImgContent = styled.div`
@@ -64,7 +80,6 @@ export const StyledImgContent = styled.div`
 `;
 export const StyledTriangle = styled.div`
   position: absolute;
-
   right: ${(props) => (props.$smaller ? `98%` : `65%`)};
   ${(props) => props.$smaller && `top:0%;`}
   width: 0px;
@@ -80,5 +95,5 @@ export const StyledTriangle = styled.div`
 export const StyledContactMeBlock = styled.div`
   position: absolute;
   top: -14%;
-  right: ${({ width }) => (width < 1100 ? `7%` : `65%`)};
+  right: 10%;
 `;

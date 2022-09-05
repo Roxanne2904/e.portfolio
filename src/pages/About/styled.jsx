@@ -1,51 +1,68 @@
 import styled from "styled-components";
 import profileImg from "../../assets/img/cv.jpg";
-import { colors } from "../../utils/GlobalStyled";
+import { colors, device } from "../../utils/GlobalStyled";
 import { motion } from "framer-motion";
 
 export const StyledParagraphContent = styled(motion.div)`
-  width: ${({ width }) => (width < 800 ? "100%" : "85%")};
-  position: ${({ width }) => (width < 1100 ? "inherit" : "absolute")};
+  background: ${colors.white};
+  width: ${({ width }) =>
+    width < device.medium ? "100%" : width >= 2000 ? `100%` : "1300px"};
+  ${({ width }) => width < device.medium && "margin: 0 auto"};
   text-align: justify;
-  box-sizing: ${({ width }) => (width < 800 ? "content-box" : "border-box;")};
+  box-sizing: ${({ width }) =>
+    width < device.medium ? "content-box" : "border-box;"};
   box-shadow: ${({ width }) =>
-    width < 800
+    width < device.medium
       ? `inherit`
       : `0 0 ${width > 1700 ? `5vmin` : `1rem`} ${
           colors.secondaryDarkerLessO
-        };`}
-  border-radius: 10px;
+        }`};
+
   padding: ${({ width }) =>
-    width < 800 ? `inherit` : width > 1700 ? `1.5vmin` : `20px`};
+    width < device.medium
+      ? `2rem 0 0 0`
+      : width >= 2000
+      ? `5rem 2rem;`
+      : `5rem 2rem 1rem 2rem`};
   ${({ width }) =>
-    width < 800 &&
+    width < device.medium &&
     `display:flex;flex-direction:column;align-items:center;height: 100vh;`}
 `;
 
 export const StyledProfilImage = styled.div`
-  float: ${({ width }) => (width < 800 ? "inherit" : "left")};
+  float: ${({ width }) => (width < device.medium ? "inherit" : "left")};
   background-image: ${({ width }) =>
-    width < 800 ? "inherit" : `url(${profileImg})`};
-  width: 18vmin;
-  height: ${({ width }) => (width < 800 ? "0vmin" : `25vmin`)};
+    width < device.medium ? "inherit" : `url(${profileImg})`};
+  width: ${({ width }) => (width >= 2000 ? `18rem` : `11rem`)};
+  height: ${({ width }) =>
+    width < device.medium ? "0vmin" : width >= 2000 ? `25rem` : `15rem`};
   background-size: 100% 100%;
   border-radius: 50%;
   shape-outside: margin-box;
-  margin: ${({ width }) => (width < 800 ? "30px 0 10px 0" : "0 30px 0 0")};
+  margin: ${({ width }) =>
+    width < device.medium ? "30px 0 10px 0" : "0 30px 0 0"};
 `;
 
 export const StyledWelcomeMsg = styled.span`
-  display: contents;
-  font-size: ${({ width }) => (width < 800 ? "2.5rem" : "3.5vmin")};
+  display: ${({ width }) => (width >= 2000 ? `flex` : `contents`)};
+  font-size: ${({ width }) =>
+    width < device.medium ? "3rem" : width >= 1500 ? `4rem` : "2.8rem"};
   color: ${colors.tertiary};
   font-family: auto;
 `;
 
 export const StyledParagraph = styled.p`
-  font-size: ${({ width }) => (width < 800 ? "1rem" : " 1.6vmin")};
-  padding: ${({ width }) => (width < 800 ? "25px" : " 10px")};
+  font-size: ${({ width, height }) =>
+    width < device.medium
+      ? width < 500
+        ? `1.2rem`
+        : "1.3rem"
+      : width >= 2000 || height > 1200
+      ? `1.5rem`
+      : "1.1rem"};
+  padding: ${({ width }) => (width < device.medium ? "25px" : " 10px")};
 
-  ${({ width }) => width < 800 && "overflow: scroll;"}
+  ${({ width }) => width < device.medium && "overflow: scroll;"}
 `;
 
 export const StyledLink = styled.a`

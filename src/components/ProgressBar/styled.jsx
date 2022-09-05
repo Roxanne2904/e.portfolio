@@ -20,10 +20,16 @@ export const StyledTemplate = styled.span`
 `;
 export const StyledTitle = styled.span`
   display: block;
-  font-size: ${({ widthDevice }) =>
-    widthDevice < 1100 ? (widthDevice < 800 ? `1rem` : `1.2rem`) : `1.9vmin`};
+  font-size: ${({ widthDevice, height }) =>
+    widthDevice < 1100
+      ? widthDevice < 800
+        ? `1rem`
+        : `1.2rem`
+      : height < 890
+      ? `1.1rem`
+      : `1.9vmin`};
   margin: 0 0
-    ${({ widthDevice }) => (widthDevice > 2000 ? `2vmin 0.1vmin` : "1% 0.5%")};
+    ${({ widthDevice }) => (widthDevice > 2000 ? `2vmin 0.1vmin` : "0.5% 0.5%")};
 `;
 export const StyledUl = styled.ul`
   margin: 20px 0;

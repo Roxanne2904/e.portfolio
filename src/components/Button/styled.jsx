@@ -61,13 +61,12 @@ export const StyledHomeButton = styled.button`
 export const StyledButton = styled.button`
   display: ${({ display }) => (display === `none` ? "none" : "block")};
   position: fixed;
-  bottom: ${({ width }) => (width < 1100 ? `2.5%` : `8%`)};
-  right: ${({ width }) => (width < 1100 ? `12%` : `8%`)};
-  font-size: ${({ width }) => (width > 2000 ? `5vmin` : `2rem`)};
+  bottom: ${({ width }) => (width < 900 ? `2%` : `11.5%`)};
+  right: 0;
+  font-size: ${({ width }) => (width > 2000 ? `3vmin` : `2rem`)};
   padding: ${({ width }) => (width > 2000 ? `2vmin` : `1rem`)};
   color: ${colors.tertiary};
   border: none;
-  border-radius: 50%;
   box-shadow: 0 0 1rem ${colors.secondaryDarker};
   z-index: 2;
   cursor: pointer;

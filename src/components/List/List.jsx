@@ -1,32 +1,25 @@
-// import { Link } from "react-router-dom";
-import {
-  StyledList,
-  StyledTitle,
-  StyledLinkA,
-  StyledLink,
-  StyledBasicSpan,
-} from "./styled";
+//*styled
+import { StyledTitle, StyledLinkA, StyledBasicSpan } from "./styled";
+//*components
 import Logo from "../Logo/Logo";
-import { colors } from "../../utils/GlobalStyled";
+//*font awesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
+//*react
 import { useEffect, useState } from "react";
+//*utils
+import { colors } from "../../utils/GlobalStyled";
+//*Ui reusable functions
+import { liDomContentForNavLink } from "./UI";
+//*framerMotionTools
+import { item } from "./framerMotionTools";
 
-export default function List({ arrayData, location, content, width }) {
-  // const [isOk, setIsOk] = useState(false);
+export default function List({ arrayData, location, content, width, height }) {
   const [test, setTest] = useState(window.location.pathname);
   const [currentTabRemoved, setCurrentTabRemoved] = useState(null);
   const [currentArrayData, setcurrentArrayData] = useState(arrayData);
-
-  const item = {
-    hidden: { translateX: "-150vw" },
-    show: {
-      translateX: 0,
-      transition: { duration: 0.5, type: "spring", stiffness: 40 },
-    },
-  };
 
   useEffect(() => {
     arrayData.map((elt) => {
@@ -44,30 +37,18 @@ export default function List({ arrayData, location, content, width }) {
         if (currentTabRemoved === null) {
           setCurrentTabRemoved(tabRemoved);
           setcurrentArrayData(datasUpdated);
-          // console.log(freshDatas);
         } else if (currentTabRemoved[0].url !== test) {
           setCurrentTabRemoved(tabRemoved);
           setcurrentArrayData(datasUpdated);
-          // console.log(freshDatas);
         }
-        // console.log(currentTabRemoved !== null && currentTabRemoved[0].url);
-
         return currentArrayData;
       }
       return currentArrayData;
     });
   });
 
-  //*a ranger
-  const liDomContentForNavLink = (elt) => {
-    return elt.name === "toContact" ? (
-      <StyledLinkA $nav href={elt.url}>{`${elt.content}`}</StyledLinkA>
-    ) : (
-      <StyledLink $nav to={elt.url}>{`${elt.content}`}</StyledLink>
-    );
-  };
-  //*
-
+  //*case Logo = all logo list
+  //*case ToContact = footer list (tel, e-mail...)
   return currentArrayData.map((elt) => {
     switch (elt.type) {
       case "logo":
@@ -126,45 +107,7 @@ export default function List({ arrayData, location, content, width }) {
           </li>
         );
       default:
-        return elt.borderTop === "false" ? (
-          <StyledList
-            width={width}
-            topborder={elt.borderTop}
-            key={`${elt.id}-${elt.name}`}
-            variants={item}
-          >
-            {liDomContentForNavLink(elt)}
-          </StyledList>
-        ) : (
-          <StyledList
-            key={`${elt.id}-${elt.name}`}
-            variants={item}
-            width={width}
-          >
-            {liDomContentForNavLink(elt)}
-          </StyledList>
-        );
+        return liDomContentForNavLink(elt, width, height, item);
     }
   });
 }
-
-// arrayData.map((elt) =>
-//     elt.type !== undefined && elt.type === "logo" ? (
-//       <li key={`${elt.id}-${elt.name}`} style={{ width: "100%" }}>
-//         <Logo
-//           name={elt.name}
-//           url={elt.url}
-//           width="80%"
-//           height="100%"
-//           margin="0px 0px"
-//           bool={true}
-//         />
-//       </li>
-//     ) : elt.name === "Compétences" || elt.name === "Accueil" ? (
-//       <StyledList
-//         noTopBorder={true}
-//         key={`${elt.id}-${elt.name}`}
-//       >{`${elt.name}`}</StyledList>
-//     ) : (
-//       <StyledList key={`${elt.id}-${elt.name}`}>{`${elt.name}`}</StyledList>
-//     )

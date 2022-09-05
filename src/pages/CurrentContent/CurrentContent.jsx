@@ -3,15 +3,15 @@ import Projects from "../Projects/Projects";
 import Skills from "../Skills/Skills";
 import { StyledSectionContent } from "./styled";
 
-export default function CurrentContent({ content, width }) {
+export default function CurrentContent({ content, width, height }) {
   return (
-    <StyledSectionContent id={content} width={width}>
+    <StyledSectionContent id={content} width={width} height={height}>
       {content === "about" ? (
-        <About width={width} />
+        <About width={width} height={height} />
       ) : content === "skills" ? (
-        <Skills width={width} />
+        <Skills width={width} height={height} />
       ) : (
-        <Projects width={width} />
+        <Projects width={width} height={height} />
       )}
     </StyledSectionContent>
   );

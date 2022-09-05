@@ -1,67 +1,72 @@
 //*Styled
-import {
-  StyledMainContent,
-  StyledHeaderContent,
-  StyledMainTitle,
-  StyledTitle,
-} from "./styled";
-
+import { StyledMainTitle, StyledTitleContent, StyledWrapper } from "./styled";
 //*components
 import HeaderLargeDevice from "../../components/HeaderLargeDevice/HeaderLargeDevice";
 import CurrentContent from "../CurrentContent/CurrentContent";
 import Footer from "../../components/Footer/Footer";
 import Button from "../../components/Button/Button";
-
+//*framerMotion
 import { motion } from "framer-motion";
+//*React
 import { useState, useEffect } from "react";
 
 export default function Page({ title, content }) {
-  const [width, setWidth] = useState(window.innerWidth); //*useState
+  const [width, setWidth] = useState(window.innerWidth);
+  const [height, setHeight] = useState(window.innerHeight);
 
   useEffect(() => {
     const updateCurrentWidthAndHeight = () => {
       const currentWidth = window.innerWidth;
+      const currentHeight = window.innerHeight;
 
       setWidth(currentWidth);
+      setHeight(currentHeight);
     };
     window.addEventListener("resize", updateCurrentWidthAndHeight);
 
     return () =>
       window.removeEventListener("resize", updateCurrentWidthAndHeight);
-  }, [width]);
+  }, [width, height]);
 
   return (
     <motion.div
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.5 }}
+      transition={{ duration: 0.2 }}
     >
-      <main>
-        <Button type={"returnToTop"} width={width} />
-        <div>
-          {width < 800 && (
-            <div>
-              <HeaderLargeDevice content={content} width={width} />
-            </div>
-          )}
-          <div style={{ position: "relative" }}>
-            <StyledMainTitle width={width}>
-              <StyledTitle width={width}>{title}</StyledTitle>
-            </StyledMainTitle>
-          </div>
-        </div>
-        <StyledMainContent width={width}>
-          {width > 800 && (
-            <StyledHeaderContent>
-              <HeaderLargeDevice content={content} width={width} />
-            </StyledHeaderContent>
-          )}
+      <StyledWrapper width={width}>
+        <main>
+          <Button type={"returnToTop"} width={width} />
 
-          <CurrentContent content={content} width={width} />
-        </StyledMainContent>
-        <Footer content={content} width={width} />
-      </main>
+          <div>
+            <HeaderLargeDevice
+              content={content}
+              width={width}
+              height={height}
+            />
+          </div>
+
+          <StyledTitleContent height={height}>
+            <StyledMainTitle
+              width={width}
+              height={height}
+              initial={{ scaleX: 0, opacity: 0 }}
+              animate={{ scaleX: 1, opacity: 1 }}
+              exit={{ scaleX: 0, opacity: 0 }}
+              transition={{ duration: 0.5, delay: 1.5 }}
+            >
+              {title}
+            </StyledMainTitle>
+          </StyledTitleContent>
+
+          <div>
+            <CurrentContent content={content} width={width} height={height} />
+          </div>
+
+          <Footer content={content} width={width} height={height} />
+        </main>
+      </StyledWrapper>
     </motion.div>
   );
 }

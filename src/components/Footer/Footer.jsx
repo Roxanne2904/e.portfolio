@@ -12,13 +12,13 @@ import {
   StyledSecondaryTitle,
   StyledContactMeBlock,
 } from "./styled";
-export default function Footer({ content, width }) {
+export default function Footer({ content, width, height }) {
   return (
     <StyledFooter>
       <StyledSectionContent id="toContact" width={width}>
         {/* <StyledTriangle></StyledTriangle> */}
         <StyledContactMeBlock width={width}>
-          <StyledSecondaryTitle width={width}>
+          <StyledSecondaryTitle width={width} height={height}>
             {/* <StyledTriangle $smaller></StyledTriangle> */}
             <span>Me contacter</span>
           </StyledSecondaryTitle>
@@ -27,8 +27,8 @@ export default function Footer({ content, width }) {
           {/* <StyledImgContent>
             <img src={logo} alt="mon logo" />
           </StyledImgContent> */}
-          <StyledListContent>
-            <StyledFooterBlockList width={width}>
+          <StyledListContent width={width}>
+            <StyledFooterBlockList width={width} height={height}>
               <List
                 width={width}
                 arrayData={listToContact}
@@ -36,7 +36,7 @@ export default function Footer({ content, width }) {
                 content={content}
               />
             </StyledFooterBlockList>
-            <StyledFooterBlockList type={"logo"} width={width}>
+            <StyledFooterBlockList type={"logo"} width={width} height={height}>
               <List
                 width={width}
                 arrayData={listLogo}

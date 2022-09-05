@@ -15,10 +15,43 @@ export const colors = {
   dark: "#011616",
 };
 
+export const isNotHover = css`
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  z-index: 1;
+`;
+
+export const device = {
+  small: 600,
+  smallXL: 720,
+  medium: 800,
+  large: 1200,
+};
+
 export const display = {
   flex: "flex",
   block: "block",
+  rowReverse: "row-reverse",
+  spaceBetween: "space-between",
+  center: "center",
 };
+
+export const fontBold = `
+font-weight: bold;
+`;
+
+export const borderTransparentSolid = `
+border: 2px transparent solid;
+`;
+export const rightAndLeftNone = `border-right: none;
+border-left: none;`;
+
+export const flexCenter = `display: flex;
+justify-content: center;`;
+
 export const flexDirection = {
   column: "column",
 };
@@ -39,15 +72,15 @@ export const beforeLineAnimation = keyframes`
 0% {width:0;}
 100% {width:100%;}
 `;
-export const afterLineAnimationPage = keyframes`
-0% {top:0;}
-100% {top:94%;}
-`;
+// export const afterLineAnimationPage = keyframes`
+// 0% {top:0;}
+// 100% {top:94%;}
+// `;
 
-export const beforeLineAnimationPage = keyframes`
-0% {bottom:0;}
-100% {bottom:94%;}
-`;
+// export const beforeLineAnimationPage = keyframes`
+// 0% {bottom:0;}
+// 100% {bottom:94%;}
+// `;
 export const buttonAnimation = keyframes`
 0%{transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
 50% {width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
@@ -73,20 +106,3 @@ export const animationRules = (props) =>
   css`
     animation: ${animationProgressBar(props)} 1s 0.7s both;
   `;
-
-// 0% {transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
-// 50% {width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
-// 70% {width:20%;font-size:0rem;border-radius:50%;}
-// 80% {width:20%;border-radius:inherit;background:${colors.primary};}
-// 100% {transform: translateY(0%);width:5%;height:12%;border-radius:inherit;width:100%;background:transparent;font-size:${fontSize.main};cursor: pointer;z-index: 1;}
-
-// 75% {width:75%;height:7.5%;}
-// 80% {width:80%;height:10%;}
-// 85% {width:85%;height:12.5%;}
-// 90% {width:90%;height:13%;}
-// 95% {width:95%; height:13%; background:${colors.primary};font-size:0.1rem;}
-// 100% { width:100%;border-radius:inherit;font-size:${fontSize.button01}; background:transparent; height:13%}
-
-// transform: translateY(-200%);
-
-// transform: translateY(40px);

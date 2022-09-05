@@ -1,6 +1,6 @@
 import Cards from "../../components/Cards/Cards";
 import { StyledMainContent } from "./styled";
-export default function Projects({ width }) {
+export default function Projects({ width, height }) {
   return (
     <StyledMainContent
       width={width}
@@ -9,7 +9,7 @@ export default function Projects({ width }) {
       exit={{ scaleY: 0 }}
       transition={{ duration: 0.5 }}
     >
-      <Cards width={width} />
+      <Cards width={width} height={height} />
     </StyledMainContent>
   );
 }

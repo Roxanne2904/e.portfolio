@@ -60,9 +60,9 @@ export default function Home() {
               </StyledLogosContainer>
               {/* <StyledImg src={logo} alt="logo" className="logo" /> */}
               <div>
-                <MainLogo />
+                <MainLogo complete={"true"} />
               </div>
-              <StyledMainTitle width={width}>
+              <StyledMainTitle width={width} height={heigth}>
                 <StyledStrongString width={width}>V</StyledStrongString>iette{" "}
                 <StyledStrongString width={width}>R</StyledStrongString>oxanne
               </StyledMainTitle>

@@ -31,8 +31,14 @@ export const StyledImg = styled.img`
   animation: ${opacityAnimation} 1500ms both;
 `;
 export const StyledMainTitle = styled.h1`
-  font-size: ${({ width }) =>
-    width < 1100 ? (width < 600 ? "5vmin" : "3vmin") : "2vmin"};
+  font-size: ${({ width, height }) =>
+    width < 1100
+      ? width < 600
+        ? "5vmin"
+        : "3vmin"
+      : height < 720
+      ? `3.5vmin`
+      : "2vmin"};
   text-align: end;
   position: absolute;
   bottom: 5px;
@@ -92,7 +98,7 @@ export const StyledMainContainer = styled.div`
   color: ${colors.white};
 `;
 export const StyledContainer = styled.div`
-  width: 95%;
+  width: 100%;
   position: relative;
   display: ${display.flex};
   justify-content: center;
