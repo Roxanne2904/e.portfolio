@@ -46,7 +46,7 @@ font-weight: bold;
 `;
 
 export const borderTransparentSolid = `
-border: 2px transparent solid;
+border: 1px transparent solid;
 `;
 export const rightAndLeftNone = `border-right: none;
 border-left: none;`;
