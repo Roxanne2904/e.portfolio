@@ -47,14 +47,14 @@ export default function Page({ title, content }) {
             />
           </div>
 
-          <StyledTitleContent height={height}>
+          <StyledTitleContent height={height} width={width}>
             <StyledMainTitle
               width={width}
               height={height}
-              initial={{ scaleX: 0, opacity: 0 }}
-              animate={{ scaleX: 1, opacity: 1 }}
-              exit={{ scaleX: 0, opacity: 0 }}
-              transition={{ duration: 0.5, delay: 1.5 }}
+              initial={{ scaleY: 0, opacity: 0 }}
+              animate={{ scaleY: 1, opacity: 1 }}
+              exit={{ scaleY: 0, opacity: 0 }}
+              transition={{ duration: 0.5, delay: 2 }}
             >
               {title}
             </StyledMainTitle>
