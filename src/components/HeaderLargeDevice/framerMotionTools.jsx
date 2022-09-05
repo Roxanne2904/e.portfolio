@@ -1,7 +1,8 @@
 export const container = {
-  hidden: { translateX: "100vw" },
+  hidden: { scale: 0, opacity: 0 },
   show: {
-    translateX: 0,
+    scale: 1,
+    opacity: 1,
     transition: { delayChildren: 2, staggerChildren: 0.5 },
   },
 };

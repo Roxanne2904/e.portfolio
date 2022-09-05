@@ -1,7 +1,8 @@
 export const item = {
-  hidden: { translateX: "100vw" },
+  hidden: { scale: 0, opacity: 0 },
   show: {
-    translateX: 0,
-    transition: { duration: 0.3, type: "spring", stiffness: 45 },
+    scale: 1,
+    opacity: 1,
+    transition: { duration: 0.3, type: "spring", stiffness: 60 },
   },
 };
