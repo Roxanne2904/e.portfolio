@@ -8,7 +8,7 @@ import { faPhone } from "@fortawesome/free-solid-svg-icons";
 import { faLocationDot } from "@fortawesome/free-solid-svg-icons";
 import { faEnvelope } from "@fortawesome/free-solid-svg-icons";
 //*react
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
 //*utils
 import { colors } from "../../utils/GlobalStyled";
 //*Ui reusable functions
