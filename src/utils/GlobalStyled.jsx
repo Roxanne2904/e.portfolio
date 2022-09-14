@@ -65,6 +65,7 @@ export const fontSize = {
   secondary: "0.85rem",
 };
 
+//*animations
 export const afterLineAnimation = keyframes`
 0% {left:100%;}
 100% {left:0;}
@@ -74,25 +75,15 @@ export const beforeLineAnimation = keyframes`
 0% {width:0;}
 100% {width:100%;}
 `;
-// export const afterLineAnimationPage = keyframes`
-// 0% {top:0;}
-// 100% {top:94%;}
-// `;
 
-// export const beforeLineAnimationPage = keyframes`
-// 0% {bottom:0;}
-// 100% {bottom:94%;}
-// `;
 export const buttonBackToTop = keyframes`
 0%{opacity:0;}
 100%{opacity: 1;}
 `;
 export const buttonAnimation = keyframes`
-0%{transform:translateY(-200%);width:5%;font-size:0rem;background:${colors.primary};border-radius:100%;}
-50% {width:5%;font-size:0rem;background:${colors.primary};border-radius:100%;}
-70% {width:20%;font-size:0rem;border-radius:50%;}
-80% {width:20%;border-radius:inherit;background:${colors.primary};}
-100%{transform: translateY(0%);}
+0%{transform:scaleX(0);border-radius:50px;background-color:${colors.primary};}
+80%{border-radius:30px; background-color:${colors.primary};}
+100%{transform:scaleX(1);border-radius:0%;background-color:transparent;}
 `;
 export const pointerEventsAnimation = keyframes`
 0%{pointer-events: none;}
