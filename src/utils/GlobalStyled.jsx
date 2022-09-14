@@ -88,8 +88,8 @@ export const buttonBackToTop = keyframes`
 100%{opacity: 1;}
 `;
 export const buttonAnimation = keyframes`
-0%{transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
-50% {width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
+0%{transform:translateY(-200%);width:5%;font-size:0rem;background:${colors.primary};border-radius:100%;}
+50% {width:5%;font-size:0rem;background:${colors.primary};border-radius:100%;}
 70% {width:20%;font-size:0rem;border-radius:50%;}
 80% {width:20%;border-radius:inherit;background:${colors.primary};}
 100%{transform: translateY(0%);}
