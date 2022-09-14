@@ -1,15 +1,17 @@
 import Cards from "../../components/Cards/Cards";
-import { StyledMainContent } from "./styled";
+import { StyledMainContent, StyledWrapper } from "./styled";
 export default function Projects({ width, height }) {
   return (
-    <StyledMainContent
+    <StyledWrapper
       width={width}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0, opacity: 0 }}
-      transition={{ duration: 0.7, delay: 0.2 }}
+      initial={{ scaleY: 0, opacity: 0 }}
+      animate={{ scaleY: 1, opacity: 1 }}
+      exit={{ scaleY: 0, opacity: 0 }}
+      transition={{ duration: 0.7, delay: 0.5 }}
     >
-      <Cards width={width} height={height} />
-    </StyledMainContent>
+      <StyledMainContent width={width}>
+        <Cards width={width} height={height} />
+      </StyledMainContent>
+    </StyledWrapper>
   );
 }

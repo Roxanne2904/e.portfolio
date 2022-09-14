@@ -21,7 +21,7 @@ export default function About({ width, height }) {
       initial={{ scale: 0, opacity: 0 }}
       animate={{ scale: 1, opacity: 1 }}
       exit={{ scale: 0, opacity: 0 }}
-      transition={{ duration: 0.7, delay: 0.2 }}
+      transition={{ duration: 0.7, delay: 0.5 }}
     >
       <StyledProfilImage width={width}></StyledProfilImage>
       <StyledWelcomeMsg width={width}>Bonjour,</StyledWelcomeMsg>

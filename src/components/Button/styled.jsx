@@ -2,6 +2,7 @@ import styled from "styled-components";
 import {
   colors,
   buttonAnimation,
+  buttonBackToTop,
   pointerEventsAnimation,
 } from "../../utils/GlobalStyled";
 import { Link } from "react-router-dom";
@@ -29,7 +30,8 @@ export const StyledButtonHover = styled.button`
   padding: 10px 0;
   background: ${colors.primary};
   color: ${colors.secondary};
-  font-size: ${({ width }) => (width < 600 ? "6vmin" : "3.5vmin")};
+  font-size: ${({ width, height }) =>
+    width < 600 ? "6vmin" : height < 720 ? `1.7rem` : "3.5vmin"};
   cursor: pointer;
   animation: ${buttonAnimation} 1500ms cubic-bezier(0.73, 0.71, 0.5, 0.99)
     2900ms both;
@@ -49,7 +51,8 @@ export const StyledHomeButton = styled.button`
   padding: 10px 0;
   background: ${colors.secondary};
   color: ${colors.primary};
-  font-size: ${({ width }) => (width < 600 ? "5vmin" : "3vmin")};
+  font-size: ${({ width, height }) =>
+    width < 600 ? "5vmin" : height < 720 ? `1.5rem` : "3vmin"};
   cursor: pointer;
   animation: ${buttonAnimation} 1500ms cubic-bezier(0.73, 0.71, 0.5, 0.99)
     2900ms both;
@@ -71,4 +74,5 @@ export const StyledButton = styled.button`
   z-index: 2;
   cursor: pointer;
   background: ${colors.white};
+  animation: ${buttonBackToTop} 0.5s ease-in-out;
 `;

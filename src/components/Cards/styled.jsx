@@ -3,18 +3,13 @@ import { colors, isNotHover } from "../../utils/GlobalStyled";
 
 export const StyledMainContent = styled.li`
   position: relative;
-  width: ${({ width, height }) =>
-    width < 1800
-      ? width < 1000
-        ? `100%`
-        : `35%`
-      : height > 1500
-      ? `35%`
-      : `20%`};
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-between;
+  border-radius: 5px;
+  width: ${({ width, height }) =>
+    width < 1800 ? `100%` : height > 1500 ? `35%` : `20%`};
   margin: ${({ width }) =>
     width < 1800
       ? width < 1000
@@ -23,11 +18,11 @@ export const StyledMainContent = styled.li`
           : `20px 0`
         : `1rem`
       : `1vmin 1vmin`};
-  border-radius: 5px;
+
   box-shadow: 0 0 1rem ${colors.secondaryLessO};
   overflow: hidden;
   height: ${({ width }) =>
-    width < 1800 ? (width < 1000 ? `inherit` : `24rem`) : ` 50vmin`};
+    width < 1800 ? (width < 1000 ? `inherit` : `30rem`) : ` 50vmin`};
 `;
 
 export const StyledSecondaryTitle = styled.h2`
@@ -36,9 +31,13 @@ export const StyledSecondaryTitle = styled.h2`
   align-items: center;
   background: ${colors.tertiary};
   ${isNotHover}
+  font-size: ${({ height, width }) => (width <= 1800 ? `1.5rem` : `1.2rem`)};
+
   ${StyledMainContent}:hover & {
-    transform: translateY(-91%);
-    font-size: ${({ height }) => (height < 720 ? `1.2rem` : `2vmin`)};
+    transform: ${({ width, height }) =>
+      width < 1800 ? ` translateY(-89%)` : ` translateY(-91%)`};
+    font-size: ${({ height, width }) =>
+      width < 1800 ? `1.5rem` : width > 2000 ? `1.5rem` : `1.2rem`};
     transition: all 1s;
   }
   ${StyledMainContent}:not(:hover) & {
@@ -46,7 +45,7 @@ export const StyledSecondaryTitle = styled.h2`
     bottom: 0;
     right: 0;
     left: 0;
-    font-size: ${({ height }) => (height < 720 ? `1.2rem` : `2.2vmin`)};
+    font-size: ${({ height, width }) => (width <= 1800 ? `1.5rem` : `1.2rem`)};
     transition: all 1s;
   }
 `;
@@ -68,26 +67,24 @@ export const StyledTitleTxt = styled.span`
   justify-content: center;
   align-items: center;
   display: flex;
-  bottom: 35%;
-  border: solid ${({ width }) => (width > 2000 ? `0.2vmin` : `1.5px`)} white;
-  box-shadow: 0 0 ${({ width }) => (width > 2000 ? `2vmin` : `1rem`)}
+  box-shadow: 0 0 ${({ width }) => (width > 2000 ? `2vmin` : `2rem`)}
     ${colors.secondaryDarker};
-  width: 15vmin;
-  height: 15vmin;
+  bottom: ${({ width, height }) => (width < 1800 ? `30%` : `35%`)};
+  width: 10rem;
+  height: 10rem;
   border-radius: 50%;
   color: ${colors.white};
   ${StyledMainContent}:hover & {
-    bottom: ${({ height }) => (height < 720 ? `1.2%` : ` 1.1%`)};
+    bottom: ${({ width, height }) => (width < 1800 ? `2%` : `0.9%`)};
     width: 100%;
-    height: 6%;
+    height: 7%;
     border-radius: 0%;
     transition: all 1s;
   }
   ${StyledMainContent}:not(:hover) & {
-    bottom: ${({ height, width }) =>
-      height < 720 ? (width < 1800 ? `35%` : `30%`) : `35%`};
-    width: ${({ height }) => (height < 720 ? `8rem` : `15vmin`)};
-    height: ${({ height }) => (height < 720 ? `8rem` : `15vmin`)};
+    bottom: ${({ width, height }) => (width < 1800 ? `30%` : `35%`)};
+    width: 10rem;
+    height: 10rem;
     border-radius: 50%;
     transition: all 1s;
   }
@@ -95,36 +92,47 @@ export const StyledTitleTxt = styled.span`
 
 export const StyledProjectsParagraph = styled.p`
   text-align: justify;
-  max-height: ${({ width, height }) =>
-    width < 1800
-      ? height < 720
-        ? `10rem`
-        : width < 700
-        ? `13rem`
-        : `8rem`
-      : height > 1000
-      ? `20rem`
-      : `12rem`};
   overflow: auto;
+  margin: 1rem 0;
   padding: ${({ width, height }) =>
     width <= 900
       ? `4vmin`
       : height <= 600
-      ? `0vmin 2vmin`
+      ? `0vmin 4vmin`
       : width <= 1000
       ? `4vmin`
-      : `1vmin 2vmin`};
+      : width >= 1800
+      ? `1vmin 2vmin`
+      : `1vmin 3vmin`};
   font-size: ${({ width, height }) =>
-    width < 900
+    width < 1800
+      ? height < 1200
+        ? width < 500
+          ? `0.8rem`
+          : `1.1rem`
+        : width < 1200
+        ? width < 1000
+          ? width < 500
+            ? `1.1rem`
+            : `1.25rem`
+          : `1.8vmin`
+        : `1.5vmin`
+      : height < 890
       ? `0.8rem`
-      : height > 900
-      ? width < 1000
-        ? `1.5vmin`
-        : `1.3vmin`
-      : height <= 720
-      ? `0.8rem`
-      : ` 1.6vmin`};
+      : `1.35vmin`};
 `;
+
+// max-height: ${({ width, height }) =>
+//     width < 1800
+//       ? height < 720
+//         ? `10rem`
+//         : width < 700
+//         ? `13rem`
+//         : `8rem`
+//       : height > 1000
+//       ? `20rem`
+//       : `12rem`};
+
 export const StyledUlBlock = styled.div`
   display: ${({ width }) => (width < 900 ? `inherit` : `flex`)};
   flex-wrap: wrap;
@@ -172,16 +180,16 @@ export const StyledLink = styled.a`
   font-weight: bold;
   font-size: ${({ width, height }) =>
     width < 900
-      ? `1rem`
+      ? width < 350
+        ? `0.8rem`
+        : `1rem`
       : height < 900
-      ? height <= 720
-        ? `1rem`
-        : `1.9vmin`
-      : `1.5vmin`};
+      ? `1.3rem`
+      : `1.7vmin`};
   ${(props) =>
     props.$app &&
     `background:${colors.tertiary}; color:${colors.white};padding: ${
-      props.width < 900 ? `0.7rem` : props.height < 900 ? `0.9vmin` : `0.8vmin`
+      props.width < 900 ? `0.7rem` : props.height < 900 ? `1rem` : `1.2vmin`
     };`}
   &:hover {
     background: ${colors.secondaryDarker};
@@ -198,11 +206,11 @@ export const StyledFigma = styled.div`
   width: 90%;
   font-size: ${({ width, height }) =>
     width < 900
-      ? `1rem`
-      : width < 1600
-      ? height <= 720
+      ? width < 350
         ? `1rem`
-        : `1.8vmin`
+        : `1.2rem`
+      : width < 1600
+      ? `1.35rem`
       : ` 1.7vmin`};
   display: block;
   text-decoration: none;
@@ -225,20 +233,22 @@ export const StyledFigma = styled.div`
 export const StyledTechLi = styled.li`
   color: ${colors.white};
   background: ${colors.tertiary};
-  padding: ${({ width }) => (width < 1000 ? `0.2rem 0.5rem` : `1% 4% 1.5%`)};
+  padding: ${({ width }) => (width < 1000 ? `0.3rem 0.8rem` : `1% 4% 1.5%`)};
   margin: ${({ width }) => (width < 900 ? `1% 1% 1% 0` : `0.1rem`)};
   font-size: ${({ width, height }) =>
-    width < 900
-      ? `0.7rem`
-      : width < 1200
-      ? height <= 720
-        ? `0.8rem`
-        : `1.25vmin`
-      : height <= 720
-      ? `0.8rem`
-      : width > 1800
-      ? `1rem`
-      : `0.7rem`};
+    width < 1800
+      ? height < 1000
+        ? `1rem`
+        : width <= 1200
+        ? width < 1000
+          ? width < 500
+            ? `0.8rem`
+            : `1.2rem`
+          : `1.6vmin`
+        : `1.3vmin`
+      : height < 1000
+      ? `0.9rem`
+      : `1.5vmin`};
 `;
 
 export const StyledLinkAppContent = styled.div`

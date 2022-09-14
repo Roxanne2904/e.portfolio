@@ -35,9 +35,11 @@ export const StyledMainTitle = styled.h1`
     width < 1100
       ? width < 600
         ? "5vmin"
+        : height < 720
+        ? `1.5rem`
         : "3vmin"
       : height < 720
-      ? `3.5vmin`
+      ? `1.5rem`
       : "2vmin"};
   text-align: end;
   position: absolute;
@@ -53,8 +55,16 @@ export const StyledSecondaryTitle = styled.h2`
   padding: 10px 0;
   margin: 20px 0;
   width: 100%;
-  font-size:${({ width }) =>
-    width < 1100 ? (width < 600 ? "4vmin" : "2.5vmin") : "2vmin"};
+  font-size:${({ width, height }) =>
+    width < 1100
+      ? width < 600
+        ? "4vmin"
+        : height < 720
+        ? `1.3rem`
+        : "2.5vmin"
+      : height < 720
+      ? `1rem`
+      : "2vmin"};
   background-color: ${colors.secondaryDarker};
   z-index:1;
   &:after {
@@ -84,8 +94,16 @@ export const StyledSecondaryTitle = styled.h2`
 export const StyledStrongString = styled.span`
   color: ${colors.primary};
   font-family: auto;
-  font-size: ${({ width }) =>
-    width < 1100 ? (width < 600 ? "15vmin" : "9vmin") : "7vmin"};
+  font-size: ${({ width, height }) =>
+    width < 1100
+      ? width < 600
+        ? "15vmin"
+        : height < 720
+        ? `4rem`
+        : "9vmin"
+      : height < 720
+      ? `3.2rem`
+      : "7vmin"};
   font-weight: normal;
 `;
 
@@ -107,8 +125,16 @@ export const StyledContainer = styled.div`
 `;
 export const StyledSubtitle = styled.span`
   display: ${display.block};
-  font-size: ${({ width }) =>
-    width < 1100 ? (width < 600 ? "3.5vmin" : "2vmin") : "1.5vmin"};
+  font-size: ${({ width, height }) =>
+    width < 1100
+      ? width < 600
+        ? "3.5vmin"
+        : height
+        ? `1rem`
+        : "2vmin"
+      : height < 720
+      ? `0.8rem`
+      : "1.5vmin"};
 `;
 export const StyledAboutContainer = styled.div`
   width: ${({ width }) =>

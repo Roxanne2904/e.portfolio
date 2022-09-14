@@ -10,7 +10,7 @@ import { faArrowUp } from "@fortawesome/free-solid-svg-icons";
 
 import { useState, useEffect } from "react";
 
-export default function Button({ title, type, width }) {
+export default function Button({ title, type, width, height }) {
   const [display, setDisplay] = useState("none");
   const [scrollY, setScrollY] = useState(window.innerHeight); //*useState
 
@@ -47,10 +47,15 @@ export default function Button({ title, type, width }) {
     default:
       return (
         <StyledLinkContainer to={"/about"} width={width}>
-          <StyledButtonHover width={width} aria-label={"le logo d'une porte"}>
+          <StyledButtonHover
+            width={width}
+            height={height}
+            aria-label={"le logo d'une porte"}
+          >
             <FontAwesomeIcon icon={faDoorOpen} />
           </StyledButtonHover>
           <StyledHomeButton
+            height={height}
             width={width}
             aria-label={`${title}`}
           >{`${title}`}</StyledHomeButton>

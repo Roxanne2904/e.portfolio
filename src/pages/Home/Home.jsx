@@ -28,22 +28,21 @@ import MainLogo from "../../components/MainLogo/MainLogo";
 
 export default function Home() {
   const [width, setWidth] = useState(window.innerWidth); //*useState
-  const [heigth, setHeigth] = useState(window.innerHeight); //*useState
+  const [height, setHeight] = useState(window.innerHeight); //*useState
 
   useEffect(() => {
     const updateCurrentWidthAndHeight = () => {
       const currentWidth = window.innerWidth;
       const currentHeight = window.innerHeight;
       setWidth(currentWidth);
-      setHeigth(currentHeight);
+      setHeight(currentHeight);
     };
     window.addEventListener("resize", updateCurrentWidthAndHeight);
 
     return () =>
       window.removeEventListener("resize", updateCurrentWidthAndHeight);
-  }, [width, heigth]);
+  }, [width, height]);
 
-  console.log(width);
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -62,18 +61,26 @@ export default function Home() {
               <div>
                 <MainLogo complete={"true"} />
               </div>
-              <StyledMainTitle width={width} height={heigth}>
-                <StyledStrongString width={width}>V</StyledStrongString>iette{" "}
-                <StyledStrongString width={width}>R</StyledStrongString>oxanne
+              <StyledMainTitle width={width} height={height}>
+                <StyledStrongString width={width} height={height}>
+                  V
+                </StyledStrongString>
+                iette{" "}
+                <StyledStrongString width={width} height={height}>
+                  R
+                </StyledStrongString>
+                oxanne
               </StyledMainTitle>
             </StyledCurrentContent>
 
             <StyledAboutContainer width={width}>
-              <StyledSecondaryTitle width={width}>
+              <StyledSecondaryTitle width={width} height={height}>
                 Développeuse d'application
-                <StyledSubtitle width={width}>JavaScript React</StyledSubtitle>
+                <StyledSubtitle width={width} height={height}>
+                  JavaScript React
+                </StyledSubtitle>
               </StyledSecondaryTitle>
-              <Button title={"Bienvenue... "} width={width} />
+              <Button title={"Bienvenue... "} width={width} height={height} />
             </StyledAboutContainer>
           </StyledContainer>
         </StyledMainContainer>

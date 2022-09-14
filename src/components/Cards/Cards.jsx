@@ -35,19 +35,25 @@ export default function Cards({ width, height }) {
         width={width}
         height={height}
       >
-        {width > 1000 ? (
-          <StyledSecondaryTitle height={height}>
-            <StyledTitleTxt width={width} height={height}>
+        {width > 1000 && width < 3000 ? (
+          height < 600 || height > 1200 ? (
+            <StyledSecondarySmallDevice width={width}>
               {elt.display}
-            </StyledTitleTxt>
-          </StyledSecondaryTitle>
+            </StyledSecondarySmallDevice>
+          ) : (
+            <div>
+              <StyledSecondaryTitle height={height} width={width}>
+                <StyledTitleTxt width={width} height={height}>
+                  {elt.display}
+                </StyledTitleTxt>
+              </StyledSecondaryTitle>
+              <StyledSecondaryTitleCopy>{elt.display}</StyledSecondaryTitleCopy>
+            </div>
+          )
         ) : (
           <StyledSecondarySmallDevice width={width}>
             {elt.display}
           </StyledSecondarySmallDevice>
-        )}
-        {width > 1000 && (
-          <StyledSecondaryTitleCopy>{elt.display}</StyledSecondaryTitleCopy>
         )}
 
         <StyledProjectsParagraph width={width} height={height}>
@@ -55,7 +61,11 @@ export default function Cards({ width, height }) {
             <span>
               {elt.description[0]}
               <br />
-              {elt.description[1]}
+              {elt.name === "sportSee" ? (
+                <span style={{ color: "red" }}>{elt.description[1]}</span>
+              ) : (
+                elt.description[1]
+              )}
               <br />
               {elt.description[2]}
               <br />
@@ -118,7 +128,7 @@ export default function Cards({ width, height }) {
                       ? width < 450
                         ? `2.3rem`
                         : `3rem`
-                      : height < 890
+                      : height < 1200
                       ? `20%`
                       : `4vmin`
                   }
@@ -128,6 +138,8 @@ export default function Cards({ width, height }) {
                         ? `2.3rem`
                         : `3rem`
                       : height < 890
+                      ? `20%`
+                      : height < 1200
                       ? `20%`
                       : `4vmin`
                   }

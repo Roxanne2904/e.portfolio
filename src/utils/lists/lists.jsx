@@ -91,8 +91,11 @@ export const listLogo = [
         tools: ["React.js", "Recharts", "JSDoc", "Sass"],
         maquette:
           "https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1",
-        description:
-          "Intégrer la nouvelle interface de la page de profil utilisateur d'une application de sport. L'objectif est d'utiliser React, bien documenter son code avec jsdoc, récupérer des données auprès de l'API et créer l'affichage des graphiques. L'application est visitable avec des données mockées et doit être responsive, dans un premier temps, seulement en version desktop.",
+        description: [
+          "Intégrer la nouvelle interface de la page de profil utilisateur d'une application de sport. L'objectif est d'utiliser React, bien documenter son code avec jsdoc, récupérer des données auprès de l'API et créer l'affichage des graphiques.",
+          "Attention : ⚠️ version desktop uniquement",
+          "L'application est visitable avec des données mockées et doit être responsive, dans un premier temps, seulement en version desktop.",
+        ],
       },
       {
         id: "04",
@@ -104,7 +107,7 @@ export const listLogo = [
         maquette:
           "https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1",
         description:
-          "Mettre en place l'application sous React et développer l'ensemble en créant des composants réutilisables et des routes React Router. Une maquette Figma a été mise à disposition et certaines contraintes fonctionnelles sont à prendre en compte.",
+          "Le projet consistait a mettre en place l'application sous React et développer l'ensemble en créant des composants réutilisables et des routes React Router. Une maquette Figma a été mise à disposition et certaines contraintes fonctionnelles sont à prendre en compte.",
       },
     ],
   },

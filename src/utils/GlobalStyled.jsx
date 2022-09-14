@@ -83,6 +83,10 @@ export const beforeLineAnimation = keyframes`
 // 0% {bottom:0;}
 // 100% {bottom:94%;}
 // `;
+export const buttonBackToTop = keyframes`
+0%{opacity:0;}
+100%{opacity: 1;}
+`;
 export const buttonAnimation = keyframes`
 0%{transform: translateY(-200%);width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
 50% {width:5%;height:5%;font-size:0rem;background:${colors.primary};border-radius:50%;}
@@ -106,5 +110,5 @@ const animationProgressBar = (props) => keyframes`
 
 export const animationRules = (props) =>
   css`
-    animation: ${animationProgressBar(props)} 1s 0.7s both;
+    animation: ${animationProgressBar(props)} 1.2s 1.3s both;
   `;

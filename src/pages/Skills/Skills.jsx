@@ -1,4 +1,11 @@
-import { StyledBlockList, StyledLi, StyledSectionTitle } from "./styled";
+import {
+  StyledBlockList,
+  StyledLi,
+  StyledSectionTitle,
+  StyledFigure,
+  StyledMainContent,
+  StyledFigcaption,
+} from "./styled";
 import ProgressBar from "../../components/ProgressBar/ProgressBar";
 import { listProgressBar } from "../../utils/lists/lists";
 import { motion } from "framer-motion";
@@ -7,12 +14,23 @@ export default function Skills({ width, height }) {
   return (
     <motion.div
       style={{ width: width < 800 ? "100%" : "70%" }}
-      initial={{ scale: 0, opacity: 0 }}
-      animate={{ scale: 1, opacity: 1 }}
-      exit={{ scale: 0, opacity: 0 }}
-      transition={{ duration: 0.7, delay: 0.2 }}
+      initial={{ scaleY: 0, opacity: 0 }}
+      animate={{ scaleY: 1, opacity: 1 }}
+      exit={{ scaleY: 0, opacity: 0 }}
+      transition={{ duration: 0.7, delay: 0.5 }}
     >
-      <div>
+      <StyledMainContent width={width}>
+        <StyledFigure width={width}>
+          <img
+            src={"https://www.codewars.com/users/Roxanne2904/badges/large"}
+            alt="codewars badge"
+          />
+          {width > 600 && (
+            <StyledFigcaption width={width}>
+              Badge Codewars: javaScript
+            </StyledFigcaption>
+          )}
+        </StyledFigure>
         <StyledBlockList>
           {listProgressBar.map((elt) => {
             const arrayDatas = elt.title[0];
@@ -33,7 +51,7 @@ export default function Skills({ width, height }) {
             );
           })}
         </StyledBlockList>
-      </div>
+      </StyledMainContent>
     </motion.div>
   );
 }

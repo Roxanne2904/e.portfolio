@@ -32,7 +32,7 @@ export default function HeaderLargeDevice({ content, width, height }) {
           initial={{ scaleX: 0, opacity: 0 }}
           animate={{ scaleX: 1, opacity: 1 }}
           exit={{ scaleX: 0, opacity: 0 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
+          transition={{ duration: 0.8 }}
         >
           <StyledBlockList
             width={width}

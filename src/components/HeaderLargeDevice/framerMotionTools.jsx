@@ -3,6 +3,6 @@ export const container = {
   show: {
     scaleX: 1,
     opacity: 1,
-    transition: { delayChildren: 2, staggerChildren: 0.5 },
+    transition: { delayChildren: 1, staggerChildren: 0.5 },
   },
 };

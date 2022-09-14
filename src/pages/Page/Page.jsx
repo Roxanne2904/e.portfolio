@@ -54,7 +54,7 @@ export default function Page({ title, content }) {
               initial={{ opacity: 0 }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
-              transition={{ duration: 0.7, delay: 2 }}
+              transition={{ duration: 0.5, delay: 1 }}
             >
               {title}
             </StyledMainTitle>

@@ -33,7 +33,7 @@ export const StyledProfilImage = styled.div`
   float: ${({ width }) => (width < device.medium ? "inherit" : "left")};
   background-image: ${({ width }) =>
     width < device.medium ? "inherit" : `url(${profileImg})`};
-  width: ${({ width }) => (width >= 2000 ? `18rem` : `11rem`)};
+  width: ${({ width }) => (width >= 2000 ? `17.5rem` : `10.5rem`)};
   height: ${({ width }) =>
     width < device.medium ? "0vmin" : width >= 2000 ? `25rem` : `15rem`};
   background-size: 100% 100%;

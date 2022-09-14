@@ -1,7 +1,16 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
 
-export const StyledMainContent = styled(motion.ul)`
+export const StyledWrapper = styled(motion.div)`
+  ${({ width }) =>
+    width < 1800
+      ? width < 1000
+        ? `margin:1rem;`
+        : `width: 900px;
+margin: 0 auto;`
+      : `width:100%;`}
+`;
+export const StyledMainContent = styled.ul`
   display: ${({ width }) => (width < 900 ? `initial` : ` flex`)};
   justify-content: center;
   align-items: center;
