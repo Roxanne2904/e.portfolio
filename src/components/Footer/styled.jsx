@@ -20,12 +20,14 @@ export const StyledFooterBlockList = styled.ul`
       : props.width < 800
       ? `10rem`
       : props.height < 890
-      ? `22%`
+      ? props.width < 1800
+        ? `26%`
+        : `20%`
       : "15vmin"};
   ${(props) =>
     props.type !== "logo" && props.width < 800
       ? `font-size:1.2rem;`
-      : `font-size: ${props.height < 890 ? `1.3rem` : `2.1vmin`} ; `}
+      : `font-size: ${props.height < 890 ? `1rem` : `2.1vmin`} ; `}
   margin: 10px 15px;
 `;
 

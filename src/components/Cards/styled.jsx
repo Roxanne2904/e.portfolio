@@ -36,8 +36,7 @@ export const StyledMainContent = styled.li`
 
   overflow: hidden;
   box-shadow: 0 0 1rem ${colors.secondaryLessO};
-  height: ${({ width }) =>
-    width < 1800 ? (width < 1000 ? `inherit` : `30rem`) : ` 50vmin`};
+  height: ${({ width }) => (width < 1800 ? `inherit` : ` 50vmin`)};
 `;
 export const StyledSecondaryTitle = styled.h2`
   ${flexCenter}
@@ -100,11 +99,11 @@ export const StyledProjectsParagraph = styled.p`
   margin: 1rem 0;
   padding: ${({ width, height }) =>
     width <= 900
-      ? `4vmin`
+      ? `3vmin`
       : height <= 600
       ? `0vmin 4vmin`
       : width <= 1000
-      ? `4vmin`
+      ? `3vmin`
       : width >= 1800
       ? `1vmin 2vmin`
       : `1vmin 3vmin`};
@@ -113,14 +112,14 @@ export const StyledProjectsParagraph = styled.p`
       ? height < 1200
         ? width < 500
           ? `0.8rem`
-          : `1.1rem`
+          : `0.95rem`
         : width < 1200
         ? width < 1000
           ? width < 500
             ? `1.1rem`
-            : `1.25rem`
-          : `1.8vmin`
-        : `1.5vmin`
+            : `1.2rem`
+          : `1.2vmin`
+        : `1.3vmin`
       : height < 890
       ? `0.8rem`
       : `1.35vmin`};
@@ -185,11 +184,13 @@ export const StyledLink = styled.a`
         : `1rem`
       : height < 900
       ? `1rem`
+      : width < 1000
+      ? `1rem`
       : `1.4vmin`};
   ${(props) =>
     props.$app &&
     `background:${colors.tertiary}; color:${colors.white};padding: ${
-      props.width < 900 ? `0.7rem` : props.height < 900 ? `1rem` : `1.2vmin`
+      props.width < 900 ? `0.7rem` : props.height < 900 ? `0.5rem` : `1.2vmin`
     };`}
   &:hover {
     background: ${colors.secondaryDarker};
@@ -211,7 +212,9 @@ export const StyledFigma = styled.div`
         ? `1rem`
         : `1.2rem`
       : width < 1600
-      ? `1.35rem`
+      ? `1.15rem`
+      : height < 1100
+      ? `1rem`
       : ` 1.7vmin`};
   display: ${display.block};
   text-decoration: ${status.none};
@@ -233,18 +236,18 @@ export const StyledFigma = styled.div`
 export const StyledTechLi = styled.li`
   color: ${colors.white};
   background: ${colors.tertiary};
-  padding: ${({ width }) => (width < 1000 ? `0.3rem 0.8rem` : `1% 4% 1.5%`)};
-  margin: ${({ width }) => (width < 900 ? `1% 1% 1% 0` : `0.1rem`)};
+  padding: ${({ width }) => (width < 1000 ? `0.3rem 0.8rem` : `0.8% 2% 0.8%`)};
+  margin: ${({ width }) => (width < 900 ? `1% 0.2% 1% 0` : `0.1rem`)};
   font-size: ${({ width, height }) =>
     width < 1800
       ? height < 1000
-        ? `1rem`
+        ? `0.8rem`
         : width <= 1200
         ? width < 1000
           ? width < 500
             ? `0.8rem`
-            : `1.2rem`
-          : `1.6vmin`
+            : `0.9rem`
+          : `1.3vmin`
         : `1.3vmin`
       : height < 1000
       ? `0.9rem`

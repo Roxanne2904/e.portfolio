@@ -35,7 +35,7 @@ export default function Cards({ width, height }) {
         width={width}
         height={height}
       >
-        {width > 1000 && width < 3000 ? (
+        {width >= 1800 && width < 3000 ? (
           height < 800 || height > 1200 ? (
             <StyledSecondarySmallDevice width={width}>
               {elt.display}

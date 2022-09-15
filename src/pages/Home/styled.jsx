@@ -39,6 +39,8 @@ export const StyledMainTitle = styled.h1`
         ? `1.5rem`
         : "3vmin"
       : height < 720
+      ? `1.6rem`
+      : height < 1000
       ? `1.5rem`
       : "2vmin"};
   text-align: end;
@@ -102,7 +104,9 @@ export const StyledStrongString = styled.span`
         ? `4rem`
         : "9vmin"
       : height < 720
-      ? `3.2rem`
+      ? `4.2rem`
+      : height < 1000
+      ? `5rem`
       : "7vmin"};
   font-weight: normal;
 `;
