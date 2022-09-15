@@ -1,12 +1,27 @@
 import styled from "styled-components";
-import { colors, isNotHover } from "../../utils/GlobalStyled";
+import {
+  colors,
+  isNotHover,
+  flexAlignCenter,
+  flexDirection,
+  display,
+  position,
+  flexCenter,
+  cornerPattern,
+  opacity,
+  paddingPattern,
+  flexAlignAndJustifyCenter,
+  WidthHeightPattern,
+  fontBold,
+  flexWrap,
+  status,
+} from "../../utils/GlobalStyled";
 
 export const StyledMainContent = styled.li`
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-between;
+  ${flexAlignCenter}
+  flex-direction: ${flexDirection.column};
+  justify-content: ${display.spaceBetween};
+  position: ${position.relative};
   border-radius: 5px;
   width: ${({ width, height }) =>
     width < 1800 ? `100%` : height > 1500 ? `35%` : `20%`};
@@ -19,20 +34,17 @@ export const StyledMainContent = styled.li`
         : `1rem`
       : `1vmin 1vmin`};
 
-  box-shadow: 0 0 1rem ${colors.secondaryLessO};
   overflow: hidden;
+  box-shadow: 0 0 1rem ${colors.secondaryLessO};
   height: ${({ width }) =>
     width < 1800 ? (width < 1000 ? `inherit` : `30rem`) : ` 50vmin`};
 `;
-
 export const StyledSecondaryTitle = styled.h2`
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexCenter}
+  align-items: ${display.center};
   background: ${colors.tertiary};
   ${isNotHover}
   font-size: ${({ height, width }) => (width <= 1800 ? `1.5rem` : `1.2rem`)};
-
   ${StyledMainContent}:hover & {
     transform: ${({ width, height }) =>
       width < 1800 ? ` translateY(-89%)` : ` translateY(-91%)`};
@@ -41,39 +53,33 @@ export const StyledSecondaryTitle = styled.h2`
     transition: all 1s;
   }
   ${StyledMainContent}:not(:hover) & {
-    top: 0;
-    bottom: 0;
-    right: 0;
-    left: 0;
+    ${cornerPattern}
     font-size: ${({ height, width }) => (width <= 1800 ? `1.5rem` : `1.2rem`)};
     transition: all 1s;
   }
 `;
 export const StyledSecondarySmallDevice = styled.h2`
-  opacity: 1;
-  padding: 10px 0;
+  ${paddingPattern}
+  opacity: ${opacity.one};
   color: ${colors.white};
   background: ${colors.tertiary};
   width: 100%;
-  text-align: center;
+  text-align: ${display.center};
   ${({ width }) => width < 450 && `font-size:1.2rem;`}
 `;
 export const StyledSecondaryTitleCopy = styled.div`
-  opacity: 0;
+  opacity: ${opacity.zero};
   padding-bottom: 15px;
 `;
 export const StyledTitleTxt = styled.span`
-  position: absolute;
-  justify-content: center;
-  align-items: center;
-  display: flex;
+  ${flexAlignAndJustifyCenter}
+  ${WidthHeightPattern}
+  position: ${position.absolute};
+  color: ${colors.white};
   box-shadow: 0 0 ${({ width }) => (width > 2000 ? `2vmin` : `2rem`)}
     ${colors.secondaryDarker};
   bottom: ${({ width, height }) => (width < 1800 ? `30%` : `35%`)};
-  width: 10rem;
-  height: 10rem;
   border-radius: 50%;
-  color: ${colors.white};
   ${StyledMainContent}:hover & {
     bottom: ${({ width, height }) => (width < 1800 ? `2%` : `0.9%`)};
     width: 100%;
@@ -82,14 +88,12 @@ export const StyledTitleTxt = styled.span`
     transition: all 1s;
   }
   ${StyledMainContent}:not(:hover) & {
+    ${WidthHeightPattern}
     bottom: ${({ width, height }) => (width < 1800 ? `30%` : `35%`)};
-    width: 10rem;
-    height: 10rem;
     border-radius: 50%;
     transition: all 1s;
   }
 `;
-
 export const StyledProjectsParagraph = styled.p`
   text-align: justify;
   overflow: auto;
@@ -121,7 +125,6 @@ export const StyledProjectsParagraph = styled.p`
       ? `0.8rem`
       : `1.35vmin`};
 `;
-
 // max-height: ${({ width, height }) =>
 //     width < 1800
 //       ? height < 720
@@ -132,30 +135,28 @@ export const StyledProjectsParagraph = styled.p`
 //       : height > 1000
 //       ? `20rem`
 //       : `12rem`};
-
 export const StyledUlBlock = styled.div`
+  ${fontBold}
+  ${flexWrap}
   display: ${({ width }) => (width < 900 ? `inherit` : `flex`)};
-  flex-wrap: wrap;
   width: 100%;
   background: ${colors.secondary};
-  font-weight: bold;
   font-size: 1.5vmin;
 `;
 // max-height: ${({ width }) => (width < 900 ? `inherit` : ` 10vmin`)};
-
 export const StyledUl = styled.ul`
+  ${flexWrap}
+  display: ${display.flex};
   background: ${colors.primaryLessO};
   margin: 0.2rem 0.1rem;
-  display: flex;
-  flex-wrap: wrap;
   width: ${({ width }) => (width < 900 ? `initial` : ` 100%`)};
 `;
 export const StyledListContent = styled.div`
-  position: relative;
+  position: ${position.relative};
   ${({ width }) => width < 900 && `padding-top: 1.5px`};
   &:before {
     content: "";
-    position: absolute;
+    position: ${position.absolute};
     top: 0;
     bottom: 97%;
     right: 0;
@@ -175,17 +176,16 @@ export const StyledLogoContent = styled.div`
   }
 `;
 export const StyledLink = styled.a`
-  display: flex;
-  justify-content: center;
-  font-weight: bold;
+  ${flexCenter}
+  ${fontBold}
   font-size: ${({ width, height }) =>
     width < 900
       ? width < 350
         ? `0.8rem`
         : `1rem`
       : height < 900
-      ? `1.3rem`
-      : `1.7vmin`};
+      ? `1rem`
+      : `1.4vmin`};
   ${(props) =>
     props.$app &&
     `background:${colors.tertiary}; color:${colors.white};padding: ${
@@ -203,6 +203,7 @@ export const StyledLink = styled.a`
   }
 `;
 export const StyledFigma = styled.div`
+  ${fontBold}
   width: 90%;
   font-size: ${({ width, height }) =>
     width < 900
@@ -212,11 +213,10 @@ export const StyledFigma = styled.div`
       : width < 1600
       ? `1.35rem`
       : ` 1.7vmin`};
-  display: block;
-  text-decoration: none;
+  display: ${display.block};
+  text-decoration: ${status.none};
   a {
     color: ${colors.tertiary};
-    font-weight: bold;
     border-bottom: solid 2px transparent;
     &:hover {
       color: ${colors.purple};
@@ -258,7 +258,7 @@ export const StyledLinkAppContent = styled.div`
 `;
 
 export const StyledModelAndGitHubLinkContent = styled.div`
-  display: flex;
-  justify-content: space-between;
+  display: ${display.flex};
+  justify-content: ${display.spaceBetween};
   margin: 0.5rem;
 `;

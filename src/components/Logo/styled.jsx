@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { colors } from "../../utils/GlobalStyled";
+import { colors, display, cursorPointer } from "../../utils/GlobalStyled";
 
 export const StyledLogo = styled.a`
-  display: block;
+  display: ${display.block};
   ${(props) => props.bool === true && "display:flex; justify-content:center; "}
-  cursor: pointer;
+  ${cursorPointer}
   svg {
     &:hover {
       fill: ${(props) =>

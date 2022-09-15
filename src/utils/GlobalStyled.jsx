@@ -17,12 +17,18 @@ export const colors = {
   dark: "#011616",
 };
 
-export const isNotHover = css`
-  position: absolute;
+export const cornerPattern = `
   top: 0;
   bottom: 0;
   right: 0;
   left: 0;
+ `;
+export const absolutePattern = `
+  position: absolute;
+ ${cornerPattern}
+ `;
+export const isNotHover = css`
+  ${absolutePattern}
   z-index: 1;
 `;
 
@@ -31,6 +37,7 @@ export const device = {
   smallXL: 720,
   medium: 800,
   large: 1200,
+  XXlarge: 2000,
 };
 
 export const display = {
@@ -41,18 +48,20 @@ export const display = {
   center: "center",
 };
 
-export const fontBold = `
-font-weight: bold;
-`;
+export const position = {
+  relative: "relative",
+  fixed: "fixed",
+  absolute: "absolute",
+};
 
-export const borderTransparentSolid = `
-border: 1px transparent solid;
-`;
-export const rightAndLeftNone = `border-right: none;
-border-left: none;`;
+export const status = {
+  none: "none",
+};
 
-export const flexCenter = `display: flex;
-justify-content: center;`;
+export const opacity = {
+  one: "1",
+  zero: "0",
+};
 
 export const flexDirection = {
   column: "column",
@@ -64,6 +73,48 @@ export const fontSize = {
   mainBigger: "4rem",
   secondary: "0.85rem",
 };
+
+export const flexWrap = `
+flex-wrap: wrap;
+`;
+export const WidthHeightPattern = `
+width: 10rem;
+height: 10rem;
+`;
+export const fontBold = `
+font-weight: bold;
+`;
+export const paddingPattern = `
+padding: 10px 0;
+`;
+export const cursorPointer = `
+cursor: pointer;
+`;
+export const borderTransparentSolid = `
+border: 1px transparent solid;
+`;
+export const rightAndLeftNone = `border-right: none;
+border-left: none;`;
+
+export const flexAlignAndJustifyCenter = `
+display: flex;
+align-items: center;
+justify-content: center;
+`;
+export const flexCenter = `
+display: flex;
+justify-content: center;
+`;
+
+export const flexAlignCenter = `
+display: flex;
+align-items: center;
+`;
+
+export const flexColumn = `
+display: flex;
+flex-direction: column;
+`;
 
 //*animations
 export const afterLineAnimation = keyframes`

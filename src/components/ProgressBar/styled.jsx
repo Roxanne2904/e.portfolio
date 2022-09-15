@@ -1,25 +1,25 @@
 import styled from "styled-components";
-import { colors } from "../../utils/GlobalStyled";
+import { colors, display, position } from "../../utils/GlobalStyled";
 import { animationRules } from "../../utils/GlobalStyled";
 
 export const StyledTemplateContent = styled.span`
-  display: block;
-  position: relative;
+  display: ${display.block};
+  position: ${position.relative};
   ${({ widthDevice }) => widthDevice > 2000 && ` bottom:1.5vmin`};
 `;
 export const StyledTemplate = styled.span`
-  display: block;
+  display: ${display.block};
+  position: ${position.absolute};
   width: ${(props) => (props.$above ? `${props.width}` : "100%")};
   height: ${({ widthDevice }) => (widthDevice > 2000 ? `1vmin` : "8px")};
   border-radius: ${({ widthDevice }) => (widthDevice > 2000 ? `1vmin` : "5px")};
-  position: absolute;
   background: ${(props) =>
     props.$above ? `${colors.primary}` : `${colors.tertiary}`};
   ${(props) => props.$above && `z-index:1;`}
   ${(props) => props.$above && animationRules(props.width)}
 `;
 export const StyledTitle = styled.span`
-  display: block;
+  display: ${display.block};
   font-size: ${({ widthDevice, height }) =>
     widthDevice < 1100
       ? widthDevice < 800

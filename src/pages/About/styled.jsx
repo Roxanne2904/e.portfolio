@@ -1,12 +1,23 @@
 import styled from "styled-components";
 import profileImg from "../../assets/img/cv.jpg";
-import { colors, device } from "../../utils/GlobalStyled";
+import {
+  colors,
+  device,
+  flexColumn,
+  status,
+  position,
+  display,
+} from "../../utils/GlobalStyled";
 import { motion } from "framer-motion";
 
 export const StyledParagraphContent = styled(motion.div)`
   background: ${colors.white};
   width: ${({ width }) =>
-    width < device.medium ? "100%" : width >= 2000 ? `100%` : "1300px"};
+    width < device.medium
+      ? "100%"
+      : width >= device.XXlarge
+      ? `100%`
+      : "1300px"};
   ${({ width }) => width < device.medium && "margin: 0 auto"};
   text-align: justify;
   box-sizing: ${({ width }) =>
@@ -21,21 +32,23 @@ export const StyledParagraphContent = styled(motion.div)`
   padding: ${({ width }) =>
     width < device.medium
       ? `2rem 0 0 0`
-      : width >= 2000
+      : width >= device.XXlarge
       ? `5rem 2rem;`
       : `5rem 2rem 1rem 2rem`};
-  ${({ width }) =>
-    width < device.medium &&
-    `display:flex;flex-direction:column;align-items:center;`}
+  ${({ width }) => width < device.medium && `${flexColumn};align-items:center;`}
 `;
 
 export const StyledProfilImage = styled.div`
   float: ${({ width }) => (width < device.medium ? "inherit" : "left")};
   background-image: ${({ width }) =>
     width < device.medium ? "inherit" : `url(${profileImg})`};
-  width: ${({ width }) => (width >= 2000 ? `17.5rem` : `10.5rem`)};
+  width: ${({ width }) => (width >= device.XXlarge ? `17.5rem` : `10.5rem`)};
   height: ${({ width }) =>
-    width < device.medium ? "0vmin" : width >= 2000 ? `25rem` : `15rem`};
+    width < device.medium
+      ? "0vmin"
+      : width >= device.XXlarge
+      ? `25rem`
+      : `15rem`};
   background-size: 100% 100%;
   border-radius: 50%;
   shape-outside: margin-box;
@@ -44,7 +57,7 @@ export const StyledProfilImage = styled.div`
 `;
 
 export const StyledWelcomeMsg = styled.span`
-  display: ${({ width }) => (width >= 2000 ? `flex` : `contents`)};
+  display: ${({ width }) => (width >= device.XXlarge ? `flex` : `contents`)};
   font-size: ${({ width }) =>
     width < device.medium ? "3rem" : width >= 1500 ? `4rem` : "2.8rem"};
   color: ${colors.tertiary};
@@ -57,7 +70,7 @@ export const StyledParagraph = styled.p`
       ? width < 500
         ? `1.2rem`
         : "1.3rem"
-      : width >= 2000 || height > 1200
+      : width >= device.XXlarge || height > device.large
       ? `1.5rem`
       : "1.1rem"};
   padding: ${({ width }) => (width < device.medium ? "25px" : " 10px")};
@@ -67,15 +80,15 @@ export const StyledParagraph = styled.p`
 
 export const StyledLink = styled.a`
   color: ${colors.tertiary};
-  text-decoration: none;
+  text-decoration: ${status.none};
   &:hover {
     color: ${colors.primary};
   }
 `;
 export const StyledSignatureContent = styled.span`
-  display: flex;
+  display: ${display.flex};
+  position: ${position.relative};
   justify-content: end;
   margin: 0 50px 0 50px;
-  position: relative;
   bottom: 20px;
 `;

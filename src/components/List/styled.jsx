@@ -9,15 +9,16 @@ import {
   rightAndLeftNone,
   borderTransparentSolid,
   fontBold,
+  cursorPointer,
+  status,
+  display,
 } from "../../utils/GlobalStyled";
 //*framer-Motion
 import { motion } from "framer-motion";
 
-// {
-// ${flexCenter}
-// align-items: center;
-// }
 export const StyledList = styled.div`
+  ${cursorPointer}
+  ${borderTransparentSolid}
   color: ${colors.primaryMoreSaturated};
   padding: ${({ width }) =>
     width < device.smallXL
@@ -25,9 +26,6 @@ export const StyledList = styled.div`
         ? `0.5rem 5rem`
         : `1.3rem 1.5rem`
       : `2rem 2rem`};
-
-  cursor: pointer;
-  ${borderTransparentSolid}
   font-size: ${({ width, height }) =>
     width < device.large
       ? `1.1rem`
@@ -54,16 +52,16 @@ export const StyledTitle = styled.span`
   margin: 0 10px 0 0;
 `;
 export const StyledLinkA = styled(motion.a)`
-  text-decoration: none;
-  color: ${colors.secondaryDarker};
   ${fontBold}
+  text-decoration: ${status.none};
+  color: ${colors.secondaryDarker};
   ${(props) =>
     props.$nav === true && `color:${colors.primary};font-weight: inherit;`}
 `;
 export const StyledLink = styled(Link)`
-  display: block;
+  display: ${display.block};
   ${({ width }) => width < 415 && `width:100%`};
-  text-decoration: none;
+  text-decoration: ${status.none};
   &:hover {
     color: ${colors.white};
     transition: all 0.5s;
@@ -76,6 +74,6 @@ export const StyledLink = styled(Link)`
 `;
 
 export const StyledBasicSpan = styled.span`
-  color: ${colors.secondaryDarker};
   ${fontBold}
+  color: ${colors.secondaryDarker};
 `;

@@ -1,32 +1,38 @@
 import styled from "styled-components";
-import { colors } from "../../utils/GlobalStyled";
+import {
+  colors,
+  display,
+  status,
+  position,
+  flexColumn,
+} from "../../utils/GlobalStyled";
 
 export const StyledFooter = styled.footer`
-  display: flex;
+  display: ${display.flex};
 `;
 export const StyledFooterBlockList = styled.ul`
-  display: flex;
+  display: ${display.flex};
   flex-direction: ${(props) => (props.type !== "logo" ? "column" : "row")};
-  list-style-type: none;
+  list-style-type: ${status.none};
   width: ${(props) =>
     props.type !== "logo"
       ? "100%"
       : props.width < 800
       ? `10rem`
       : props.height < 890
-      ? `30%`
+      ? `22%`
       : "15vmin"};
   ${(props) =>
     props.type !== "logo" && props.width < 800
       ? `font-size:1.2rem;`
-      : `font-size: ${props.height < 890 ? `1rem` : `2.1vmin`} ; `}
+      : `font-size: ${props.height < 890 ? `1.3rem` : `2.1vmin`} ; `}
   margin: 10px 15px;
 `;
 
 // margin: ${(props) => (props.type !== "logo" ? "2% 2% 2% 1%" : "2% 4% 2% 2%")};
 
 export const StyledSectionContent = styled.section`
-  position: relative;
+  position: ${position.relative};
   background: ${({ width }) =>
     width < 400
       ? `${colors.white}`
@@ -40,22 +46,21 @@ export const StyledSectionContent = styled.section`
     ${colors.secondaryLessO};
 `;
 export const StyledMainContent = styled.div`
-  display: flex;
+  display: ${display.flex};
   width: ${({ width }) => (width < 800 ? `100%` : `45%`)};
   background: white;
   border-radius: 0 100vmin 0% 0;
   z-index: 1;
 `;
 export const StyledListContent = styled.div`
-  display: flex;
-  flex-direction: column;
+  ${flexColumn}
   justify-content: space-evenly;
   width: 100%;
   margin: ${({ width }) => (width < 500 ? `6%` : `2%`)} 4% 3% 4%;
 `;
 export const StyledSecondaryTitle = styled.h2`
   background: ${colors.white};
-  padding: ${({ width }) => (width > 2000 ? `1vmin` : `10px`)};
+  padding: ${({ width }) => (width > 2000 ? `1vmin` : `12px`)};
   color: ${colors.tertiary};
   box-shadow: 0 0 ${({ width }) => (width > 2000 ? `1vmin` : `1rem`)}
     ${colors.secondaryLessO};
@@ -65,21 +70,21 @@ export const StyledSecondaryTitle = styled.h2`
         ? `1rem`
         : `1.2rem`
       : height < 890
-      ? `1rem`
+      ? `1.3rem`
       : `2.5vmin`};
   border-radius: 5px;
 `;
 export const StyledImgContent = styled.div`
-  width: 14vmin;
-  display: flex;
-  margin: 2% 0 2% 2%;
+  display: ${display.flex};
   align-items: baseline;
+  width: 14vmin;
+  margin: 2% 0 2% 2%;
   img {
     width: 100%;
   }
 `;
 export const StyledTriangle = styled.div`
-  position: absolute;
+  position: ${position.absolute};
   right: ${(props) => (props.$smaller ? `98%` : `65%`)};
   ${(props) => props.$smaller && `top:0%;`}
   width: 0px;
@@ -93,7 +98,7 @@ export const StyledTriangle = styled.div`
     transparent transparent;
 `;
 export const StyledContactMeBlock = styled.div`
-  position: absolute;
+  position: ${position.absolute};
   top: -14%;
   right: 10%;
 `;

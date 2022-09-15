@@ -1,13 +1,19 @@
 import styled from "styled-components";
 import { motion } from "framer-motion";
-import { colors, device } from "../../utils/GlobalStyled";
+import {
+  colors,
+  device,
+  flexAlignAndJustifyCenter,
+  flexWrap,
+  status,
+  flexAlignCenter,
+  position,
+} from "../../utils/GlobalStyled";
 import { Link } from "react-router-dom";
 
 export const StyledHeader = styled.header`
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  ${flexAlignAndJustifyCenter}
+  position: ${position.relative};
 `;
 export const StyledMainLogoContent = styled(Link)`
   width: 5%;
@@ -19,18 +25,15 @@ export const StyledMainLogoContent = styled(Link)`
 `;
 
 export const StyledBlockList = styled(motion.ul)`
-  display: flex;
+  ${flexAlignAndJustifyCenter}
+  ${flexWrap}
   flex-direction: row;
-  align-items: center;
-  list-style-type: none;
-  flex-wrap: wrap;
-  justify-content: center;
+  list-style-type: ${status.none};
 `;
 
 export const StyledNav = styled.nav`
+  ${flexAlignCenter}
   width: 100%;
-  display: flex;
-  align-items: center;
   justify-content: ${({ width }) =>
     width <= 900 ? `center` : `space-between`};
   margin: ${({ width }) => (width < 900 ? `1rem` : `0.3rem`)};

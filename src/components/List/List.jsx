@@ -69,8 +69,8 @@ export default function List({ arrayData, location, content, width, height }) {
             <Logo
               name={elt.name}
               url={elt.url}
-              width="100%"
-              height="100%"
+              width={`100%`}
+              height={`100%`}
               margin="0 10px 0 0"
               bool={true}
               color={colors.tertiary}
