@@ -57,6 +57,7 @@ export const listLogo = [
         urlApp: "https://oc-rv-hrnet-app.netlify.app/",
         display: "Hrnet",
         name: "hrnet",
+        date: "25.05.2022",
         tools: [
           "React",
           "Redux",
@@ -73,6 +74,7 @@ export const listLogo = [
         urlApp: "https://oc-rv-argent-bank.netlify.app/",
         display: "ArgentBank",
         name: "argentBank",
+        date: "18.04.2022",
         tools: ["React", "Redux", "React Redux", "styled-components"],
 
         description: [
@@ -88,6 +90,7 @@ export const listLogo = [
         urlApp: "https://oc-rv-sportsee.netlify.app/",
         display: "SportSee",
         name: "sportSee",
+        date: "18.02.2022",
         tools: ["React.js", "Recharts", "JSDoc", "Sass"],
         maquette:
           "https://www.figma.com/file/BMomGVZqLZb811mDMShpLu/UI-design-Sportify-FR?node-id=0%3A1",
@@ -103,6 +106,7 @@ export const listLogo = [
         urlApp: "https://kasa-rv-project.netlify.app/",
         display: "Kasa",
         name: "kasa",
+        date: "14.12.2021",
         tools: ["React.js", "Sass"],
         maquette:
           "https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1",

@@ -27,7 +27,7 @@ export const StyledFooterBlockList = styled.ul`
   ${(props) =>
     props.type !== "logo" && props.width < 800
       ? `font-size:1.2rem;`
-      : `font-size: ${props.height < 890 ? `1rem` : `2.1vmin`} ; `}
+      : `font-size: ${props.height < 890 ? `1.2rem` : `2.1vmin`} ; `}
   margin: 10px 15px;
 `;
 

@@ -9,6 +9,7 @@ export const colors = {
   secondaryDarker: "#021d1e",
   secondaryDarkerLessO: "#021d1e99",
   tertiary: "#005959",
+  tertiaryTest: "#00595999",
   tertiaryLessO: "#00595950",
   fourth: "#002528",
 
@@ -31,7 +32,6 @@ export const isNotHover = css`
   ${absolutePattern}
   z-index: 1;
 `;
-
 export const device = {
   small: 600,
   smallXL: 720,
@@ -114,6 +114,20 @@ align-items: center;
 export const flexColumn = `
 display: flex;
 flex-direction: column;
+`;
+
+export const cardPattern = `
+${flexAlignCenter}
+position: ${position.relative};
+flex-direction: ${flexDirection.column};
+justify-content: ${display.spaceBetween};
+border-radius: 5px;
+overflow: hidden;
+box-shadow: 0 0 1rem ${colors.secondaryLessO};
+`;
+export const fontSizeTitleCard = ({ height, width }) => css`
+  font-size: ${({ height, width }) =>
+    width <= 1800 ? `1.3rem` : width > 2000 ? `1.35rem` : `1.2rem`};
 `;
 
 //*animations

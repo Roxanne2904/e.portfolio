@@ -1,28 +1,17 @@
 import styled from "styled-components";
 import {
   colors,
-  isNotHover,
-  flexAlignCenter,
-  flexDirection,
+  cardPattern,
   display,
   position,
   flexCenter,
-  cornerPattern,
-  opacity,
-  paddingPattern,
-  flexAlignAndJustifyCenter,
-  WidthHeightPattern,
   fontBold,
   flexWrap,
   status,
 } from "../../utils/GlobalStyled";
 
-export const StyledMainContent = styled.li`
-  ${flexAlignCenter}
-  flex-direction: ${flexDirection.column};
-  justify-content: ${display.spaceBetween};
-  position: ${position.relative};
-  border-radius: 5px;
+export const StyledLi = styled.li`
+  ${cardPattern}
   width: ${({ width, height }) =>
     width < 1800 ? `100%` : height > 1500 ? `35%` : `20%`};
   margin: ${({ width }) =>
@@ -33,66 +22,14 @@ export const StyledMainContent = styled.li`
           : `20px 0`
         : `1rem`
       : `1vmin 1vmin`};
-
-  overflow: hidden;
-  box-shadow: 0 0 1rem ${colors.secondaryLessO};
   height: ${({ width }) => (width < 1800 ? `inherit` : ` 50vmin`)};
 `;
-export const StyledSecondaryTitle = styled.h2`
-  ${flexCenter}
-  align-items: ${display.center};
-  background: ${colors.tertiary};
-  ${isNotHover}
-  font-size: ${({ height, width }) => (width <= 1800 ? `1.5rem` : `1.2rem`)};
-  ${StyledMainContent}:hover & {
-    transform: ${({ width, height }) =>
-      width < 1800 ? ` translateY(-89%)` : ` translateY(-91%)`};
-    font-size: ${({ height, width }) =>
-      width < 1800 ? `1.5rem` : width > 2000 ? `1.5rem` : `1.2rem`};
-    transition: all 1s;
-  }
-  ${StyledMainContent}:not(:hover) & {
-    ${cornerPattern}
-    font-size: ${({ height, width }) => (width <= 1800 ? `1.5rem` : `1.2rem`)};
-    transition: all 1s;
-  }
+export const StyledMainContent = styled.div`
+  ${cardPattern}
+  margin: 0.5rem;
+  height: ${({ width }) => (width < 1800 ? `inherit` : ` 50vmin`)};
 `;
-export const StyledSecondarySmallDevice = styled.h2`
-  ${paddingPattern}
-  opacity: ${opacity.one};
-  color: ${colors.white};
-  background: ${colors.tertiary};
-  width: 100%;
-  text-align: ${display.center};
-  ${({ width }) => width < 450 && `font-size:1.2rem;`}
-`;
-export const StyledSecondaryTitleCopy = styled.div`
-  opacity: ${opacity.zero};
-  padding-bottom: 15px;
-`;
-export const StyledTitleTxt = styled.span`
-  ${flexAlignAndJustifyCenter}
-  ${WidthHeightPattern}
-  position: ${position.absolute};
-  color: ${colors.white};
-  box-shadow: 0 0 ${({ width }) => (width > 2000 ? `2vmin` : `2rem`)}
-    ${colors.secondaryDarker};
-  bottom: ${({ width, height }) => (width < 1800 ? `30%` : `35%`)};
-  border-radius: 50%;
-  ${StyledMainContent}:hover & {
-    bottom: ${({ width, height }) => (width < 1800 ? `2%` : `0.9%`)};
-    width: 100%;
-    height: 7%;
-    border-radius: 0%;
-    transition: all 1s;
-  }
-  ${StyledMainContent}:not(:hover) & {
-    ${WidthHeightPattern}
-    bottom: ${({ width, height }) => (width < 1800 ? `30%` : `35%`)};
-    border-radius: 50%;
-    transition: all 1s;
-  }
-`;
+
 export const StyledProjectsParagraph = styled.p`
   text-align: justify;
   overflow: auto;
@@ -124,16 +61,7 @@ export const StyledProjectsParagraph = styled.p`
       ? `0.8rem`
       : `1.35vmin`};
 `;
-// max-height: ${({ width, height }) =>
-//     width < 1800
-//       ? height < 720
-//         ? `10rem`
-//         : width < 700
-//         ? `13rem`
-//         : `8rem`
-//       : height > 1000
-//       ? `20rem`
-//       : `12rem`};
+
 export const StyledUlBlock = styled.div`
   ${fontBold}
   ${flexWrap}
@@ -264,4 +192,45 @@ export const StyledModelAndGitHubLinkContent = styled.div`
   display: ${display.flex};
   justify-content: ${display.spaceBetween};
   margin: 0.5rem;
+`;
+export const StyledSimpleAnimationDate = styled.span`
+  position: absolute;
+  bottom: 3%;
+  right: 3%;
+  font-size: 1.1rem;
+  font-weight: bold;
+  ${StyledLi}:hover & {
+    opacity: 0;
+    transition: all 1s;
+  }
+  ${StyledLi}:not(:hover) & {
+    opacity: 1;
+    transition: all 1s;
+  }
+`;
+export const StyledAnimationBlock = styled.div`
+  color: ${colors.white};
+  background: linear-gradient(
+    45turn,
+    ${colors.tertiary},
+    ${colors.tertiaryTest},
+    transparent
+  );
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  transform-origin: right;
+  transform: scaleX(1);
+  cursor: pointer;
+  ${StyledLi}:hover & {
+    transform: scaleX(0);
+    transition: all 1s;
+  }
+  ${StyledLi}:not(:hover) & {
+    transform: scaleX(1);
+    transition: all 1s;
+  }
 `;
