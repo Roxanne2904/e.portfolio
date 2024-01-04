@@ -74,9 +74,6 @@ export default function About({ width, height }) {
 					</StyledSignatureContent>
 				)}
 			</StyledParagraph>
-			{/* <div style={{ transform: "rotate(180deg)" }}>
-        <Corner />
-      </div> */}
 		</StyledParagraphContent>
 	);
 }
