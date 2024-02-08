@@ -1,21 +1,21 @@
 import { keyframes, css } from "styled-components";
 
 export const colors = {
-  primary: "#4ac0bf",
-  primaryMoreSaturated: "#5DD3D2",
-  primaryLessO: "#4ac0bf09",
-  secondary: "#032628",
-  secondaryLessO: "#03262899",
-  secondaryDarker: "#021d1e",
-  secondaryDarkerLessO: "#021d1e99",
-  tertiary: "#005959",
-  tertiaryTest: "#00595999",
-  tertiaryLessO: "#00595950",
-  fourth: "#002528",
+	primary: "#4ac0bf",
+	primaryMoreSaturated: "#5DD3D2",
+	primaryLessO: "#4ac0bf09",
+	secondary: "#032628",
+	secondaryLessO: "#03262899",
+	secondaryDarker: "#021d1e",
+	secondaryDarkerLessO: "#021d1e99",
+	tertiary: "#005959",
+	tertiaryTest: "#00595999",
+	tertiaryLessO: "#00595950",
+	fourth: "#002528",
 
-  purple: "#6229C9",
-  white: "#FFFFFF",
-  dark: "#011616",
+	purple: "#6229C9",
+	white: "#FFFFFF",
+	dark: "#011616",
 };
 
 export const cornerPattern = `
@@ -29,49 +29,49 @@ export const absolutePattern = `
  ${cornerPattern}
  `;
 export const isNotHover = css`
-  ${absolutePattern}
-  z-index: 1;
+	${absolutePattern}
+	z-index: 1;
 `;
 export const device = {
-  small: 600,
-  smallXL: 720,
-  medium: 800,
-  large: 1200,
-  XXlarge: 2000,
+	small: 600,
+	smallXL: 720,
+	medium: 800,
+	large: 1200,
+	XXlarge: 2000,
 };
 
 export const display = {
-  flex: "flex",
-  block: "block",
-  rowReverse: "row-reverse",
-  spaceBetween: "space-between",
-  center: "center",
+	flex: "flex",
+	block: "block",
+	rowReverse: "row-reverse",
+	spaceBetween: "space-between",
+	center: "center",
 };
 
 export const position = {
-  relative: "relative",
-  fixed: "fixed",
-  absolute: "absolute",
+	relative: "relative",
+	fixed: "fixed",
+	absolute: "absolute",
 };
 
 export const status = {
-  none: "none",
+	none: "none",
 };
 
 export const opacity = {
-  one: "1",
-  zero: "0",
+	one: "1",
+	zero: "0",
 };
 
 export const flexDirection = {
-  column: "column",
+	column: "column",
 };
 
 export const fontSize = {
-  main: "2.5rem",
-  mainLessB: "1.5rem",
-  mainBigger: "4rem",
-  secondary: "0.85rem",
+	main: "2.5rem",
+	mainLessB: "1.5rem",
+	mainBigger: "4rem",
+	secondary: "0.85rem",
 };
 
 export const flexWrap = `
@@ -124,10 +124,12 @@ justify-content: ${display.spaceBetween};
 border-radius: 5px;
 overflow: hidden;
 box-shadow: 0 0 1rem ${colors.secondaryLessO};
+width: -webkit-fill-available;
+width: -moz-available; 
 `;
 export const fontSizeTitleCard = ({ height, width }) => css`
-  font-size: ${({ height, width }) =>
-    width <= 1800 ? `1.3rem` : width > 2000 ? `1.35rem` : `1.2rem`};
+	font-size: ${({ height, width }) =>
+		width <= 1800 ? `1.3rem` : width > 2000 ? `1.35rem` : `1.2rem`};
 `;
 
 //*animations
@@ -165,6 +167,6 @@ const animationProgressBar = (props) => keyframes`
 `;
 
 export const animationRules = (props) =>
-  css`
-    animation: ${animationProgressBar(props)} 1.2s 1.3s both;
-  `;
+	css`
+		animation: ${animationProgressBar(props)} 1.2s 1.3s both;
+	`;

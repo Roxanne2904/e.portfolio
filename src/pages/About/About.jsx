@@ -30,7 +30,7 @@ export default function About({ width, height }) {
 			<StyledParagraph width={width} height={height}>
 				<StyledMediumTitle>
 					Développeuse Frontend | Spécialisée en React, TypeScript | Expérience
-					1 an et + chez{" "}
+					3 ans dont 1 an et + chez{" "}
 					<StyledLink target={"_blank"} href={"https://sahar.fr"}>
 						SAHAR
 					</StyledLink>
