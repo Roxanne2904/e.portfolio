@@ -4,28 +4,41 @@ import Page from "./pages/Page/Page.jsx";
 import { AnimatePresence } from "framer-motion";
 
 function App() {
-  // const location = useLocation();
-  return (
-    <AnimatePresence mode="wait">
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route
-            path="/about"
-            element={<Page title="À propos" content={"about"} />}
-          />
-          <Route
-            path="/skills"
-            element={<Page title="Mes compétences" content={"skills"} />}
-          />
-          <Route
-            path="/projects"
-            element={<Page title="Mes projets" content={"projects"} />}
-          />
-        </Routes>
-      </BrowserRouter>
-    </AnimatePresence>
-  );
+	// const location = useLocation();
+	return (
+		<AnimatePresence mode="wait">
+			<BrowserRouter>
+				<Routes>
+					<Route path="/" element={<Home />} />
+					<Route
+						path="/about"
+						element={<Page title="À propos" content={"about"} />}
+					/>
+					<Route
+						path="/skills"
+						element={<Page title="Mes compétences" content={"skills"} />}
+					/>
+					<Route
+						path="/projects"
+						element={<Page title="Mes projets" content={"projects"} />}
+					/>
+					<Route
+						path="/projects-in-progress"
+						element={
+							<Page
+								title="Mes projets en cours"
+								content={"projectsInProgress"}
+							/>
+						}
+					/>
+					<Route
+						path="/challenges"
+						element={<Page title="Mes challenges" content={"challenges"} />}
+					/>
+				</Routes>
+			</BrowserRouter>
+		</AnimatePresence>
+	);
 }
 
 export default App;

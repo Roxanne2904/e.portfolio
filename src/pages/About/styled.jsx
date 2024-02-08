@@ -93,6 +93,7 @@ export const StyledSignatureContent = styled.span`
 	bottom: 20px;
 `;
 
-export const StyledMediumTitle = styled.h2`
+export const StyledMediumTitle = styled.span`
 	font-size: 1.2rem;
+	font-weight: bold;
 `;

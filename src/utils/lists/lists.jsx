@@ -21,7 +21,7 @@ export const listNav = [
 		name: "projects",
 		borderLeft: "false",
 		type: "nav",
-		url: "/projects",
+		url: null,
 	},
 	{
 		id: "03",
@@ -53,6 +53,7 @@ export const listLogo = [
 		projects: [
 			{
 				id: "01",
+				type: "done",
 				urlP: "https://github.com/Roxanne2904/VietteRoxanne_14_25052022",
 				urlApp: "https://oc-rv-hrnet-app.netlify.app/",
 				display: "Hrnet",
@@ -70,6 +71,7 @@ export const listLogo = [
 			},
 			{
 				id: "02",
+				type: "done",
 				urlP: "https://github.com/Roxanne2904/VietteRoxanne_13_18042022",
 				urlApp: "https://oc-rv-argent-bank.netlify.app/",
 				display: "ArgentBank",
@@ -86,6 +88,7 @@ export const listLogo = [
 			},
 			{
 				id: "03",
+				type: "done",
 				urlP: "https://github.com/Roxanne2904/VietteRoxanne_12_23122020",
 				urlApp: "https://oc-rv-sportsee.netlify.app/",
 				display: "SportSee",
@@ -102,6 +105,7 @@ export const listLogo = [
 			},
 			{
 				id: "04",
+				type: "done",
 				urlP: "https://github.com/Roxanne2904/VietteRoxanne_11_23122020",
 				urlApp: "https://kasa-rv-project.netlify.app/",
 				display: "Kasa",
@@ -112,6 +116,30 @@ export const listLogo = [
 					"https://www.figma.com/file/bAnXDNqRKCRRP8mY2gcb5p/UI-Design-Kasa-FR?node-id=4%3A1",
 				description:
 					"Le projet consistait a mettre en place l'application sous React et développer l'ensemble en créant des composants réutilisables et des routes React Router. Une maquette Figma a été mise à disposition et certaines contraintes fonctionnelles sont à prendre en compte.",
+			},
+			{
+				id: "05",
+				type: "challenges",
+				urlP: "https://github.com/Roxanne2904/typeScript_training",
+				urlApp: null,
+				display: "Défis TypeScript",
+				name: "typeScriptChallenge",
+				date: "01.01.2024",
+				tools: ["TypeScript"],
+				maquette: null,
+				description: "Suite d'exercices pour s'exercer en TypeScript",
+			},
+			{
+				id: "06",
+				type: "challenges",
+				urlP: "https://github.com/Roxanne2904/codewars_training/tree/master",
+				urlApp: null,
+				display: "Défis CodeWars",
+				name: "codeWarsChallenge",
+				date: "01.01.2024",
+				tools: ["TypeScript"],
+				maquette: null,
+				description: "Mes exercices codeWars",
 			},
 		],
 	},
