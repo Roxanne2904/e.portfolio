@@ -20,7 +20,7 @@ function App() {
 					/>
 					<Route
 						path="/projects"
-						element={<Page title="Mes projets" content={"projects"} />}
+						element={<Page title="Mes projets terminés" content={"projects"} />}
 					/>
 					<Route
 						path="/projects-in-progress"
@@ -33,7 +33,7 @@ function App() {
 					/>
 					<Route
 						path="/challenges"
-						element={<Page title="Mes challenges" content={"challenges"} />}
+						element={<Page title="Mes défis" content={"challenges"} />}
 					/>
 				</Routes>
 			</BrowserRouter>

@@ -144,8 +144,12 @@ export const StyledFigma = styled.div`
 			: height < 1100
 			? `1rem`
 			: ` 1.7vmin`};
-	display: ${display.block};
+	display: ${display.flex};
+	gap: 0.3rem;
+	flex-flow: column;
+	width: fit-content;
 	text-decoration: ${status.none};
+	white-space: nowrap;
 	a {
 		color: ${colors.tertiary};
 		border-bottom: solid 2px transparent;

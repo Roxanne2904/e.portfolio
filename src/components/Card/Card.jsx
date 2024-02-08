@@ -43,6 +43,55 @@ const filterProjects = (projects, contentPage) => {
 	}
 };
 
+const links = {
+	maquette: (elt) => (
+		<a
+			href={`${elt.maquette}`}
+			alt={"voir la maquette"}
+			target={"_blank"}
+			rel={"noreferrer"}
+		>
+			{`Maquette Figma`}
+		</a>
+	),
+	library: (elt) => (
+		<a
+			href={`${elt.library}`}
+			alt={"voir la librairie"}
+			target={"_blank"}
+			rel={"noreferrer"}
+		>
+			{`Plugin react-calendar`}
+		</a>
+	),
+	storybook: (elt) => (
+		<a
+			href={`${elt.storybook}`}
+			alt={"voir storybook"}
+			target={"_blank"}
+			rel={"noreferrer"}
+		>
+			{`Voir le storybook`}
+		</a>
+	),
+	npm: (elt) => (
+		<a
+			href={`${elt.npm}`}
+			alt={"voir storybook"}
+			target={"_blank"}
+			rel={"noreferrer"}
+		>
+			{`Installer via npm`}
+		</a>
+	),
+};
+
+const displayRightLink = (elt) => {
+	if (elt.maquette) return links["maquette"](elt);
+	if (elt.library) return links["library"](elt);
+	if (elt.storybook) return links["storybook"](elt);
+};
+
 export default function Card({ width, height, content }) {
 	const [simplestCardAnimation, setSimplestCardAnimation] = useState(false);
 	const projectsList = filterProjects(listLogo[0].projects, content);
@@ -135,31 +184,10 @@ export default function Card({ width, height, content }) {
 								</StyledUl>
 							</StyledUlBlock>
 							<StyledModelAndGitHubLinkContent>
-								{elt.maquette ? (
+								{elt.maquette || elt.library || elt.storybook || elt.npm ? (
 									<StyledFigma width={width} height={height}>
-										{elt.maquette === undefined ? (
-											elt.library === undefined ? (
-												""
-											) : (
-												<a
-													href={`${elt.library}`}
-													alt={"voir la librairie"}
-													target={"_blank"}
-													rel={"noreferrer"}
-												>
-													{`Plugin react-calendar`}
-												</a>
-											)
-										) : (
-											<a
-												href={`${elt.maquette}`}
-												alt={"voir la maquette"}
-												target={"_blank"}
-												rel={"noreferrer"}
-											>
-												{`Maquette Figma`}
-											</a>
-										)}
+										{displayRightLink(elt)}
+										{elt.npm && links["npm"](elt)}
 									</StyledFigma>
 								) : (
 									<span>

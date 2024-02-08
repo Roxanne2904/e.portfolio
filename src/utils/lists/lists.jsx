@@ -52,6 +52,22 @@ export const listLogo = [
 		url: "https://github.com/Roxanne2904/",
 		projects: [
 			{
+				id: "00",
+				type: "done",
+				urlP: "",
+				urlApp: "",
+				display: "Calendar Library",
+				name: "reactCalendarLibrary",
+				date: "25.05.2022",
+				tools: ["React", "Storybook", "Rollup"],
+				storybook:
+					"https://react-calendar-library.netlify.app/?path=/story/ui-datepicker--default",
+				npm: "https://www.npmjs.com/package/react-calendar-library",
+				description: `Création d'une librairie "from scratch" d'un calendrier développé sous React. 
+				              Possibilité de l'installer via npm et d'avoir toute la documentation sur storybook.
+							  Ma librairie a été utilisé sur le project Hrnet ! ;)`,
+			},
+			{
 				id: "01",
 				type: "done",
 				urlP: "https://github.com/Roxanne2904/VietteRoxanne_14_25052022",
@@ -127,7 +143,7 @@ export const listLogo = [
 				date: "01.01.2024",
 				tools: ["TypeScript"],
 				maquette: null,
-				description: "Suite d'exercices pour s'exercer en TypeScript",
+				description: "Suite de défis en TypeScript",
 			},
 			{
 				id: "06",
@@ -139,7 +155,7 @@ export const listLogo = [
 				date: "01.01.2024",
 				tools: ["TypeScript"],
 				maquette: null,
-				description: "Mes exercices codeWars",
+				description: "Mes défis codeWars",
 			},
 		],
 	},

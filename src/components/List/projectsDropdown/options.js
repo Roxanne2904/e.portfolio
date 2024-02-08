@@ -15,6 +15,6 @@ export const projectOptions = [
 		id: "opt3",
 		name: "challenge",
 		link: "/challenges",
-		label: "Challenges",
+		label: "Mes défis",
 	},
 ];
